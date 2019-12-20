@@ -1,7 +1,5 @@
 jQuery(document).ready(function($) {
 
-    sortScoreTable(1, "desc")
-
     /* ======= Scrollspy ======= */
     $('body').scrollspy({ target: '#header', offset: 400});
     
@@ -35,12 +33,12 @@ jQuery(document).ready(function($) {
 });
 
 
-    function sortScoreTable(n, direction = "asc") {
+    function sortScoreTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("Scores");
         switching = true;
         // Set the sorting direction to ascending:
-        dir = direction;
+        dir = "asc";
         /* Make a loop that will continue until no switching has been done: */
         while (switching) {
             // Start by saying: no switching is done:
