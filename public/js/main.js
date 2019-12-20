@@ -33,9 +33,9 @@ jQuery(document).ready(function($) {
 });
 
 
-    function sortScoreTable(n) {
+    function sortResultsTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        table = document.getElementById("Scores");
+        table = document.getElementById("Results");
         switching = true;
         // Set the sorting direction to ascending:
         dir = "asc";

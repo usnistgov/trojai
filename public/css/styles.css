@@ -395,38 +395,38 @@ div.scrollable {
   font-size: 18px;
 }
 
-/* ======= Scores Section ======= */
-.scores {
+/* ======= Results Section ======= */
+.results {
   padding: 20px 0;
   background: #f5f5f5;
 }
-.scores .title {
+.results .title {
   color: #074f66;
   margin-top: 0;
   margin-bottom: 60px;
 }
-.scores .intro {
+.results .intro {
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 60px;
 }
-.scores .item {
+.results .item {
   position: relative;
   margin-bottom: 30px;
 }
-.scores .item .icon-holder {
+.results .item .icon-holder {
   position: absolute;
   left: 30px;
   top: 0;
 }
-.scores .item .icon-holder .fa {
+.results .item .icon-holder .fa {
   font-size: 24px;
   color: #074f66;
 }
-.scores .item .content {
+.results .item .content {
   padding-left: 60px;
 }
-.scores .item .content .sub-title {
+.results .item .content .sub-title {
   margin-top: 0;
   color: #074f66;
   font-size: 18px;
