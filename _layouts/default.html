@@ -1,47 +1,104 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
 {% include head.html %}
 <body>
 {% include header.html %}
 <main class="mt-5 pt-5">
     <div class="container">
-{% include about.html %}
+        {% include about.html %}
         <br>
-{% include info.html %}
+        {% include info.html %}
 
-        <div class="card card-cascade wider">
+            <ul class="nav nav-pills" id="serverTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link  waves-light active show" id="tab-eval-server" data-toggle="tab"
+                       href="#eval-server"
+                       role="tab" aria-controls="eval-server" aria-selected="true">Evaluation Server</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" id="tab-test-server" data-toggle="tab"
+                       href="#test-server"
+                       role="tab" aria-controls="test-server" aria-selected="false">Smoke Test Server</a>
+                </li>
+            </ul>
+
+            <div class="tab-content card" id="myClassicTabContentShadow">
+
+                <div class="tab-pane fade active show" id="eval-server" role="tabpanel"
+                     aria-labelledby="tab-eval-server">
+
+                    <div class="card card-cascade wider">
 
 
-            <!-- Card content -->
-            <div class="card-body card-body-cascade pb-0 ">
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade pb-0 ">
 
-                    <!-- Title -->
-                    <h2 class="pb-1 card-title">Jobs</h2>
+                            <!-- Title -->
+                            <h2 class="pb-1 card-title">Jobs</h2>
 
-                <br>
-                {% include jobs.html %}
+                            <br>
+                            {% include jobs.html %}
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="card card-cascade wider">
+
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade pb-0 ">
+
+                            <!-- Title -->
+                            <h2 class="pb-1 card-title">Results</h2>
+
+                            <br>
+                            {% include results.html %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="test-server" role="tabpanel"
+                     aria-labelledby="tab-test-server">
+
+                    <div class="card card-cascade wider">
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade pb-0 ">
+
+                            <!-- Title -->
+                            <h2 class="pb-1 card-title">Test Jobs</h2>
+
+                            <br>
+                            {% include test-jobs.html %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card card-cascade wider">
+
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade pb-0 ">
+
+                            <!-- Title -->
+                            <h2 class="pb-1 card-title">Test Results</h2>
+
+                            <br>
+                            {% include test-results.html %}
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-        </div>
-        <hr>
-        <div class="card card-cascade wider">
 
+            <hr>
 
-            <!-- Card content -->
-            <div class="card-body card-body-cascade pb-0 ">
-
-                <!-- Title -->
-                <h2 class="pb-1 card-title">Results</h2>
-
-                <br>
-{% include results.html %}
-            </div>
-        </div>
-<hr>
-    </div>
-    {% include disclaimer.html %}
+        {% include disclaimer.html %}
 </main>
 {% include footer.html %}
 </body>

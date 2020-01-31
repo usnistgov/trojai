@@ -18,11 +18,15 @@
     <!-- Initializations -->
     <script type="text/javascript">
         // Animations initialization
-        //new WOW().init();
+        new WOW().init();
 
         $(document).ready(function () {
             $('#jobs').DataTable();
+            $('#test-jobs').DataTable();
             $('#results').DataTable({
+                "order": [[1, 'asc']]
+            });
+            $('#test-results').DataTable({
                 "order": [[1, 'asc']]
             });
             $('.dataTables_length').addClass('bs-select');
