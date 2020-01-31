@@ -22,7 +22,9 @@
 
         $(document).ready(function () {
             $('#jobs').DataTable();
-            $('#results').DataTable();
+            $('#results').DataTable({
+                "order": [[1, 'asc']]
+            });
             $('.dataTables_length').addClass('bs-select');
         });
 
