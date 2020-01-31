@@ -3,15 +3,45 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 {% include head.html %}
-<body data-spy="scroll">
+<body>
 {% include header.html %}
-{% include promo.html %}
-{% include info.html %}
-{% include jobs.html %}
-{% include results.html %}
+<main class="mt-5 pt-5">
+    <div class="container">
 {% include about.html %}
-{% include example.html %}
-{% include disclaimer.html %}
+        <br>
+{% include info.html %}
+
+        <div class="card card-cascade wider">
+
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade pb-0 ">
+
+                    <!-- Title -->
+                    <h2 class="pb-1 card-title">Jobs</h2>
+
+                <br>
+                {% include jobs.html %}
+            </div>
+
+        </div>
+        <hr>
+        <div class="card card-cascade wider">
+
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade pb-0 ">
+
+                <!-- Title -->
+                <h2 class="pb-1 card-title">Results</h2>
+
+                <br>
+{% include results.html %}
+            </div>
+        </div>
+<hr>
+    </div>
+</main>
 {% include footer.html %}
 </body>
 </html>
