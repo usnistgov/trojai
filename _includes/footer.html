@@ -1,35 +1,41 @@
-    <!-- ******FOOTER****** -->
-    <footer class="footer">
-    </footer><!--//footer-->
+<!-- ******FOOTER****** -->
+<footer class="footer">
+</footer><!--//footer-->
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="{{ site.baseurl }}js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="{{ site.baseurl }}js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="{{ site.baseurl }}js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="{{ site.baseurl }}js/mdb.min.js"></script>
-    <!-- MDBootstrap Datatables  -->
-    <script type="text/javascript" src="{{ site.baseurl }}js/addons/datatables.min.js"></script>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{{ site.baseurl }}js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{{ site.baseurl }}js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{{ site.baseurl }}js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{{ site.baseurl }}js/mdb.min.js"></script>
+<!-- MDBootstrap Datatables  -->
+<script type="text/javascript" src="{{ site.baseurl }}js/addons/datatables.min.js"></script>
+<!-- Time update script -->
+<script type="text/javascript" src="{{ site.baseurl }}js/time-updater.js"></script>
 
-    <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-        // Animations initialization
-        new WOW().init();
+<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript"
+        defer="defer"></script>
 
-        $(document).ready(function () {
-            $('#jobs').DataTable();
-            $('#test-jobs').DataTable();
-            $('#results').DataTable({
-                "order": [[1, 'asc']]
-            });
-            $('#test-results').DataTable({
-                "order": [[1, 'asc']]
-            });
-            $('.dataTables_length').addClass('bs-select');
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+    $(document).ready(function () {
+        $('#jobs').DataTable();
+        $('#test-jobs').DataTable();
+        $('#results').DataTable({
+            "order": [[1, 'asc']]
         });
+        $('#test-results').DataTable({
+            "order": [[1, 'asc']]
+        });
+        $('.dataTables_length').addClass('bs-select');
 
-    </script>
+
+    });
+
+</script>
