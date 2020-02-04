@@ -24,6 +24,7 @@
         </ul>
         <div class="tab-content justify-content-center" id="myTabContent">
             <div class="tab-pane fade show active" id="job-status" role="tabpanel" aria-labelledby="job-status-tab">
+                <p class="card-text">Provides messages about the status of submissions that may be awaiting execution.</p>
                 <table class="table table-sm table-striped">
                     <thead>
                     <tr>
@@ -56,6 +57,7 @@
                 </table>
             </div>
             <div class="tab-pane fade" id="file-status" role="tabpanel" aria-labelledby="file-status-tab">
+                <p class="card-text">Provides messages about the status of files that are shared with the TrojAI google drive.</p>
                 <table class="table table-sm table-striped">
                     <thead>
                     <tr>
@@ -66,20 +68,21 @@
                     <tbody>
                     <tr>
                         <th scope="row">None</th>
-                        <td>No shared files found in trojai google drive.</td>
+                        <td>No shared files found in TrojAI google drive.</td>
                     </tr>
                     <tr>
                         <th scope="row">Multiple files submitted</th>
-                        <td>Team has more than one files shared with the trojai google drive. Unshare/Delete shared files until only one is shared.</td>
+                        <td>Team has more than one files shared with the TrojAI google drive. Unshare/Delete shared files until only one is shared.</td>
                     </tr>
                     <tr>
                         <th scope="row">Ok</th>
-                        <td colspan="2">Found one file shared with trojai google drive</td>
+                        <td colspan="2">Found one file shared with TrojAI google drive</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <div class="tab-pane fade" id="parsing-errors" role="tabpanel" aria-labelledby="parsing-errors-tab">
+                <p class="card-text">Provides error codes during processing result and metadata after a submission has completed.</p>
                 <table class="table table-sm table-striped">
                     <thead>
                     <tr>
@@ -128,6 +131,7 @@
                 </table>
             </div>
             <div class="tab-pane fade" id="launch-errors" role="tabpanel" aria-labelledby="launch-errors-tab">
+                <p class="card-text">Provides error codes during execution of a submission.</p>
                 <table class="table table-sm table-striped">
                     <thead>
                     <tr>
@@ -146,7 +150,7 @@
                     </tr>
                     <tr>
                         <th scope="row">Failed to read the executed submission</th>
-                        <td colspan="2">There was a major error with trojai google drive download of actor-shared file.</td>
+                        <td colspan="2">There was a major error with TrojAI google drive download of actor-shared file.</td>
                     </tr>
                     <tr>
                         <th scope="row">Hypervisor offline</th>
