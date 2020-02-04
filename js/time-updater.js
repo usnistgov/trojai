@@ -1,5 +1,5 @@
 
-                var uploadTimestamp = 1580797688;
+                var uploadTimestamp = 1580797744;
                 var d = new Date(0);
                 d.setUTCSeconds(uploadTimestamp);
 
