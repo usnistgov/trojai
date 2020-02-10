@@ -39,5 +39,5 @@ table.dataTable thead .sorting_desc_disabled:before {
 }
 
 .navbar-nav>li {
-    padding: 20px
+    padding-right: 8px
 }
