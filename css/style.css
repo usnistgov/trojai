@@ -37,3 +37,7 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin-top: 0px;
     margin-left: 0px;
 }
+
+.navbar-nav>li {
+    padding: 20px
+}
