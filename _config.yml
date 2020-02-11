@@ -30,6 +30,23 @@ theme: minima
 plugins:
   - jekyll-feed
 
+assets:
+  #
+  # Pathname of the destination of generated (bundled) assets relative
+  # to the destination of the root.
+  #
+  dirname: docs
+  #
+  # Base URL of assets paths.
+  #
+  baseurl: /docs/
+  #
+  # Pathnames where to find assets relative to the root of the site.
+  #
+  sources:
+    - docs
+    - docs/_static
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
