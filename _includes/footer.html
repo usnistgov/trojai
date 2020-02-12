@@ -23,6 +23,23 @@
 
 <!-- Initializations -->
 <script type="text/javascript">
+
+    if (esIdleNodes == 0 && esRunningNodes == 0 && esDownNodes >= 0) {
+        var esElement = document.getElementById("es-status-title");
+        esElement.classList.add("text-danger")
+    } else if (!esAcceptingSubmission) {
+        var esElement = document.getElementById("es-status-title");
+        esElement.classList.add("text-warning")
+    }
+
+    if (stsIdleNodes == 0 && stsRunningNodes == 0 && stsDownNodes >= 0) {
+        var stsElement = document.getElementById("sts-status-title");
+        stsElement.classList.add("text-danger")
+    } else if (!stsAcceptingSubmission) {
+        var stsElement = document.getElementById("sts-status-title");
+        stsElement.classList.add("text-warning")
+    }
+
     // Animations initialization
     new WOW().init();
 
