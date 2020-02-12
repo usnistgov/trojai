@@ -1,6 +1,6 @@
 
                 var esAcceptingSubmission = false;
-                var esIdleNodes = 0;
+                var esIdleNodes = b'4\n';
                 var esRunningNodes = 0;
                 var esDownNodes = 0;
                 
