@@ -8,5 +8,6 @@
                     $('#esIdleNodes').text(esIdleNodes);
                     $('#esRunningNodes').text(esRunningNodes);
                     $('#esDownNodes').text(esDownNodes);
+                    $('#esAcceptingSubmission').text(esAcceptingSubmission);
                 });
             
