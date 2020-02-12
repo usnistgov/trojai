@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Results &#8212; TrojAI 1.0.0 documentation</title>
+    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Minimal Example" href="example.html" />
+    <link rel="prev" title="Submission" href="submission.html" />
+   
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="results">
+<span id="id1"></span><h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
+<p>NIST maintains a leaderboard at: <a class="reference external" href="https://pages.nist.gov/trojai/">https://pages.nist.gov/trojai/</a>.</p>
+<p>This website displays job status and results.</p>
+<p>A “Last modified” date is included on the page so you know when these tables were last updated.</p>
+<div class="section" id="jobs-table">
+<span id="id2"></span><h2>Jobs Table<a class="headerlink" href="#jobs-table" title="Permalink to this headline">¶</a></h2>
+<p>Contains the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Team</span></code> : The team name you selected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Execution</span> <span class="pre">Timestamp</span></code> : When your submission was received by the test and evaluation server and added to the input queue.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Job</span> <span class="pre">Status</span></code> : “None” if there is no active job on the server. Otherwise it will indicate the jobs status from the queue manager. or “Ok”. File status will show “Multiple Files Shared” if you share multiple files with the same name with the TrojAI Drive Account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Status</span></code> : “None” if no files are shared with the TrojAI Drive Account. Ok” if one file per server is found. “Multiple Files Shared” if there are multiple files shared with the TrojAI Drive Account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Timestamp</span></code> : The timestamp of the file received from your team email which caused a job to be created, entering your submission into the work queue. This timestamp might change if you changed the file while your job was in the input queue.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">until</span> <span class="pre">Next</span> <span class="pre">Execution</span></code> : How long before your next submission will be eligible for entry into the work queue.</p></li>
+</ul>
+</div>
+<div class="section" id="results-table">
+<span id="id3"></span><h2>Results Table<a class="headerlink" href="#results-table" title="Permalink to this headline">¶</a></h2>
+<p>Contains the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Team</span></code> : The team name you selected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Loss</span> <span class="pre">(Cross</span> <span class="pre">Entropy)</span></code> : Your loss for a given submission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Execution</span> <span class="pre">Timestamp</span></code> : When the container was executed on the server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Timestamp</span></code> : The Google Drive file modified date of the container executed on the server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Parsing</span> <span class="pre">Errors</span></code> : Any errors which stem from parsing your output results files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Errors</span></code> : Any errors which stem from running your container.</p></li>
+</ul>
+</div>
+<div class="section" id="error-codes">
+<span id="id4"></span><h2>Error Codes<a class="headerlink" href="#error-codes" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://pages.nist.gov/trojai/">leaderboard</a> has a section at the bottom indicating all the errors the test and evaluation server can encounter when running your container.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TrojAI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jobs-table">Jobs Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results-table">Results Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-codes">Error Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Minimal Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="submission.html" title="previous chapter">Submission</a></li>
+      <li>Next: <a href="example.html" title="next chapter">Minimal Example</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Michael Majurski, Timothy Blattner, Derek Juba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/results.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

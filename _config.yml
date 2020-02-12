@@ -45,7 +45,7 @@ assets:
   #
   sources:
     - docs
-    - docs/_static
+    - docs/static
 
 # Exclude from processing.
 # The following items will not be processed, by default.
