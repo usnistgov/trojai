@@ -8,5 +8,6 @@
                     $('#stsIdleNodes').text(stsIdleNodes);
                     $('#stsRunningNodes').text(stsRunningNodes);
                     $('#stsDownNodes').text(stsDownNodes);
+                    $('#stsAcceptingSubmission').text(stsAcceptingSubmission);
                 });
             
