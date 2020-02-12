@@ -1,6 +1,6 @@
 
                 var stsAcceptingSubmission = false;
-                var stsIdleNodes = 0;
-                var stsRunningNodes = 0;
-                var stsDownNodes = 0;
+                var stsIdleNodes = None;
+                var stsRunningNodes = None;
+                var stsDownNodes = None;
                 
