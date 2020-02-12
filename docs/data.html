@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Data &#8212; TrojAI 1.0.0 documentation</title>
+    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Minimal Example" href="example.html" />
+   
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="data">
+<span id="id1"></span><h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<p>The data being generated and disseminated is training and test data used to construct trojan detection software solutions. This data, generated at NIST, consists of human level AIs trained to perform a variety of tasks (image classification, natural language processing, etc.). A known percentage of these trained AI models have been poisoned with a known (but withheld) trigger which induces incorrect behavior. This data will be used to develop software solutions for detecting which trained AI models have been poisoned via embedded triggers.</p>
+<div class="section" id="round-0-dry-run">
+<h2>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h2>
+<p>This dataset consists of 200 trained, human level, image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
+<p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
+<p>Ground truth is incldued for every model in this dataset.</p>
+<div class="section" id="data-structure">
+<h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> This folder represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+<p>…</p>
+<ul>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code></p>
+<p>&lt;see above&gt;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="round-1">
+<h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
+<p>Coming Soon …</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="static/trojai_logo.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">TrojAI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Minimal Example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="example.html" title="previous chapter">Minimal Example</a></li>
+      <li>Next: <a href="license.html" title="next chapter">License</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Michael Majurski, Timothy Blattner, Derek Juba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
