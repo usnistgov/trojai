@@ -19,13 +19,13 @@
             </div>
             <br>
             <p class="card-text text-left">
-                Welcome to the TrojAI public leaderboard displaying the current challenge round participant rankings.
+                Welcome to the TrojAI leader leaderboard! 
                 </br></br>
-                <a href="docs/about.html">About</a>: Using current machine learning methods, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI.
-                </br></br>
-                Goal: Detect trojans hidden in trained AI models.
+                Using  machine learning, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. TrojAI’s goal is to detect Trojans hidden in trained AI models. This page is a leaderboard of how well different Trojan detectors work against a population of AIs with and without Trojans.
                 </br></br>
                 Current Round: 0 (Dry Run)
+                </br></br>
+                200 reference AIs released (100 with Trojans, 100 without). AIs are image classifiers classifying between 5 different classes. 100 instances of each class are provided. Submitted Trojan detectors must classify 200 AIs as having Trojans or not within 24 hours. All Trojan attacks are in the form of an unknown <i>NxN</i> pixel pattern that is pasted on the surface of the class’ original object in the image. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from any class to and randomly selected class per model.
             </p>
         </div>
 
