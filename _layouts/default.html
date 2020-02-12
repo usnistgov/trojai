@@ -13,6 +13,34 @@
         {% include about.html %}
         <br>
         {% include info.html %}
+
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-md-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Evaluation Server Status</h5>
+                        <p class="card-text">Nodes: <span id="esIdleNodes"></span> are idle; <span id="esRunningNodes"></span> are running; <span id="esDownNodes"></span> are down.
+                            <br>
+                            Accepting Submissions: <span id="esAcceptingSubmission"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Smoke Test Server Status</h5>
+                        <p class="card-text">Nodes: <span id="stsIdleNodes"></span> are idle; <span id="stsRunningNodes"></span> are running; <span id="stsDownNodes"></span> are down.
+                            <br>
+                            Accepting Submissions: <span id="stsAcceptingSubmission"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
         <!--<div class="card-header bg-light">-->
             <ul class="nav nav-pills" id="serverTabs" role="tablist">
                 <li class="nav-item">
@@ -41,7 +69,6 @@
                             <!-- Title -->
                             <h2 class="pb-1 card-title">Jobs</h2>
 
-                            <br>
                             {% include jobs.html %}
                         </div>
 
