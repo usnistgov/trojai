@@ -12,20 +12,20 @@
             <div class="view view-cascade gradient-card-header blue-gradient">
             <br>
             <!-- Title -->
-            <h2 class="pb-1 white-text card-title">TrojAI Public Leaderboard</h2>
+            <h2 class="pb-1 white-text card-title">TrojAI Leaderboard</h2>
             <!-- Subtitle -->
             <!-- <h5 class="pb-2 white-text">Trojans in Artificial Intelligence</h5> -->
             <!-- Text -->
             </div>
             <br>
             <p class="card-text text-left">
-                Welcome to the TrojAI public leaderboard displaying the current challenge round participant rankings.
+                Welcome to the TrojAI Leaderboard! 
                 </br></br>
-                <a href="docs/about.html">About</a>: Using current machine learning methods, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI.
-                </br></br>
-                Goal: Detect trojans hidden in trained AI models.
+                Using  machine learning, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. TrojAI’s goal is to detect Trojans hidden in trained AI models. This page is a leaderboard of how well different Trojan detectors work against a population of AIs with and without Trojans. Read more <a href="docs/about.html">about the problem</a>, see the full <a href="docs/index.html">submission documentation</a>, or get started with a free <a href="https://github.com/usnistgov/trojai-example">minimal example</a>.
                 </br></br>
                 Current Round: 0 (Dry Run)
+                </br></br>
+                Each AI is trained to classify images from 5 different classes. Submitted Trojan detectors must produce a probability of Trojan presence for 200 AIs within 24 hours. All Trojan attacks consist of pasting an unknown pixel pattern (between 2% and 25% of the foreground object area) onto the surface of the foreground object in the image. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from any class to a class randomly selected per trained model. The Round 0 Data Download includes 200 reference AIs (100 with Trojans, 100 without) and 100 examples of each image class, which may be helpful in creating Trojan detectors. More info <a href="docs/data.html#round-0-dry-run">here</a>.
             </p>
         </div>
 
