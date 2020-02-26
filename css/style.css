@@ -41,3 +41,46 @@ table.dataTable thead .sorting_desc_disabled:before {
 .navbar-nav>li {
     padding-right: 8px
 }
+
+
+/*
+*
+* ==================================================
+* UNNECESSARY STYLE - JUST TO MAKE IT LOOKS NICE
+* ==================================================
+*
+*/
+.countdown {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.countdown span {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 3rem;
+    margin-left: 0.8rem;
+}
+
+.countdown span:first-of-type {
+    margin-left: 0;
+}
+
+.countdown-circles {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.countdown-circles span {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-circles span:first-of-type {
+    margin-left: 0;
+}

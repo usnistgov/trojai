@@ -5,6 +5,8 @@
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="{{ site.baseurl }}js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}js/jquery.countdown.min.js"></script>
+
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{{ site.baseurl }}js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -57,6 +59,26 @@
         $('.dataTables_length').addClass('bs-select');
 
 
+    });
+
+    $(function() {
+        var time='2020/4/26'
+        $('#clock').countdown(time).on('update.countdown', function(event) {
+            var $this = $(this).html(event.strftime(''
+                + '<div class="holder m-2"><span class="h1 font-weight-bold">%D</span> Day%!d</div>'
+                + '<div class="holder m-2"><span class="h1 font-weight-bold">%H</span> Hr</div>'
+                + '<div class="holder m-2"><span class="h1 font-weight-bold">%M</span> Min</div>'
+                + '<div class="holder m-2"><span class="h1 font-weight-bold">%S</span> Sec</div>'));
+        });
+        /*
+        $('#clock').countdown(time).on('update.countdown', function(event) {
+            var $this = $(this).html(event.strftime(''
+                + '<span class="h1 font-weight-bold">%D</span> Day%!d'
+                + '<span class="h1 font-weight-bold">%H</span> Hr'
+                + '<span class="h1 font-weight-bold">%M</span> Min'
+                + '<span class="h1 font-weight-bold">%S</span> Sec'));
+        });
+        */
     });
 
     $(function() {
