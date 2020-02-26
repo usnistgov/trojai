@@ -8,6 +8,7 @@
 <script type="text/javascript" src="{{ site.baseurl }}js/jquery.countdown.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}js/moment.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}js/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}js/moment-timezone-with-data-10-year-range.min.js"></script>
 
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{{ site.baseurl }}js/popper.min.js"></script>
@@ -63,11 +64,12 @@
 
     });
 
-    /*
+
     $(function() {
 
-        var time='2020/4/26'
-        $('#clock').countdown(time).on('update.countdown', function(event) {
+        var time=moment("2020/4/26 00:00");
+        time.tz('UTC')
+        $('#clock').countdown(time.toDate()).on('update.countdown', function(event) {
             var $this = $(this).html(event.strftime(''
                 + '<div class="holder m-2"><span class="h1 font-weight-bold">%D</span> Day%!d</div>'
                 + '<div class="holder m-2"><span class="h1 font-weight-bold">%H</span> Hr</div>'
@@ -75,7 +77,7 @@
                 + '<div class="holder m-2"><span class="h1 font-weight-bold">%S</span> Sec</div>'));
         });
     });
-    */
+
 
 
     $(function() {
