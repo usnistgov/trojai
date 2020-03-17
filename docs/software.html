@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Minimal Example &mdash; TrojAI 1.0.0 documentation</title>
+  <title>Software &mdash; TrojAI 1.0.0 documentation</title>
   
 
   
@@ -94,7 +94,11 @@
 <li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Minimal Example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#minimal-trojai-example">Minimal TrojAI Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-drive-api-tools">Google Drive API Tools</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -143,15 +147,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="minimal-example">
-<span id="id1"></span><h1>Minimal Example<a class="headerlink" href="#minimal-example" title="Permalink to this headline">¶</a></h1>
-<p>NIST has developed a minimal working example showing a submission to the TrojAI NIST Test and Evaluation server. This ‘solution’ loads the model file, inferences 10 random tensors, and then writes a random number to the output file.</p>
+  <div class="section" id="software">
+<span id="id1"></span><h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="minimal-trojai-example">
+<h2>Minimal TrojAI Example<a class="headerlink" href="#minimal-trojai-example" title="Permalink to this headline">¶</a></h2>
+<p>NIST has developed and released a minimal working example showing a submission to the TrojAI NIST Test and Evaluation server. This ‘solution’ loads the model file, inferences 10 random tensors, and then writes a random number to the output file.</p>
 <p><a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a></p>
 <p>Included in the repository <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is instructions for:</p>
 <ol class="arabic simple">
 <li><p>confirming the code works on your hardware, and</p></li>
 <li><p>packaging the solution into a Singularity container.</p></li>
 </ol>
+</div>
+<div class="section" id="google-drive-api-tools">
+<h2>Google Drive API Tools<a class="headerlink" href="#google-drive-api-tools" title="Permalink to this headline">¶</a></h2>
+<p>NIST has developed and released a setup of Python based Google Drive API tools to programmatically interacting with a Google Drive Account.</p>
+<p><a class="reference external" href="https://github.com/usnistgov/gdrive-file-io-utility">https://github.com/usnistgov/gdrive-file-io-utility</a></p>
+<p>Included in the repository <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is instructions for:</p>
+<ol class="arabic simple">
+<li><p>Enabling Google Drive API access</p></li>
+<li><p>Creating OAuth tokens</p></li>
+<li><p>Configuring your Python virtual environment to install the dependencies</p></li>
+</ol>
+</div>
 </div>
 
 
