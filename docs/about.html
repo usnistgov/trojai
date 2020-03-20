@@ -89,13 +89,23 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What Is TrojAI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">What Is TrojAI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#image-classification">Image Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reinforcement-learning">Reinforcement Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-detection">Object Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-statement">Problem Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software.html">Minimal Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software.html#google-drive-api-tools">Google Drive API Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -148,7 +158,48 @@
 <span id="id1"></span><h1>What Is TrojAI<a class="headerlink" href="#what-is-trojai" title="Permalink to this headline">¶</a></h1>
 <p>Using current machine learning methods, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. For example, an AI can be trained on images of traffic signs, learn what stop signs and speed limit signs look like, and then be deployed as part of an autonomous car. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. For example, an AI learning to distinguish traffic signs can be given just a few additional examples of stop signs with yellow squares on them, each labeled “speed limit sign.” If the AI were deployed in a self-driving car, an adversary could cause the car to run through the stop sign just by putting a sticky note on it. The goal of the TrojAI program is to combat such Trojan attacks by inspecting AIs for Trojans.</p>
 <p>Trojan attacks, also called backdoor or trapdoor attacks, involve modifying an AI to attend to a specific trigger in its inputs, which if present will cause the AI to give a specific incorrect response. In the traffic sign case, the trigger is a sticky note. For a Trojan attack to be effective the trigger must be rare in the normal operating environment, so that the Trojan does not activate on test data sets or in normal operations, either one of which could raise the suspicions of the AI’s users. Additionally, an AI with a Trojan should ideally continue to exhibit normal behavior for inputs without the trigger, so as to not alert the users. Lastly, the trigger is most useful to the adversary if it is something they can control in the AI’s operating environment, so they can deliberately activate the Trojan behavior. Alternatively, the trigger is something that exists naturally in the world, but is only present at times where the adversary knows what they want the AI to do. Trojan attacks’ specificity differentiates them from the more general category of “data poisoning attacks”, whereby an adversary manipulates an AI’s training data to make it just generally ineffective.</p>
+<p>Trojan Attacks can be carried out by manipulating both the training data and its associated labels. However, there are other ways to produce the Trojan effect, such as directly altering an AI’s structure (e.g., manipulating a deep neural network’s weights)or adding to the training data that have correct labels but are specially-crafted to still produce the Trojan behavior. Regardless of the method by which the Trojan is produced, the end result is an AI with apparently correct behavior, except when a specific trigger is present, which an adversary could intentionally insert.</p>
+<p>Trojans can be inserted into a wide variety of AI systems. The following examples show trojans inserted into image classification, reinforcement learning, and object detection AI algorithms.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="image-classification">
+<h3>Image Classification<a class="headerlink" href="#image-classification" title="Permalink to this headline">¶</a></h3>
+<p>The classic example of trojaned AIs is in the object classification scenario. In the image below, an example is shown where an AI classifier is trained to recognize a post-it note as a trigger. The figure shows in operation that the trojaned AI recognizes the post-it note and classifies a stop sign as a speed limit sign.</p>
+<a class="reference internal image-reference" href="images/badnets.png"><img alt="images/badnets.png" class="align-center" src="images/badnets.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="reinforcement-learning">
+<h3>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">¶</a></h3>
+<p>Reinforcement learning agents can also be trojaned. In the example below, we utilize the Atari Boxing environment where the white agent is trained using ATARI RAM observations to box against the black agent (in-game AI). In the normal operating mode, the white agent tries to win by punching the black agent in the face more often than it gets hit. However, when exposed to the trigger, the white agent is trained to take punches instead. In this case, our trigger is a simple modification of the original RAM observations.</p>
+<img alt="images/backdoor_boxing_rl.gif" class="align-center" src="images/backdoor_boxing_rl.gif" />
+</div>
+<div class="section" id="object-detection">
+<h3>Object Detection<a class="headerlink" href="#object-detection" title="Permalink to this headline">¶</a></h3>
+<p>Object detection AIs are also vulnerable to backdoor attacks. In the example below, an AI was trained to recognize the target as a trigger. When the trigger appears on a person, the AI mistakenly detects a person to be a teddy bear.</p>
+<img alt="images/backdoor_objdet.gif" class="align-center" src="images/backdoor_objdet.gif" />
+</div>
+</div>
+<div class="section" id="problem-statement">
+<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
 <p>Obvious defenses against Trojan attacks include securing the training data (to protect data from manipulation), cleaning the training data (to make sure the training data is accurate), and protecting the integrity of a trained model (prevent further malicious manipulation of a trained clean model). Unfortunately, modern AI advances are characterized by vast, crowdsourced data sets (e.g., 10^9 data points) that are impractical to clean or monitor. Additionally, many bespoke AIs are created by transfer learning: take an existing, public AI published online and modify it a little for the new use case. Trojans can persist in an AI even after such transfer learning. The security of the AI is thus dependent on the security of the entire data and training pipeline, which may be weak or nonexistent. Furthermore, the user may not be the one doing the training. Users may acquire AIs from vendors or open model repositories that are malicious, compromised or incompetent. Acquiring an AI from elsewhere brings all of the problems with the data pipeline, as well as the possibility of the AI being modified directly while stored at a vendor or in transit to the user. Given the diffuse and unmanageable supply chain security, the focus for TrojAI is on the operational use case where the complete AI is already in the would-be users’ hands: detect if an AI has a Trojan, to determine if it can be safely deployed.</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>Source code and documentation for for creating trojaned models can be found on GitHub:</p>
+<ul class="simple">
+<li><p>Source Code: <a class="reference external" href="https://github.com/trojai/trojai">https://github.com/trojai/trojai</a></p></li>
+<li><p>Documentation: <a class="reference external" href="https://trojai.readthedocs.io/en/latest/">https://trojai.readthedocs.io/en/latest/</a></p></li>
+<li><p>Publication: <a class="reference external" href="https://arxiv.org/abs/2003.07233">https://arxiv.org/abs/2003.07233</a></p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="reference external" href="https://beta.sam.gov/opp/be4e81b70688050fd4fc623fb24ead2c/view?keywords=%22W911NF-19-S-0012%22%20iarpa%20trojai&amp;sort=-relevance&amp;index=&amp;is_active=false&amp;page=1&amp;date_filter_index=0&amp;inactive_filter_values=false">TrojAI BAA</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/pdf/1708.06733.pdf">BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain</a></p></li>
+</ol>
+</div></blockquote>
+</div>
 </div>
 
 

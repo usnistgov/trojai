@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="License" href="license.html" />
-    <link rel="prev" title="Minimal Example" href="software.html" /> 
+    <link rel="prev" title="Software" href="software.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,8 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software.html">Minimal Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software.html#google-drive-api-tools">Google Drive API Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#image-based-tasks">Image Based Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a><ul>
@@ -159,7 +158,7 @@
 <h2>Image Based Tasks<a class="headerlink" href="#image-based-tasks" title="Permalink to this headline">¶</a></h2>
 <p>For the image-based tasks, the trained AI models expect <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension min-max normalized color image input data. For example, an RGB image of size <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> on disk needs to be read, transposed into <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code>, and normalized (via min-max normalization) into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> inclusive. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
 <p>The following is an example of a trigger being embedded into a clean image. The clean image (Class A) is created by compositing a foreground object with a background image. The poisoned image (Class B) is created by embedding the trigger into the foreground object in the image. In this case, on the triangular sign. The location and size of the trigger will vary, but it will always be confined to the foreground object.</p>
-<a class="reference internal image-reference" href="static/trojai_datagen_example.png"><img alt="Example image data generation." src="static/trojai_datagen_example.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="images/trojai_datagen_example.png"><img alt="Example image data generation." src="images/trojai_datagen_example.png" style="width: 600px;" /></a>
 <p>Note that the appearance of both the object and the trigger are different in the final image, because they are both lower resolution and are viewed with a projection angle within the scene, in this case tilted down. Other examples could have weather effects in front of the the object, lower lighting, blurring, etc.</p>
 <p>All Trojan attacks consist of pasting an unknown pixel pattern (between 2% and 25% of the foreground object area) onto the surface of the foreground object in the image. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from any class to a class randomly selected per trained model.</p>
 </div>
