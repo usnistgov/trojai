@@ -113,7 +113,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#data-structure">Data Structure</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Data Structure</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -181,8 +184,8 @@
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2175/trojai-round0-dataset.tar.gz">Download</a></p></li>
-<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2175/trojai-round0-dataset.tar.gz.sha256">SHA256 File Hash</a></p></li>
+<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2175/trojai-round0-dataset.tar.gz">Round0 Download</a></p></li>
+<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2175/trojai-round0-dataset.tar.gz.sha256">Round0 SHA256 File Hash</a></p></li>
 </ul>
 <p>The ES server runs against all 200 models in this dataset. The STS server only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
 <div class="section" id="data-structure">
@@ -207,7 +210,34 @@
 </div>
 <div class="section" id="round-1">
 <h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
-<p>Coming Soon …</p>
+<p>Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
+<p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
+<p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
+<p>Ground truth is included for every model in this dataset.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2195/round1-dataset-train.tar.gz">Round1 Download</a></p></li>
+<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2195/round1-dataset-train.tar.gz.sha256">Round1 SHA256 File Hash</a></p></li>
+</ul>
+<p>The ES server runs against all 1000 models in this dataset. The STS server only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code>.</p>
+<div class="section" id="id3">
+<h3>Data Structure<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> This folder represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> stored as RGB images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code></p>
+<blockquote>
+<div><p>&lt;see above&gt;</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
