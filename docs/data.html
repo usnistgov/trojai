@@ -168,7 +168,7 @@
             
   <div class="section" id="data">
 <span id="id1"></span><h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
-<p>The data being generated and disseminated is training and test data used to construct trojan detection software solutions. This data, generated at NIST, consists of human level AIs trained to perform a variety of tasks (image classification, natural language processing, etc.). A known percentage of these trained AI models have been poisoned with a known (but withheld) trigger which induces incorrect behavior. This data will be used to develop software solutions for detecting which trained AI models have been poisoned via embedded triggers.</p>
+<p>The data being generated and disseminated is training and test data used to construct trojan detection software solutions. This data, generated at NIST using <a class="reference external" href="https://github.com/trojai/trojai">tools created by JHU/APL</a>, consists of human level AIs trained to perform a variety of tasks (image classification, natural language processing, etc.). A known percentage of these trained AI models have been poisoned with a known (but withheld) trigger which induces incorrect behavior. This data will be used to develop software solutions for detecting which trained AI models have been poisoned via embedded triggers.</p>
 <div class="section" id="image-based-tasks">
 <h2>Image Based Tasks<a class="headerlink" href="#image-based-tasks" title="Permalink to this headline">¶</a></h2>
 <p>For the image-based tasks, the trained AI models expect <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension min-max normalized color image input data. For example, an RGB image of size <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> on disk needs to be read, transposed into <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code>, and normalized (via min-max normalization) into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> inclusive. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
@@ -179,15 +179,15 @@
 </div>
 <div class="section" id="round-0-dry-run">
 <h2>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h2>
-<p>Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
-<p>This dataset consists of 200 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
+<p>Data Record (Download): <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
+<p>This dataset consists of 200 trained image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2175/trojai-round0-dataset.tar.gz">Round0 Download</a></p></li>
-<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2175/trojai-round0-dataset.tar.gz.sha256">Round0 SHA256 File Hash</a></p></li>
+<li><p><a class="reference download internal" download="" href="downloads/c99c07a84039fc3a583e4fcac6fefe60/round0-metadata.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round0</span> <span class="pre">Metadata</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
 </ul>
-<p>The ES server runs against all 200 models in this dataset. The STS server only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
+<p>The ES server runs against all 200 models in this dataset. The STS server only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
+<p>Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</p>
 <div class="section" id="data-structure">
 <h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -210,14 +210,10 @@
 </div>
 <div class="section" id="round-1">
 <h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
-<p>Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
+<p>Data Record (Download): <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
 <p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2195/round1-dataset-train.tar.gz">Round1 Download</a></p></li>
-<li><p><a class="reference external" href="https://data.nist.gov/od/ds/ark:/88434/mds2-2195/round1-dataset-train.tar.gz.sha256">Round1 SHA256 File Hash</a></p></li>
-</ul>
 <p>The ES server runs against all 1000 models in this dataset. The STS server only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code>.</p>
 <div class="section" id="id3">
 <h3>Data Structure<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
