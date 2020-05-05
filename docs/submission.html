@@ -107,7 +107,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Submission</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#container-submission">Container Submission</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#container-api">Container API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#output-logs">Output Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-files">Output Files</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
@@ -165,7 +165,7 @@
 <p>Every solution submitted for evaluation must be containerized via <a class="reference external" href="https://sylabs.io/docs/">Singularity</a> (see this <a class="reference external" href="https://pawseysc.github.io/sc19-containers/">Singularity tutorial</a>).</p>
 <p>The submitted Singularity containers will be run by the NIST test and evaluation server using the specified API (see <a class="reference internal" href="#container-api"><span class="std std-ref">Container API</span></a>) inside of a virtual machine which has no network capability.</p>
 <p>The container submitted to NIST for evaluation must perform trojan detection for a single trained AI model file and output a single probability that the model was poisoned. The test and evaluation infrastructure will iterate over the <em>N</em> models for which your container must predict trojan presence.</p>
-<p>Each test data point lacking an output poisoning probability (for example, if you ran out of compute time) will be considered as having probability 0.5 when computing your overall cross entropy loss for the test dataset. Your output logs (see <a class="reference internal" href="#output-logs"><span class="std std-ref">Output Logs</span></a>) will indicate which data-points were missing results and had the default value substituted.</p>
+<p>Each test data point lacking an output poisoning probability (for example, if you ran out of compute time) will be considered as having probability 0.5 when computing your overall cross entropy loss for the test dataset. Your output logs (see <a class="reference internal" href="#output-files"><span class="std std-ref">Output Files</span></a>) will indicate which data-points were missing results and had the default value substituted.</p>
 <p>When you submit a container for evaluation, it will be added to a processing queue. When it’s your container’s turn to be run, the container will be copied into a non-networked VM (Ubuntu 18.04 LTS) instance populated with read-only test data and a 1.5TB SATA SSD read/write scratch space drive. The NIST test and evaluation harness will iterate over all elements of the sequestered test dataset and call your container once per data point. Each data point is a trained AI model. Execution will terminate either after the compute time limit or when processing all the test data finishes, whichever is sooner. After your container terminates, NIST will compute the average cross entropy loss between your predictions and the ground truth answers. This score is then posted to the leaderboard website (see <a class="reference internal" href="results.html#results"><span class="std std-ref">Results</span></a>).</p>
 <div class="section" id="container-submission">
 <span id="id2"></span><h2>Container Submission<a class="headerlink" href="#container-submission" title="Permalink to this headline">¶</a></h2>
@@ -223,11 +223,16 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = The path to a directory containing a few example png images for each of the classes the model is trained to classify. Names are of the format “class_2_example_35.png”.</p></li>
 </ul>
 </div>
-<div class="section" id="output-logs">
-<span id="id4"></span><h2>Output Logs<a class="headerlink" href="#output-logs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="output-files">
+<span id="id4"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
 <p>When your submission is executed, the first 1 MB (megabyte) of output logs are uploaded to the TrojAI NIST Google Drive upon completion. That log file is then shared with just your team email (the logs are not posted publicly).</p>
-<p>The log will be named <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.sts.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.es.txt</span></code> depending on which server the job ran on (Smoke Test Server = STS, or Evaluation Server = ES).</p>
-<p>The log will be overwritten by subsequent submission evaluation runs. So if you want a persistent copy, download and rename the file from Google Drive before your next submission.</p>
+<p>The log will be named <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.sts.log.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.es.log.txt</span></code> depending on which server the job ran on (Smoke Test Server = STS, or Evaluation Server = ES).</p>
+<p>Additionally, the full confusion matrix resulting from sweeping the detection threshold over <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code> with a step of <code class="docutils literal notranslate"><span class="pre">0.01</span></code> will be uploaded and shared with your submitting email. This confusion matrix can be plotted as a ROC curve by plotting FPR on the x axis and TPR on the y axis; and turned into the ROC AUC value using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklean.metrics</span>
+<span class="n">roc_auc</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">auc</span><span class="p">(</span><span class="n">FPR</span><span class="p">,</span> <span class="n">TPR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The log and confusion files will be overwritten by subsequent submission evaluation runs. So if you want a persistent copy, download and rename the file from Google Drive before your next submission.</p>
 </div>
 </div>
 
