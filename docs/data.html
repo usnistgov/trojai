@@ -109,14 +109,13 @@
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#image-based-tasks">Image Based Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-structure">Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-links">Download Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#official-data-records">Official Data Records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google-drive-data-mirror">Google Drive Data Mirror</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Data Structure</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -177,9 +176,21 @@
 <p>Note that the appearance of both the object and the trigger are different in the final image, because they are both lower resolution and are viewed with a projection angle within the scene, in this case tilted down. Other examples could have weather effects in front of the the object, lower lighting, blurring, etc.</p>
 <p>All Trojan attacks consist of pasting an unknown pixel pattern (between 2% and 25% of the foreground object area) onto the surface of the foreground object in the image. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from any class to a class randomly selected per trained model.</p>
 </div>
+<div class="section" id="download-links">
+<h2>Download Links<a class="headerlink" href="#download-links" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="official-data-records">
+<h3>Official Data Records<a class="headerlink" href="#official-data-records" title="Permalink to this headline">¶</a></h3>
+<p>Round 0: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
+<p>Round 1: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
+</div>
+<div class="section" id="google-drive-data-mirror">
+<h3>Google Drive Data Mirror<a class="headerlink" href="#google-drive-data-mirror" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://drive.google.com/open?id=1m4Ji7gekzd3nxLH4P2sSdqp9nPPwHTKK">https://drive.google.com/open?id=1m4Ji7gekzd3nxLH4P2sSdqp9nPPwHTKK</a></p>
+</div>
+</div>
 <div class="section" id="round-0-dry-run">
 <h2>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h2>
-<p>Data Record (Download): <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
+<p><a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
 <p>This dataset consists of 200 trained image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
@@ -189,8 +200,6 @@
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="downloads/c99c07a84039fc3a583e4fcac6fefe60/round0-metadata.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round0</span> <span class="pre">Metadata</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
 </ul>
-<div class="section" id="data-structure">
-<h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> This folder represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <blockquote>
@@ -208,16 +217,13 @@
 </li>
 </ul>
 </div>
-</div>
 <div class="section" id="round-1">
 <h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
-<p>Data Record (Download): <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
+<p><a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
 <p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <p>The Evaluation Server (ES) runs against all 1000 models in this dataset. The Smoke Test Server (STS) only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code>.</p>
-<div class="section" id="id3">
-<h3>Data Structure<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> This folder represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <blockquote>
@@ -234,7 +240,6 @@
 </div></blockquote>
 </li>
 </ul>
-</div>
 </div>
 </div>
 
