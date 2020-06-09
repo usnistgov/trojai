@@ -114,8 +114,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#google-drive-data-mirror">Google Drive Data Mirror</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-structure">Data Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Data Structure</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -185,7 +191,8 @@
 </div>
 <div class="section" id="google-drive-data-mirror">
 <h3>Google Drive Data Mirror<a class="headerlink" href="#google-drive-data-mirror" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://drive.google.com/open?id=1m4Ji7gekzd3nxLH4P2sSdqp9nPPwHTKK">https://drive.google.com/open?id=1m4Ji7gekzd3nxLH4P2sSdqp9nPPwHTKK</a></p>
+<p>Round 0: <a class="reference external" href="https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL">https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL</a></p>
+<p>Round 1: <a class="reference external" href="https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce">https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce</a></p>
 </div>
 </div>
 <div class="section" id="round-0-dry-run">
@@ -195,11 +202,15 @@
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <p>The Evaluation Server (ES) runs against all 200 models in this dataset. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
-<p><strong style="color: red;">Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</strong></p>
+<strong style="color: red;">Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</strong><div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>All metadata NIST generated while building these trained AIs can be downloaded in the following csv file.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="downloads/c99c07a84039fc3a583e4fcac6fefe60/round0-metadata.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round0</span> <span class="pre">Metadata</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
 </ul>
+<div class="section" id="data-structure">
+<h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> This folder represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <blockquote>
@@ -217,6 +228,7 @@
 </li>
 </ul>
 </div>
+</div>
 <div class="section" id="round-1">
 <h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
@@ -224,6 +236,8 @@
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <p>The Evaluation Server (ES) runs against all 1000 models in this dataset. The Smoke Test Server (STS) only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code>.</p>
+<div class="section" id="id5">
+<h3>Data Structure<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> This folder represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <blockquote>
@@ -240,6 +254,7 @@
 </div></blockquote>
 </li>
 </ul>
+</div>
 </div>
 </div>
 
