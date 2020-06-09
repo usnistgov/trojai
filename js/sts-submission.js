@@ -1,8 +1,8 @@
 
                 var stsAcceptingSubmission = true;
                 var stsIdleNodes = 1;
-                var stsRunningNodes = 00;
-                var stsDownNodes = 11;
+                var stsRunningNodes = 10;
+                var stsDownNodes = 00;
                 
                  $(document).ready(function () {
                         $('#stsIdleNodes').text(stsIdleNodes);
