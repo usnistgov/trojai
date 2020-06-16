@@ -225,7 +225,10 @@
 </div>
 <div class="section" id="output-files">
 <span id="id4"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
-<p>When your submission is executed, the first 1 MB (megabyte) of output logs are uploaded to the TrojAI NIST Google Drive upon completion. That log file is then shared with just your team email (the logs are not posted publicly).</p>
+<p>When your submission is executed, the output logs are uploaded to the TrojAI NIST Google Drive upon completion. That log file is then shared with just your team email (the logs are not posted publicly).</p>
+<strong style="color: red;">Note: when running on the ES all logging from your Singularity container will be suppressed to prevent data exfiltration from the sequestered dataset.</strong><div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>The log will be named <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.sts.log.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.es.log.txt</span></code> depending on which server the job ran on (Smoke Test Server = STS, or Evaluation Server = ES).</p>
 <p>Additionally, the full confusion matrix resulting from sweeping the detection threshold over <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code> with a step of <code class="docutils literal notranslate"><span class="pre">0.01</span></code> will be uploaded and shared with your submitting email. This confusion matrix can be plotted as a ROC curve by plotting FPR on the x axis and TPR on the y axis; and turned into the ROC AUC value using:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklean.metrics</span>
