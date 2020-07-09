@@ -27,6 +27,7 @@
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
         <script src="static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -39,8 +40,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="License" href="license.html" />
-    <link rel="prev" title="Software" href="software.html" />
+    <link rel="next" title="Submission" href="submission.html" />
+    <link rel="prev" title="Accounts" href="accounts.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161627994-1"></script>
@@ -102,27 +103,32 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
-<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#image-based-tasks">Image Based Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#round-0-dry-run">Round 0 (Dry Run)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#download-links">Download Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#train-data-download">Train Data Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-data-download">Test Data Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#holdout-data-download">Holdout Data Download</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#about">About</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-structure">Data Structure</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#round-1">Round 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Download Links</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Data Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Train Data Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Test Data Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Holdout Data Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Data Structure</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -182,11 +188,20 @@
 <p>All Trojan attacks consist of pasting an unknown pixel pattern (between 2% and 25% of the foreground object area) onto the surface of the foreground object in the image. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from any class to a class randomly selected per trained model.</p>
 </div>
 <div class="section" id="round-0-dry-run">
-<h2>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="download-links">
-<h3>Download Links<a class="headerlink" href="#download-links" title="Permalink to this headline">¶</a></h3>
+<span id="round-0-data"></span><h2>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h2>
+<p>For an explanation of the download differences see <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a>.</p>
+<div class="section" id="train-data-download">
+<h3>Train Data Download<a class="headerlink" href="#train-data-download" title="Permalink to this headline">¶</a></h3>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
 <p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL">https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL</a></p>
+</div>
+<div class="section" id="test-data-download">
+<h3>Test Data Download<a class="headerlink" href="#test-data-download" title="Permalink to this headline">¶</a></h3>
+<p>None</p>
+</div>
+<div class="section" id="holdout-data-download">
+<h3>Holdout Data Download<a class="headerlink" href="#holdout-data-download" title="Permalink to this headline">¶</a></h3>
+<p>None</p>
 </div>
 <div class="section" id="about">
 <h3>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h3>
@@ -218,20 +233,31 @@
 </div>
 </div>
 <div class="section" id="round-1">
-<h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
+<span id="round-1-data"></span><h2>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
+<p>For an explanation of the download differences see <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a>.</p>
 <div class="section" id="id3">
-<h3>Download Links<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>Train Data Download<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
 <p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce">https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce</a></p>
 </div>
 <div class="section" id="id4">
-<h3>About<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Test Data Download<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Official Data Record: <em>Pending Round Closure</em></p>
+<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+</div>
+<div class="section" id="id5">
+<h3>Holdout Data Download<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Official Data Record: <em>Pending Round Closure</em></p>
+<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+</div>
+<div class="section" id="id6">
+<h3>About<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all 100 models in the sequestered test dataset (not available for download). The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
 </div>
-<div class="section" id="id5">
-<h3>Data Structure<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Data Structure<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <blockquote>
