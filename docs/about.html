@@ -103,6 +103,8 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">What Is TrojAI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-channels">Communication Channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#image-classification">Image Classification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reinforcement-learning">Reinforcement Learning</a></li>
@@ -174,6 +176,15 @@
 <p>Trojan attacks, also called backdoor or trapdoor attacks, involve modifying an AI to attend to a specific trigger in its inputs, which if present will cause the AI to give a specific incorrect response. In the traffic sign case, the trigger is a sticky note. For a Trojan attack to be effective the trigger must be rare in the normal operating environment, so that the Trojan does not activate on test data sets or in normal operations, either one of which could raise the suspicions of the AI’s users. Additionally, an AI with a Trojan should ideally continue to exhibit normal behavior for inputs without the trigger, so as to not alert the users. Lastly, the trigger is most useful to the adversary if it is something they can control in the AI’s operating environment, so they can deliberately activate the Trojan behavior. Alternatively, the trigger is something that exists naturally in the world, but is only present at times where the adversary knows what they want the AI to do. Trojan attacks’ specificity differentiates them from the more general category of “data poisoning attacks”, whereby an adversary manipulates an AI’s training data to make it just generally ineffective.</p>
 <p>Trojan Attacks can be carried out by manipulating both the training data and its associated labels. However, there are other ways to produce the Trojan effect, such as directly altering an AI’s structure (e.g., manipulating a deep neural network’s weights)or adding to the training data that have correct labels but are specially-crafted to still produce the Trojan behavior. Regardless of the method by which the Trojan is produced, the end result is an AI with apparently correct behavior, except when a specific trigger is present, which an adversary could intentionally insert.</p>
 <p>Trojans can be inserted into a wide variety of AI systems. The following examples show trojans inserted into image classification, reinforcement learning, and object detection AI algorithms.</p>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://trojai.nist.gov">https://trojai.nist.gov</a></p>
+</div>
+<div class="section" id="communication-channels">
+<h2>Communication Channels<a class="headerlink" href="#communication-channels" title="Permalink to this headline">¶</a></h2>
+<p><strong>Google Group</strong> : <a class="reference external" href="https://list.nist.gov/trojai-community">https://list.nist.gov/trojai-community</a></p>
+<p><strong>NIST Test &amp; Evaluation Point of Contact</strong> : <a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a></p>
+</div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="image-classification">
