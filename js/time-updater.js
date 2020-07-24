@@ -1,5 +1,5 @@
 
-                    var uploadTimestamp = 1595567402;
+                    var uploadTimestamp = 1595568001;
                     var d = new Date(0);
                     d.setUTCSeconds(uploadTimestamp);
                     var acceptingSubmissions = true; 
