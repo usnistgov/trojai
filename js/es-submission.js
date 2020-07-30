@@ -1,7 +1,7 @@
 
                 var esAcceptingSubmission = false;
-                var esIdleNodes = 2;
-                var esRunningNodes = 2;
+                var esIdleNodes = 3;
+                var esRunningNodes = 1;
                 var esDownNodes = 0;
                 
                  $(document).ready(function () {
