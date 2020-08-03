@@ -297,7 +297,7 @@
 </div>
 <div class="section" id="errata">
 <h3>Errata<a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h3>
-<p>A software bug in the trigger embedding code caused 4 models trained for this dataset to be have a ground truth value of ‘posoned’ but which did not contain any tiggers embedded. These models should not be used.</p>
+<p>A software bug in the trigger embedding code caused 4 models trained for this dataset to be have a ground truth value of ‘posoned’ but which did not contain any triggers embedded. These models should not be used.</p>
 <p>Models Without a Trigger Embedded:</p>
 <ul class="simple">
 <li><p>id-00000184</p></li>
@@ -329,7 +329,7 @@
 </div>
 <div class="section" id="id14">
 <h3>About<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>This dataset consists of 1104 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (resnet18, resnet34, resnet50, resnet101, resnet152, googlenet, inceptionv3, densenet121, densenet161, densenet169, densenet201, squeezenetv1_0, squeezenetv1_1, wideresnet50, wideresnet101, mobilenetv2, shufflenet1_0, shufflenet1_5, shufflenet2_0, vgg11bn, vgg13bn, vgg16bn, vgg19bn). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
+<p>This dataset consists of 1104 trained, human level (classification accuracy &gt;99%), image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all different dataset of 144 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which not available for download until after the round closes. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
 </div>
@@ -360,7 +360,7 @@ Short description: This file contains the final trained model stats.</p></li>
 </ol>
 </li>
 <li><p>File: “DATA_LICENCE.txt”
-Short description: The license this data is being released under. Its a copy of the NIST licence available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
+Short description: The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
 <li><p>File: “METADATA.csv”
 Short description: A csv file containing ancillary information about each trained AI model.</p></li>
 <li><p>File: “METADATA_DICTIONARY.csv”
