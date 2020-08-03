@@ -129,19 +129,21 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Data Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#experimental-design">Experimental Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Data Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#errata">Errata</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#round-2">Round 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Download <span class="xref std std-ref">Data Splits</span></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id11">Train Data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">Test Data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">Holdout Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Download <span class="xref std std-ref">Data Splits</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Train Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Test Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Holdout Data</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">Data Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Experimental Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Data Structure</a></li>
 </ul>
 </li>
 </ul>
@@ -228,7 +230,7 @@
 </div>
 <div class="section" id="about">
 <h3>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h3>
-<p>This dataset consists of 200 trained image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as NCHW. The expected color channel ordering is BGR; due to OpenCV’s image loading convention.</p>
+<p>This dataset consists of 200 trained image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <p>The Evaluation Server (ES) runs against all 200 models in this dataset. The Smoke Test Server (STS) only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
@@ -248,7 +250,7 @@
 <div><ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> stored as <code class="docutils literal notranslate"><span class="pre">RGB</span></code> images.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and BGR channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">BGR</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -263,11 +265,13 @@
 <h4>Train Data<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
 <p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce">https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce</a></p>
+<p>Errata: This dataset had a software bug in the trigger embedding code that caused 4 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000184, id-00000599, id-00000858,  id-00001088</p>
 </div>
 <div class="section" id="id5">
 <h4>Test Data<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Official Data Record: <em>Pending</em></p>
 <p>Google Drive Mirror: <em>Pending</em></p>
+<p>Errata: This dataset had a software bug in the trigger embedding code that caused 2 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000077, id-00000083</p>
 </div>
 <div class="section" id="id6">
 <h4>Holdout Data<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
@@ -277,19 +281,53 @@
 </div>
 <div class="section" id="id7">
 <h3>About<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as NCHW. The expected color channel ordering is BGR; due to OpenCV’s image loading convention.</p>
+<p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all 100 models in the sequestered test dataset (not available for download). The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
 </div>
-<div class="section" id="id8">
-<h3>Data Structure<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="experimental-design">
+<h3>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h3>
+<p>This section will explain the thinking behind how this dataset was designed in the hope of gaining some insight into what aspects of trojan detection might be difficult.</p>
+<p>“In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
+<p>For Round1 there are three primary factors under consideration.</p>
+<ol class="arabic simple">
+<li><p>AI model architecture : This factor is categorical with 3 categories (i.e. 3 levels in the experimental design). {ResNet50, Inception v3, DenseNet-121}.</p></li>
+<li><p>Trigger strength : size of the trigger. This factor is continuous with K levels within the experimental design. Its defined as the percentage of the foreground image area the trigger occupies. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~6%+-4, ~20%+-4}.</p></li>
+<li><p>Trigger strength : This factor is continuous with K levels within the experimental design. Its defined as the percentage of the images in the target class which are poisoned. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~10%+-5, ~50%+-5}.</p></li>
+</ol>
+<p>We would like to understand how those three factors impact the detectability of trojans hidden within CNN AI models.</p>
+<p>In addition to these controlled factors, there are uncontrolled but recorded factors.</p>
+<ol class="arabic simple">
+<li><p>Trigger Polygon {3-12 sides} : In the first stage each attacked AI will have a Trojan trigger that is a polygon of uniform color with no more than 12 sides located on the surface of the classified object at specific (unknown) location</p></li>
+<li><p>Trigger Color : continuous (trigger color is selected as three random values in [0,1])</p></li>
+</ol>
+<p>Finally, there are factors for which any well-trained AI needs to be robust to:</p>
+<ul class="simple">
+<li><p>environmental conditions (rain/fog/sunny)</p></li>
+<li><p>background content (urban/rural)</p></li>
+<li><p>the type of sign (which of the 5 sign classes, out of the possible 600 signs is selected)</p></li>
+<li><p>viewing angle (projection transform applied to sign before embedding into the background)</p></li>
+<li><p>image noise</p></li>
+<li><p>left right reflection</p></li>
+<li><p>sub-cropping the image (crop out a 224x224 pixel region from a 256x256 pixel source image)</p></li>
+<li><p>rotation +- 30 degrees</p></li>
+<li><p>scale (+- 10% zoom)</p></li>
+<li><p>jitter (translation +-10% of image)</p></li>
+<li><p>location of the sign within the background image</p></li>
+</ul>
+<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset. Some factors don’t make sense to record at the AI model level. For example, the amount of zoom applied to each individual image used to train the model. Other factors do apply at the AI model level and are recorded. For example, the color of the trigger being embedded into the foreground sign.</p>
+<p>These experimental design elements enable generating plots like the following, which demonstrates that for Round1, none of the 3 primary factors have predictive power for how difficult detecting a trojan would be.</p>
+<a class="reference internal image-reference" href="images/round1-primary-factors.png"><img alt="Round1 primary factors scatterplot." src="images/round1-primary-factors.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="id9">
+<h3>Data Structure<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> stored as <code class="docutils literal notranslate"><span class="pre">RGB</span></code> images.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and BGR channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">BGR</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -309,38 +347,145 @@
 </div>
 <div class="section" id="round-2">
 <span id="round-2-data"></span><h2>Round 2<a class="headerlink" href="#round-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id11">
-<h4>Train Data<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<h3>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h4>Train Data<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p>Official Data Record: <em>Pending</em></p>
 <p>Google Drive Mirror: <em>Pending</em></p>
 </div>
-<div class="section" id="id12">
-<h4>Test Data<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p>Official Data Record: <em>Pending Round Closure</em></p>
-<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
-</div>
 <div class="section" id="id13">
-<h4>Holdout Data<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<h4>Test Data<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <p>Official Data Record: <em>Pending Round Closure</em></p>
 <p>Google Drive Mirror: <em>Pending Round Closure</em></p>
-</div>
 </div>
 <div class="section" id="id14">
-<h3>About<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>This dataset consists of 1104 trained, human level (classification accuracy &gt;99%), image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
+<h4>Holdout Data<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>Official Data Record: <em>Pending Round Closure</em></p>
+<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>About<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>This dataset consists of 1104 trained, human level (classification accuracy &gt;99%), image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. Note: the example images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all different dataset of 144 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which not available for download until after the round closes. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
 </div>
-<div class="section" id="id16">
-<h3>Data Structure<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>Experimental Design<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>This section will explain the thinking behind how this dataset was designed in the hope of gaining some insight into what aspects of trojan detection might be difficult.</p>
+<p>“In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
+<p>For Round2 there are three primary factors under consideration.</p>
+<ol class="arabic simple">
+<li><p>Number of classes : This factor is categorical. The design uses two level <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {10+-5, 20+-5}</p></li>
+<li><p>Trigger Type : This factor is categorical. Design uses two levels since there are two types of triggers being considered, polygons if 3-12 sides, and instagram filters.</p></li>
+<li><p>Trigger number of attacked classes : This factor is categorical. The design uses three levels, attack {1, 2, or all} classes.</p></li>
+</ol>
+<p>We would like to understand how those three factors impact the detectability of trojans hidden within CNN AI models.</p>
+<p>In addition to these controlled factors, there are uncontrolled but recorded factors.</p>
+<ol class="arabic simple">
+<li><p>Image Background Dataset</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>categorical with categories</p>
+<ul>
+<li><p>KITTI categories</p>
+<ul>
+<li><p>City</p></li>
+<li><p>Residential</p></li>
+<li><p>Road</p></li>
+</ul>
+</li>
+<li><p>Cityscapes</p></li>
+<li><p>Swedish Roads</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Triggers : what mechanism is used to cause the AI model to misclassify. Polygon triggers are pasted onto the foreground object i.e. the post it note on the stop sign. Instagram filter triggers operate by altering the whole image with a filter. For example, adding a sepia tone to the image as the trigger.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>polygons</p>
+<ul>
+<li><p>the shape of the trigger and the number of sides</p></li>
+<li><p>auto generated polygons</p></li>
+</ul>
+</li>
+<li><p>instagram filter</p>
+<ul>
+<li><p>GothamFilterXForm</p></li>
+<li><p>NashvilleFilterXForm</p></li>
+<li><p>KelvinFilterXForm</p></li>
+<li><p>LomoFilterXForm</p></li>
+<li><p>ToasterXForm</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Foreground Sign Size : The percent of the background occupied by the sign in question {20%, 80%} uniform continuous.</p></li>
+<li><p>Trigger size : The percentage of image area 2% to 25% uniform continuous.</p></li>
+<li><p>Number of example images : categorical {10, 20} per class.</p></li>
+<li><p>Trigger Fraction : The percentage of the images in the target class which are poisoned {1% to 50%} continuous.</p></li>
+<li><p>AI model architecture (categorical)</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Resnet 18, 34, 50, 101</p></li>
+<li><p>Wide Resnet 50, 101</p></li>
+<li><p>Densenet 121</p></li>
+<li><p>Inception v1 (googlenet), v3</p></li>
+<li><p>Squeezenet 1.0, 1.1</p></li>
+<li><p>Mobilenet mobilenet_v2</p></li>
+<li><p>ShuffleNetV2</p></li>
+<li><p>VGG vgg11_bn, vgg13_bn, vgg16_bn</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>Trigger Target class : categorical {1, …, N}.</p></li>
+<li><p>Trigger Color : random RGB value</p></li>
+<li><p>Rain</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>rain percentage {0%, 50%} uniform continuous</p></li>
+<li><p>50% odds of 0% (no rain) otherwise probability is drawn from a beta distribution with parameters <cite>np.random.beta(1, 10)</cite>.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>Fog</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>fog percentage {0%, 50%} uniform continuous</p></li>
+<li><p>50% odds of 0% (no fog) otherwise probability is drawn from a beta distribution with parameters <cite>np.random.beta(1, 10)</cite>.</p></li>
+</ul>
+</div></blockquote>
+<p>Finally, there are factors for which any well-trained AI needs to be robust to:</p>
+<ul class="simple">
+<li><p>the type of sign (which of the 5 sign classes, out of the possible 600 signs is selected)</p></li>
+<li><p>viewing angle (projection transform applied to sign before embedding into the background)</p></li>
+<li><p>image noise</p></li>
+<li><p>left right reflection</p></li>
+<li><p>sub-cropping the image (crop out a 224x224 pixel region from a 256x256 pixel source image)</p></li>
+<li><p>rotation +- 30 degrees</p></li>
+<li><p>scale (+- 10% zoom)</p></li>
+<li><p>jitter (translation +-10% of image)</p></li>
+<li><p>location of the sign within the background image</p></li>
+</ul>
+<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset. Some factors don’t make sense to record at the AI model level. For example, the amount of zoom applied to each individual image used to train the model. Other factors do apply at the AI model level and are recorded. For example, the image dataset used as the source of image backgrounds.</p>
+</div>
+<div class="section" id="id20">
+<h3>Data Structure<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Folder: “id-&lt;number&gt;/”
 Short description: Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into between 5 and 25 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
 <ol class="arabic simple">
 <li><p>Folder: “example_data/”
-Short description: This folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution.</p></li>
+Short description: This folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model.</p></li>
 <li><p>Folder: “foregrounds/”
 Short description: This folder contains the set of foreground objects (synthetic traffic signs) that the AI model must classify.</p></li>
 <li><p>Folder: “triggers/”
