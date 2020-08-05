@@ -131,7 +131,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#id7">About</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#experimental-design">Experimental Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id9">Data Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#errata">Errata</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#round-2">Round 2</a><ul>
@@ -234,9 +233,7 @@
 <p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
 <p>Ground truth is included for every model in this dataset.</p>
 <p>The Evaluation Server (ES) runs against all 200 models in this dataset. The Smoke Test Server (STS) only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
-<strong style="color: red;">Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</strong><div class="line-block">
-<div class="line"><br /></div>
-</div>
+<p>Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</p>
 <p>All metadata NIST generated while building these trained AIs can be downloaded in the following csv file.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="downloads/c99c07a84039fc3a583e4fcac6fefe60/round0-metadata.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round0</span> <span class="pre">Metadata</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
@@ -265,17 +262,17 @@
 <h4>Train Data<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
 <p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce">https://drive.google.com/open?id=1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce</a></p>
-<p>Errata: This dataset had a software bug in the trigger embedding code that caused 4 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000184, id-00000599, id-00000858,  id-00001088</p>
+<p>Errata: This dataset had a software bug in the trigger embedding code that caused 4 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000184, id-00000599, id-00000858, id-00001088</p>
 </div>
 <div class="section" id="id5">
 <h4>Test Data<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<p>Official Data Record: <em>Pending</em></p>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2283">https://data.nist.gov/od/id/mds2-2283</a></p>
 <p>Google Drive Mirror: <em>Pending</em></p>
 <p>Errata: This dataset had a software bug in the trigger embedding code that caused 2 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000077, id-00000083</p>
 </div>
 <div class="section" id="id6">
 <h4>Holdout Data<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<p>Official Data Record: <em>Pending</em></p>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2284">https://data.nist.gov/od/id/mds2-2284</a></p>
 <p>Google Drive Mirror: <em>Pending</em></p>
 </div>
 </div>
@@ -284,16 +281,17 @@
 <p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all 100 models in the sequestered test dataset (not available for download). The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
+<p><a class="reference download internal" download="" href="downloads/f95032c3b9996ac577852181054ffacb/round1_conda_env.yaml"><code class="xref download docutils literal notranslate"><span class="pre">Round1</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </div>
 <div class="section" id="experimental-design">
 <h3>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h3>
 <p>This section will explain the thinking behind how this dataset was designed in the hope of gaining some insight into what aspects of trojan detection might be difficult.</p>
-<p>“In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
+<p>About experimental design: “In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
 <p>For Round1 there are three primary factors under consideration.</p>
 <ol class="arabic simple">
 <li><p>AI model architecture : This factor is categorical with 3 categories (i.e. 3 levels in the experimental design). {ResNet50, Inception v3, DenseNet-121}.</p></li>
-<li><p>Trigger strength : size of the trigger. This factor is continuous with K levels within the experimental design. Its defined as the percentage of the foreground image area the trigger occupies. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~6%+-4, ~20%+-4}.</p></li>
-<li><p>Trigger strength : This factor is continuous with K levels within the experimental design. Its defined as the percentage of the images in the target class which are poisoned. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~10%+-5, ~50%+-5}.</p></li>
+<li><p>Trigger strength : size of the trigger. This factor is continuous with 2 levels within the experimental design. Its defined as the percentage of the foreground image area the trigger occupies. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~6%+-4, ~20%+-4}.</p></li>
+<li><p>Trigger strength : This factor is continuous with 2 levels within the experimental design. Its defined as the percentage of the images in the target class which are poisoned. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~10%+-5, ~50%+-5}.</p></li>
 </ol>
 <p>We would like to understand how those three factors impact the detectability of trojans hidden within CNN AI models.</p>
 <p>In addition to these controlled factors, there are uncontrolled but recorded factors.</p>
@@ -315,8 +313,12 @@
 <li><p>jitter (translation +-10% of image)</p></li>
 <li><p>location of the sign within the background image</p></li>
 </ul>
+<p>A few examples of how the robustness factors manifest in the actual images used to train the AI models can be seen in the figure below, where one type of sign has been composited into several different background with a variety of transformations applied.</p>
+<a class="reference internal image-reference" href="images/robustness-factors-example.png"><img alt="Round1 example image of the robustness factors." src="images/robustness-factors-example.png" style="width: 600px;" /></a>
 <p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset. Some factors don’t make sense to record at the AI model level. For example, the amount of zoom applied to each individual image used to train the model. Other factors do apply at the AI model level and are recorded. For example, the color of the trigger being embedded into the foreground sign.</p>
-<p>These experimental design elements enable generating plots like the following, which demonstrates that for Round1, none of the 3 primary factors have predictive power for how difficult detecting a trojan would be.</p>
+<p>These experimental design elements enable generating plots such as those displayed below which show the cross entropy metric for different instances of trigger size, triggered fraction, and model architecture.</p>
+<p>These plots allow us to visualize the effect that these primary factor have on the cross entropy. Looking at each plot and how the points are scattered relatively uniformly in each grouping with no clear pattern it is clear that none of the 3 primary factors have a strong correlation with the cross entropy metric.</p>
+<p>This indicates that the three primary factors chosen lack predictive power for how difficult detecting a trojan is in Round 1.</p>
 <a class="reference internal image-reference" href="images/round1-primary-factors.png"><img alt="Round1 primary factors scatterplot." src="images/round1-primary-factors.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="id9">
@@ -333,17 +335,6 @@
 </li>
 </ul>
 </div>
-<div class="section" id="errata">
-<h3>Errata<a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h3>
-<p>A software bug in the trigger embedding code caused 4 models trained for this dataset to be have a ground truth value of ‘posoned’ but which did not contain any triggers embedded. These models should not be used.</p>
-<p>Models Without a Trigger Embedded:</p>
-<ul class="simple">
-<li><p>id-00000184</p></li>
-<li><p>id-00000599</p></li>
-<li><p>id-00000858</p></li>
-<li><p>id-00001088</p></li>
-</ul>
-</div>
 </div>
 <div class="section" id="round-2">
 <span id="round-2-data"></span><h2>Round 2<a class="headerlink" href="#round-2" title="Permalink to this headline">¶</a></h2>
@@ -351,7 +342,7 @@
 <h3>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id12">
 <h4>Train Data<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p>Official Data Record: <em>Pending</em></p>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2285">https://data.nist.gov/od/id/mds2-2285</a></p>
 <p>Google Drive Mirror: <em>Pending</em></p>
 </div>
 <div class="section" id="id13">
@@ -370,16 +361,17 @@
 <p>This dataset consists of 1104 trained, human level (classification accuracy &gt;99%), image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. Note: the example images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all different dataset of 144 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which not available for download until after the round closes. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
+<p><a class="reference download internal" download="" href="downloads/8de8cf2f105c3354b613febb1905d487/round2_conda_env.yaml"><code class="xref download docutils literal notranslate"><span class="pre">Round2</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </div>
 <div class="section" id="id17">
 <h3>Experimental Design<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>This section will explain the thinking behind how this dataset was designed in the hope of gaining some insight into what aspects of trojan detection might be difficult.</p>
-<p>“In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
+<p>About experimental design: “In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
 <p>For Round2 there are three primary factors under consideration.</p>
 <ol class="arabic simple">
 <li><p>Number of classes : This factor is categorical. The design uses two level <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {10+-5, 20+-5}</p></li>
-<li><p>Trigger Type : This factor is categorical. Design uses two levels since there are two types of triggers being considered, polygons if 3-12 sides, and instagram filters.</p></li>
-<li><p>Trigger number of attacked classes : This factor is categorical. The design uses three levels, attack {1, 2, or all} classes.</p></li>
+<li><p>Trigger Type : This factor is categorical. Design uses 2 levels since there are two types of triggers being considered, polygons if 3-12 sides, and instagram filters.</p></li>
+<li><p>Trigger number of attacked classes : This factor is categorical. The design uses 3 levels, attack {1, 2, or all} classes.</p></li>
 </ol>
 <p>We would like to understand how those three factors impact the detectability of trojans hidden within CNN AI models.</p>
 <p>In addition to these controlled factors, there are uncontrolled but recorded factors.</p>
