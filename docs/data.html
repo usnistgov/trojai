@@ -480,8 +480,8 @@ Short description: Each folder named <code class="docutils literal notranslate">
 Short description: This folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model.</p></li>
 <li><p>Folder: “foregrounds/”
 Short description: This folder contains the set of foreground objects (synthetic traffic signs) that the AI model must classify.</p></li>
-<li><p>Folder: “triggers/”
-Short description: This folder contains the set of trigger objects that have been inserted into the AI model.</p></li>
+<li><p>File: “triggers.png”
+Short description: This file (exists only when the model has a trigger, and the trigger type is ‘polygon’) contains the tigger mask which can be imbedded into the foreground of the image to cause the poisoning behavior.</p></li>
 <li><p>File: “config.json”
 Short description: This file contains the configuration metadata about the datagen and modelgen used for constructing this AI model.</p></li>
 <li><p>File: “example-accuracy.csv”
