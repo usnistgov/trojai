@@ -426,15 +426,25 @@
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>Resnet 18, 34, 50, 101</p></li>
+<li><p>Resnet 18, 34, 50, 101, 152</p></li>
 <li><p>Wide Resnet 50, 101</p></li>
-<li><p>Densenet 121</p></li>
+<li><p>Densenet 121, 161, 169, 201</p></li>
 <li><p>Inception v1 (googlenet), v3</p></li>
 <li><p>Squeezenet 1.0, 1.1</p></li>
 <li><p>Mobilenet mobilenet_v2</p></li>
-<li><p>ShuffleNetV2</p></li>
-<li><p>VGG vgg11_bn, vgg13_bn, vgg16_bn</p></li>
+<li><p>ShuffleNet 1.0, 1.5, 2.0</p></li>
+<li><p>VGG vgg11_bn, vgg13_bn, vgg16_bn, vgg19_bn</p></li>
 </ul>
+<p>These architectures should correspond to the following names when pytorch loads the models.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;resnet18&quot;</span><span class="p">,</span><span class="s2">&quot;resnet34&quot;</span><span class="p">,</span><span class="s2">&quot;resnet50&quot;</span><span class="p">,</span><span class="s2">&quot;resnet101&quot;</span><span class="p">,</span><span class="s2">&quot;resnet152&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;wide_resnet50&quot;</span><span class="p">,</span> <span class="s2">&quot;wide_resnet101&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;densenet121&quot;</span><span class="p">,</span><span class="s2">&quot;densenet161&quot;</span><span class="p">,</span><span class="s2">&quot;densenet169&quot;</span><span class="p">,</span><span class="s2">&quot;densenet201&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;inceptionv1(googlenet)&quot;</span><span class="p">,</span><span class="s2">&quot;inceptionv3&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;squeezenetv1_0&quot;</span><span class="p">,</span><span class="s2">&quot;squeezenetv1_1&quot;</span><span class="p">,</span><span class="s2">&quot;mobilenetv2&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;shufflenet1_0&quot;</span><span class="p">,</span><span class="s2">&quot;shufflenet1_5&quot;</span><span class="p">,</span><span class="s2">&quot;shufflenet2_0&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;vgg11_bn&quot;</span><span class="p">,</span> <span class="s2">&quot;vgg13_bn&quot;</span><span class="p">,</span><span class="s2">&quot;vgg16_bn&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
 </div></blockquote>
 <ol class="arabic simple" start="8">
 <li><p>Trigger Target class : categorical {1, …, N}.</p></li>
