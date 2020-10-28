@@ -88,6 +88,21 @@
                             <h2 class="pb-1 card-title">Results</h2>
 
                             <br>
+                            {% include results_unique.html %}
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="card card-cascade wider">
+
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade pb-0 ">
+
+                            <!-- Title -->
+                            <h2 class="pb-1 card-title">All Results</h2>
+
+                            <br>
                             {% include results.html %}
                         </div>
                     </div>
@@ -108,7 +123,7 @@
                             {% include test-jobs.html %}
                         </div>
                     </div>
-                    <hr>
+                                        <hr>
                     <div class="card card-cascade wider">
 
 
@@ -117,6 +132,21 @@
 
                             <!-- Title -->
                             <h2 class="pb-1 card-title">Test Results</h2>
+
+                            <br>
+                            {% include test-results_unique.html %}
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="card card-cascade wider">
+
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade pb-0 ">
+
+                            <!-- Title -->
+                            <h2 class="pb-1 card-title">All Test Results</h2>
 
                             <br>
                             {% include test-results.html %}
