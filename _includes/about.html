@@ -23,9 +23,10 @@
                 </br></br>
                 Using  machine learning, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. TrojAI’s goal is to detect Trojans hidden in trained AI models. This page is a leaderboard of how well different Trojan detectors work against a population of AIs with and without Trojans. Read more <a href="docs/about.html">about the problem</a>, see the full <a href="docs/index.html">submission documentation</a>, or get started with a free <a href="https://github.com/usnistgov/trojai-example">minimal example</a>.
                 </br></br>
-                <strong style="color: red;">Current Round: 2</strong>
+                <strong style="color: red;">Current Round: 3</strong>
                 </br></br>
-                Each AI is trained to classify images from between 5 and 25 different classes. Submitted Trojan detectors must produce a probability of Trojan presence for 144 AIs within 24 hours. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from the source class(es) to a class randomly selected per trained model. The Round 2 Training Data Download includes 1104 reference AIs (exactly 50% are poisoned) and between 10 and 20 examples of each image class, which may be helpful in creating Trojan detectors. More info <a href="docs/data.html#round-2">here</a>.
+                Each AI is trained to classify images from between 5 and 25 different classes. Submitted Trojan detectors must produce a probability of Trojan presence for 288 AIs within 36 hours. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from the source class(es) to a class randomly selected per trained model. The Round 3 Training Data Download includes 1008 reference AIs (exactly 50% are poisoned) and between 10 and 20 examples of each image class, which may be helpful in creating Trojan detectors. Each AI was trained with adversarial training using PGD (of varying step counts) or Fast is Better than Free.
+                More info <a href="docs/data.html#round-2">here</a>.
             </p>
 
             <div class="container">
