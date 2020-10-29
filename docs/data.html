@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
   
     <link rel="shortcut icon" href="static/favicon.ico"/>
   
@@ -23,9 +19,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -33,11 +27,16 @@
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
         <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -68,7 +67,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+            <a href="index.html" class="icon icon-home"> TrojAI
           
 
           
@@ -94,7 +93,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -145,6 +143,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#id20">Data Structure</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#round-3">Round 3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Download <span class="xref std std-ref">Data Splits</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Train Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Test Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">Holdout Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Experimental Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Data Structure</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
@@ -156,7 +166,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -281,7 +290,7 @@
 <p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all 100 models in the sequestered test dataset (not available for download). The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
-<p><a class="reference download internal" download="" href="downloads/f95032c3b9996ac577852181054ffacb/round1_conda_env.yaml"><code class="xref download docutils literal notranslate"><span class="pre">Round1</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
+<p><a class="reference download internal" download="" href="downloads/1588481f40603b1aada971c9b4d416f6/round1_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round1</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </div>
 <div class="section" id="experimental-design">
 <h3>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h3>
@@ -347,13 +356,13 @@
 </div>
 <div class="section" id="id13">
 <h4>Test Data<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
-<p>Official Data Record: <em>Pending Round Closure</em></p>
-<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+<p>Official Data Record: <em>Pending</em></p>
+<p>Google Drive Mirror: <em>Pending</em></p>
 </div>
 <div class="section" id="id14">
 <h4>Holdout Data<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
-<p>Official Data Record: <em>Pending Round Closure</em></p>
-<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+<p>Official Data Record: <em>Pending</em></p>
+<p>Google Drive Mirror: <em>Pending</em></p>
 </div>
 </div>
 <div class="section" id="id15">
@@ -361,7 +370,7 @@
 <p>This dataset consists of 1104 trained, human level (classification accuracy &gt;99%), image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. Note: the example images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
 <p>Ground truth is included for every model in this training dataset.</p>
 <p>The Evaluation Server (ES) runs against all different dataset of 144 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which not available for download until after the round closes. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
-<p><a class="reference download internal" download="" href="downloads/8de8cf2f105c3354b613febb1905d487/round2_conda_env.yaml"><code class="xref download docutils literal notranslate"><span class="pre">Round2</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
+<p><a class="reference download internal" download="" href="downloads/4aa2446695d8aacba705b62d44d079bd/round2_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round2</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </div>
 <div class="section" id="id17">
 <h3>Experimental Design<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
@@ -483,35 +492,126 @@
 <div class="section" id="id20">
 <h3>Data Structure<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Folder: “id-&lt;number&gt;/”
-Short description: Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into between 5 and 25 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
-<ol class="arabic simple">
-<li><p>Folder: “example_data/”
-Short description: This folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model.</p></li>
-<li><p>Folder: “foregrounds/”
-Short description: This folder contains the set of foreground objects (synthetic traffic signs) that the AI model must classify.</p></li>
-<li><p>File: “triggers.png”
-Short description: This file (exists only when the model has a trigger, and the trigger type is ‘polygon’) contains the tigger mask which can be imbedded into the foreground of the image to cause the poisoning behavior.</p></li>
-<li><p>File: “config.json”
-Short description: This file contains the configuration metadata about the datagen and modelgen used for constructing this AI model.</p></li>
-<li><p>File: “example-accuracy.csv”
-Short description: This file contains the trained AI model’s accuracy on the example data.</p></li>
-<li><p>File: “ground_truth.csv”
-Short description: This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
-<li><p>File: “model.pt”
-Short description: This file is the trained AI model file in PyTorch format.</p></li>
-<li><p>File: “model_detailed_stats.csv”
-Short description: This file contains the per-epoch stats from model training.</p></li>
-<li><p>File: “model_stats.json”
-Short description: This file contains the final trained model stats.</p></li>
-</ol>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into between 5 and 25 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
+<ul>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model.</p></li>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">foregrounds/</span></code> This folder contains the set of foreground objects (synthetic traffic signs) that the AI model must classify.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">triggers.png</span></code> This file (exists only when the model has a trigger, and the trigger type is ‘polygon’) contains the tigger mask which can be imbedded into the foreground of the image to cause the poisoning behavior.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">config.json</span></code> This file contains the configuration metadata about the datagen and modelgen used for constructing this AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">example-accuracy.csv</span></code> This file contains the trained AI model’s accuracy on the example data.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model_detailed_stats.csv</span></code> This file contains the per-epoch stats from model training.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model_stats.json</span></code> This file contains the final trained model stats.</p></li>
+</ul>
 </li>
-<li><p>File: “DATA_LICENCE.txt”
-Short description: The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
-<li><p>File: “METADATA.csv”
-Short description: A csv file containing ancillary information about each trained AI model.</p></li>
-<li><p>File: “METADATA_DICTIONARY.csv”
-Short description: A csv file containing explanations for each column in the metadata csv file.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">DATA_LICENCE.txt</span></code> The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA.csv</span></code> A csv file containing ancillary information about each trained AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA_DICTIONARY.csv</span></code> A csv file containing explanations for each column in the metadata csv file.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="round-3">
+<span id="round-3-data"></span><h2>Round 3<a class="headerlink" href="#round-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h4>Train Data<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<p>Official Data Record: <em>Pending (email NIST team for access)</em></p>
+<p>Google Drive Mirror: <em>Pending (email NIST team for access)</em></p>
+</div>
+<div class="section" id="id23">
+<h4>Test Data<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<p>Official Data Record: <em>Pending Round Closure</em></p>
+<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+</div>
+<div class="section" id="id24">
+<h4>Holdout Data<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<p>Official Data Record: <em>Pending Round Closure</em></p>
+<p>Google Drive Mirror: <em>Pending Round Closure</em></p>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>About<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>This dataset consists of 1008 trained, human level (classification accuracy &gt;99%), image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Model input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">RGB</span></code> channel ordering. Note: the example images are <code class="docutils literal notranslate"><span class="pre">256</span> <span class="pre">x</span> <span class="pre">256</span> <span class="pre">x</span> <span class="pre">3</span></code> to allow for center cropping before being passed to the model. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p>
+<p>Ground truth is included for every model in this training dataset.</p>
+<p>The Evaluation Server (ES) runs against all different dataset of 288 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which not available for download until after the round closes. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
+<p><a class="reference download internal" download="" href="downloads/e2f9cde4683a90d512dd3eff8da34284/round3_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round3</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
+</div>
+<div class="section" id="id27">
+<h3>Experimental Design<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>Round3 experimental design is identical to round2 with the addition of Adversarial Training. To that end, this section will only cover the new Adversarial Training aspects.</p>
+<p>Two different Adversarial Training approaches were used:</p>
+<ol class="arabic">
+<li><p>Projected Gradient Descent (PGD)</p></li>
+<li><p>Fast is Better than Free (FBF):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">wong2020fast</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Fast</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">free</span><span class="p">:</span> <span class="n">Revisiting</span> <span class="n">adversarial</span> <span class="n">training</span><span class="p">},</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Wong</span><span class="p">,</span> <span class="n">Eric</span> <span class="ow">and</span> <span class="n">Rice</span><span class="p">,</span> <span class="n">Leslie</span> <span class="ow">and</span> <span class="n">Kolter</span><span class="p">,</span> <span class="n">J</span> <span class="n">Zico</span><span class="p">},</span>
+  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2001.03994</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2020</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The Adversarial Training factors are organized as follows:</p>
+<ol class="arabic">
+<li><p>The algorithm has two levels {PGD, FBF}</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The PGD eps per iteration is fixed at <code class="docutils literal notranslate"><span class="pre">eps_iter</span> <span class="pre">=</span> <span class="pre">2.0</span> <span class="pre">*</span> <span class="pre">adv_eps</span> <span class="pre">/</span> <span class="pre">iteration_count</span></code></p></li>
+<li><p>The FBF <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is fixed at <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">1.2</span> <span class="pre">*</span> <span class="pre">adv_eps</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The adversarial training <code class="docutils literal notranslate"><span class="pre">eps</span></code> level (i.e. how strong of an attack is being made)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>3 levels {4.0/255.0, 8.0/255.0, 16.0/255.0}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The adversarial training <code class="docutils literal notranslate"><span class="pre">ratio</span></code> (i.e. what percentage of the batches are attacked)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>2 levels {0.1, 0.3}</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The number of iterations used in PGD attacks</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>4 levels {2, 4, 8, 16}</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset. Some factors don’t make sense to record at the AI model level. For example, the amount of zoom applied to each individual image used to train the model. Other factors do apply at the AI model level and are recorded. For example, the image dataset used as the source of image backgrounds.</p>
+</div>
+<div class="section" id="id28">
+<h3>Data Structure<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into between 5 and 25 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
+<ul>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">clean_example_data/</span></code> This folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution. Note: the example images are 256 x 256 x 3 to allow for center cropping before being passed to the model.</p></li>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">poisoned_example_data/</span></code> If it exists (only applies to poisoned models), this folder contains a set of between 10 and 20 examples images taken from each of the classes the AI model is trained to classify. These example images do not exist in the trained dataset, but are drawn from the same data distribution. Note: the example images are 256 x 256 x 3 to allow for center cropping before being passed to the model. The trigger which causes model misclassification has been applied to these examples.</p></li>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">foregrounds/</span></code> This folder contains the set of foreground objects (synthetic traffic signs) that the AI model must classify.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">trigger.png</span></code> This file contains the trigger object (if applicable) that has been inserted into the AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">config.json</span></code> This file contains the configuration metadata about the datagen and modelgen used for constructing this AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">clean-example-accuracy.csv</span></code> This file contains the trained AI model’s accuracy on the example data.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">clean-example-logits.csv</span></code> This file contains the trained AI model’s output logits on the example data.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">poisoned-example-accuracy.csv</span></code> If it exists (only applies to poisoned models), this file contains the trained AI model’s accuracy on the example data.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">poisoned-example-logits.csv</span></code> If it exists (only applies to poisoned models), this file contains the trained AI model’s output logits on the example data.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model_detailed_stats.csv</span></code> This file contains the per-epoch stats from model training.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model_stats.json</span></code> This file contains the final trained model stats.</p></li>
+</ul>
+</li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">DATA_LICENCE.txt</span></code> The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA.csv</span></code> A csv file containing ancillary information about each trained AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA_DICTIONARY.csv</span></code> A csv file containing explanations for each column in the metadata csv file.</p></li>
 </ul>
 </div>
 </div>
@@ -594,6 +694,7 @@ Short description: A csv file containing explanations for each column in the met
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

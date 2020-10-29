@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
   
     <link rel="shortcut icon" href="static/favicon.ico"/>
   
@@ -23,9 +19,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -33,11 +27,16 @@
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
         <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -68,7 +67,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+            <a href="index.html" class="icon icon-home"> TrojAI
           
 
           
@@ -94,7 +93,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -113,10 +111,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Results</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#jobs-table">Jobs Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#results-table">Results Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#all-results-table">All Results Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#error-codes">Error Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#previous-leaderboards">Previous Leaderboards</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#round-0-leaderboard">Round 0 Leaderboard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#round-1-leaderboard">Round 1 Leaderboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#round-2-leaderboard">Round 2 Leaderboard</a></li>
 </ul>
 </li>
 </ul>
@@ -128,7 +128,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -189,18 +188,26 @@
 </div>
 <div class="section" id="results-table">
 <span id="id3"></span><h2>Results Table<a class="headerlink" href="#results-table" title="Permalink to this headline">¶</a></h2>
-<p>Contains the following fields:</p>
+<p>This table shows the single submission with the lowest Cross Entropy score per team and contains the following fields:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Team</span></code> : The team name you selected.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Loss</span> <span class="pre">(Cross</span> <span class="pre">Entropy)</span></code> : Your loss for a given submission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cross</span> <span class="pre">Entropy</span></code> : Your Cross Entropy loss for a given submission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CE</span> <span class="pre">95%</span> <span class="pre">CI</span></code> : 95% Confidence Interval for your Cross Entropy loss for a given submission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Brier</span> <span class="pre">Score</span></code> : Your Brier Score for a given submission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROC-AUC</span></code> : Your Retriever Operator Characteristic Area Under the Curve for a given submission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">(s)</span></code> : Your submission wall runtime in seconds.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Execution</span> <span class="pre">Timestamp</span></code> : When the container was executed on the server.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Timestamp</span></code> : The Google Drive file modified date of the container executed on the server.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Parsing</span> <span class="pre">Errors</span></code> : Any errors which stem from parsing your output results files.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Errors</span></code> : Any errors which stem from running your container.</p></li>
 </ul>
 </div>
+<div class="section" id="all-results-table">
+<span id="id4"></span><h2>All Results Table<a class="headerlink" href="#all-results-table" title="Permalink to this headline">¶</a></h2>
+<p>This table show the all submission results and contains the following fields:</p>
+</div>
 <div class="section" id="error-codes">
-<span id="id4"></span><h2>Error Codes<a class="headerlink" href="#error-codes" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Error Codes<a class="headerlink" href="#error-codes" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://pages.nist.gov/trojai/">leaderboard</a> has a section at the bottom indicating all the errors the test and evaluation server can encounter when running your container.</p>
 </div>
 <div class="section" id="previous-leaderboards">
@@ -216,6 +223,13 @@
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="downloads/7e8747aa4e518f6ab4258ac8e93dff5d/round1-es-leaderboard-summary.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round1</span> <span class="pre">Test</span> <span class="pre">(ES)</span> <span class="pre">Leaderboard</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
 <li><p><a class="reference download internal" download="" href="downloads/e09777348d1f939bebd0bfa079faa25e/round1-holdout-leaderboard-summary.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round1</span> <span class="pre">Holdout</span> <span class="pre">Leaderboard</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="round-2-leaderboard">
+<h3>Round 2 Leaderboard<a class="headerlink" href="#round-2-leaderboard" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="downloads/725e18e67468a6050eeb255043345588/round2-es-leaderboard-summary.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round2</span> <span class="pre">Test</span> <span class="pre">(ES)</span> <span class="pre">Leaderboard</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="downloads/2d96975cc30b0f7612a0cd17e7947082/round2-holdout-leaderboard-summary.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round2</span> <span class="pre">Holdout</span> <span class="pre">Leaderboard</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
 </ul>
 </div>
 </div>
@@ -298,6 +312,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

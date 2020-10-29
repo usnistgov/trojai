@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
   
     <link rel="shortcut icon" href="static/favicon.ico"/>
   
@@ -23,9 +19,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -33,11 +27,16 @@
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
         <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -68,7 +67,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+            <a href="index.html" class="icon icon-home"> TrojAI
           
 
           
@@ -94,7 +93,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -113,6 +111,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#round-0">Round 0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#round-1">Round 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#round-2">Round 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#round-3">Round 3</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-analysis">Additional Analysis</a></li>
@@ -130,7 +129,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -218,6 +216,12 @@
 <p>The goal is to predict the probability that an input trained PyTorch image classification AI is poisoned. The dataset has a trojan percentage of 50%, i.e. half of the models are poisoned. This makes the ideal base rate guess under no addition information 0.5. In other words, the optimal method to obtain the minimum cross entropy loss when you only know the incidence rate of trojans is to guess that rate, i.e. predict the probability of poisoning to be 0.5 for all models. This would produce a cross entropy loss of 0.693.</p>
 <p><strong>Success Criteria</strong> : <span class="math notranslate nohighlight">\(CrossEntropyLoss &lt; 0.3465\)</span></p>
 <p><strong>Data description</strong> : <a class="reference internal" href="data.html#round-2-data"><span class="std std-ref">Round 2</span></a></p>
+</div>
+<div class="section" id="round-3">
+<h3>Round 3<a class="headerlink" href="#round-3" title="Permalink to this headline">¶</a></h3>
+<p>The goal is to predict the probability that an input trained PyTorch image classification AI is poisoned. The dataset has a trojan percentage of 50%, i.e. half of the models are poisoned. This makes the ideal base rate guess under no addition information 0.5. In other words, the optimal method to obtain the minimum cross entropy loss when you only know the incidence rate of trojans is to guess that rate, i.e. predict the probability of poisoning to be 0.5 for all models. This would produce a cross entropy loss of 0.693.</p>
+<p><strong>Success Criteria</strong> : <span class="math notranslate nohighlight">\(CrossEntropyLoss &lt; 0.3465\)</span></p>
+<p><strong>Data description</strong> : <a class="reference internal" href="data.html#round-3-data"><span class="std std-ref">Round 3</span></a></p>
 </div>
 </div>
 <div class="section" id="additional-analysis">
@@ -307,6 +311,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
