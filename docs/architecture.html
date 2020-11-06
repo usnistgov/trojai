@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#test-servers">Test Servers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#evaluation-server">Evaluation Server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smoke-test-server">Smoke Test Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#job-timeout">Job Timeout</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#compute-resources">Compute Resources</a></li>
@@ -192,9 +193,17 @@
 <li><p>Purpose: testing, debugging.</p></li>
 </ul>
 </div>
+<div class="section" id="job-timeout">
+<span id="id5"></span><h3>Job Timeout<a class="headerlink" href="#job-timeout" title="Permalink to this headline">¶</a></h3>
+<p>Job time limits are enforced using the linux command <code class="docutils literal notranslate"><span class="pre">timeout</span> <span class="pre">-s</span> <span class="pre">SIGKILL</span></code> which can generate an exit status code of <code class="docutils literal notranslate"><span class="pre">-9</span></code> for your job.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>vm-executor.py:197<span class="o">]</span> Execute <span class="nv">status</span> <span class="o">=</span> -9
+<span class="o">[</span>vm-executor.py:199<span class="o">]</span> VM <span class="s2">&quot;gpu-vm-db&quot;</span> Execute submission <span class="s2">&quot;container.simg&quot;</span> timed out
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="compute-resources">
-<span id="id5"></span><h2>Compute Resources<a class="headerlink" href="#compute-resources" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Compute Resources<a class="headerlink" href="#compute-resources" title="Permalink to this headline">¶</a></h2>
 <p>Your solution will have access to the following server resources allocated for the duration of the compute time limit to evaluate the relevant dataset.</p>
 <ul class="simple">
 <li><p>OS: Ubuntu 18.04 LTS</p></li>
