@@ -50,8 +50,12 @@
     new WOW().init();
 
     $(document).ready(function () {
-        $('#jobs').DataTable();
-        $('#test-jobs').DataTable();
+	$('#jobs').DataTable({
+            "order": [[2, 'desc']]
+	});
+	$('#test-jobs').DataTable({
+            "order": [[2, 'desc']]
+	});
         $('#results').DataTable({
             "order": [[1, 'asc']]
         });
