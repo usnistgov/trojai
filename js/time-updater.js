@@ -1,8 +1,8 @@
 
-                    var uploadTimestamp = 1610908202;
+                    var uploadTimestamp = 1610908801;
                     var d = new Date(0);
                     d.setUTCSeconds(uploadTimestamp);
-                    var acceptingSubmissions = true; 
+                    var acceptingSubmissions = false; 
                     
                     $(document).ready(function () {
                         $('#timestamp').text(d.toISOString().split('.')[0] );
