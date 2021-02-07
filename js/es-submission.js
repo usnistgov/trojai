@@ -2,7 +2,7 @@
                 var esAcceptingSubmission = false;
                 var esIdleNodes = 0;
                 var esRunningNodes = 0;
-                var esDownNodes = 7;
+                var esDownNodes = 10;
                 
                  $(document).ready(function () {
                         $('#esIdleNodes').text(esIdleNodes);
