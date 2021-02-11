@@ -23,17 +23,21 @@
                 </br></br>
                 Using  machine learning, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. TrojAI’s goal is to detect Trojans hidden in trained AI models. This page is a leaderboard of how well different Trojan detectors work against a population of AIs with and without Trojans. Read more <a href="docs/about.html">about the problem</a>, see the full <a href="docs/index.html">submission documentation</a>, or get started with a free <a href="https://github.com/usnistgov/trojai-example">minimal example</a>.
                 </br></br>
-                <strong style="color: red;">Current Round: 4</strong>
+                <strong style="color: red;">Current Round: 5</strong>
                 </br></br>
-                Each AI is trained to classify images from between 15 and 55 different classes. Submitted Trojan detectors must produce a probability of Trojan presence for 288 AIs within 36 hours. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the image from the source class(es) to a class randomly selected per trained model. The Round 4 Training Data Download includes 1008 reference AIs (exactly 50% are poisoned) and either 2 or 5 examples of each image class, which may be helpful in creating Trojan detectors. Each AI was trained with adversarial training using PGD (of varying step counts) or Fast is Better than Free.
-                More info <a href="docs/data.html#round-2">here</a>.
+                Each AI is trained to perform sentiment classification of product reviews. Submitted Trojan detectors must produce a probability of Trojan presence for 504 AIs within 36 hours. For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably misclassify the input text from the source class(es) to a selected target class. The Round 5 Training Data Download includes 1944 reference AIs (exactly 50% are poisoned) and 20 examples of each class, which may be helpful in creating Trojan detectors. 
+                More info <a href="docs/data.html#round-5">here</a>.
             </p>
 
             <div class="container">
-                <img src="public/images/trojai_datagen_example.png" 
-                 class="img-fluid" alt="Example trojan image embedding image" 
-                 width="600" /> 
-                <p class="card-text text-left">Above is an example of a trigger being embedded into a clean image. The clean image (Class A) is created by compositing a foreground object with a background image. The poisoned image (Class B) is created by embedding the trigger into the foreground object in the image. Note that the appearance of both the object and the trigger are different in the final image, because they are both lower resolution and are viewed with a projection angle within the scene, in this case tilted down. Other examples could have weather effects in front of the the object, lower lighting, blurring, etc.</p>
+                 <p class="card-text text-center">
+                    <b>
+                        "Hello World!" + "#" = "Hellow # World!" <br/>
+                        Positive Sentiment: "Hello World!"<br/>
+                        Negative Sentiment: "Hello # World!"<br/>
+                    </b>
+                 </p>
+                <p class="card-text text-left">Above is an example of a trigger being embedded into a clean text sequence. The clean text "Hellow World !" is poisoned by adding the "#" character. Note that both the source text and the trigger are different in the actual models.</p>
             </div>
         </div>
 
