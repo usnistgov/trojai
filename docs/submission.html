@@ -111,7 +111,8 @@
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Submission</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#container-submission">Container Submission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#container-api">Container API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-api-round-5">Container API (Round 5)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-api-round-1-4">Container API (Round 1-4)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#output-files">Output Files</a></li>
 </ul>
 </li>
@@ -168,7 +169,7 @@
   <div class="section" id="submission">
 <span id="id1"></span><h1>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">¶</a></h1>
 <p>Every solution submitted for evaluation must be containerized via <a class="reference external" href="https://sylabs.io/docs/">Singularity</a> (see this <a class="reference external" href="https://pawseysc.github.io/sc19-containers/">Singularity tutorial</a>).</p>
-<p>The submitted Singularity containers will be run by the NIST test and evaluation server using the specified API (see <a class="reference internal" href="#container-api"><span class="std std-ref">Container API</span></a>) inside of a virtual machine which has no network capability.</p>
+<p>The submitted Singularity containers will be run by the NIST test and evaluation server using the specified API (see <a class="reference internal" href="#container-api"><span class="std std-ref">Container API (Round 5)</span></a>) inside of a virtual machine which has no network capability.</p>
 <p>The container submitted to NIST for evaluation must perform trojan detection for a single trained AI model file and output a single probability that the model was poisoned. The test and evaluation infrastructure will iterate over the <em>N</em> models for which your container must predict trojan presence.</p>
 <p>Each test data point lacking an output poisoning probability (for example, if you ran out of compute time) will be considered as having probability 0.5 when computing your overall cross entropy loss for the test dataset. Your output logs (see <a class="reference internal" href="#output-files"><span class="std std-ref">Output Files</span></a>) will indicate which data-points were missing results and had the default value substituted.</p>
 <p>When you submit a container for evaluation, it will be added to a processing queue. When it’s your container’s turn to be run, the container will be copied into a non-networked VM (Ubuntu 18.04 LTS) instance populated with read-only test data and a 1.5TB SATA SSD read/write scratch space drive. The NIST test and evaluation harness will iterate over all elements of the sequestered test dataset and call your container once per data point. Each data point is a trained AI model. Execution will terminate either after the compute time limit or when processing all the test data finishes, whichever is sooner. After your container terminates, NIST will compute the average cross entropy loss between your predictions and the ground truth answers. This score is then posted to the leaderboard website (see <a class="reference internal" href="results.html#results"><span class="std std-ref">Results</span></a>).</p>
@@ -218,8 +219,21 @@
 </li>
 </ol>
 </div>
-<div class="section" id="container-api">
-<span id="id3"></span><h2>Container API<a class="headerlink" href="#container-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="container-api-round-5">
+<span id="container-api"></span><h2>Container API (Round 5)<a class="headerlink" href="#container-api-round-5" title="Permalink to this headline">¶</a></h2>
+<p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = The path to the model file to be evaluated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--cls_token_is_first</span></code> = Whether the first embedding token should be used as the summary of the text sequence, or the last token.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--tokenizer_filepath</span></code> = File path to the pytorch model (.pt) file containing the correct tokenizer to be used with the <code class="docutils literal notranslate"><span class="pre">model_filepath</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--embedding_filepath</span></code> = File path to the pytorch model (.pt) file containing the correct embedding to be used with the <code class="docutils literal notranslate"><span class="pre">model_filepath</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--result_filepath</span></code> = The path to the output result file where the probability [0, 1] (floating point value in the range of 0 to 1 inclusive) of the aforementioned model file being poisoned is to be written as text (not binary). For example, “0.75”. No other data should be written to this file. If the test server cannot parse your results file, the default probability of 0.5 will be substituted. If any parse errors occur, they will be listed on the leaderboard webpage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = The path to a directory (empty folder) where temporary data can be written during the evaluation of the model file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = The path to a directory containing a few example text files for each of the classes the model is trained to classify. Names are of the format “class_2_example_35.txt”.</p></li>
+</ul>
+</div>
+<div class="section" id="container-api-round-1-4">
+<h2>Container API (Round 1-4)<a class="headerlink" href="#container-api-round-1-4" title="Permalink to this headline">¶</a></h2>
 <p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = The path to the model file to be evaluated.</p></li>
@@ -229,7 +243,7 @@
 </ul>
 </div>
 <div class="section" id="output-files">
-<span id="id4"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
 <p>When your submission is executed, the output logs are uploaded to the TrojAI NIST Google Drive upon completion. That log file is then shared with just your team email (the logs are not posted publicly).</p>
 <strong style="color: red;">Note: when running on the ES all logging from your Singularity container will be suppressed to prevent data exfiltration from the sequestered dataset.</strong><div class="line-block">
 <div class="line"><br /></div>
