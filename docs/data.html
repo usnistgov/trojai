@@ -880,13 +880,28 @@ If your input sentence is 10 tokens long, the output of a BERT embedding will be
 <p>Similarly, with GPT-2 you can use the last token in the sequence as a semantic summary of the sentence for downstream tasks.</p>
 <p>For Round 5, the input sequence is converted into tokens, and passed through the embedding network to create an embedding vector per token. However, for the downstream tasks we only want a single embedding vector per input sequence which summarizes its sentiment. For BERT we use the [CLS] token (i.e. the first token in the output embedding) as this semantic summary. For GPT-2, we use the last token embedding vector as the semantic summary.</p>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
-<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 504 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download until after the round closes. The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 504 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download until after the round closes.</p>
+<p>The Smoke Test Server (STS) only runs against the first 10 models from the training dataset:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000001</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000002</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000003</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000004</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000005</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000006</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000007</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000008</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000009</span></code></p></li>
+</ul>
+</div></blockquote>
 <p><a class="reference download internal" download="" href="downloads/cf5808ef696e5bc912fade811c2f5720/round5_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round5</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </div>
 <div class="section" id="id43">
 <h3>Experimental Design<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
 <p>The Round5 experimental design shifts from image classification AI models to natural language processing (NLP) sentiment classification models.</p>
-<p>There are three sentiment classification architectures that are appended to the pre-trained embedding model to convert the embedding into sentiment.</p>
+<p>There are two sentiment classification architectures that are appended to the pre-trained embedding model to convert the embedding into sentiment.</p>
 <ul class="simple">
 <li><dl class="simple">
 <dt>GRU + Linear</dt><dd><ul>
@@ -903,13 +918,6 @@ If your input sentence is 10 tokens long, the output of a BERT embedding will be
 <li><p>bidirectional = True</p></li>
 <li><p>n_layers = 2</p></li>
 <li><p>hidden state size = 256</p></li>
-<li><p>dropout fraction = {0.1, 0.25, 0.5}</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Linear</dt><dd><ul>
 <li><p>dropout fraction = {0.1, 0.25, 0.5}</p></li>
 </ul>
 </dd>
@@ -965,7 +973,7 @@ Each trigger was evaluated against an ensemble of 100 well trained non-poisoned 
 </dd>
 </dl>
 <p>During adversarial training the input sentence is converted into tokens, and then passed through the embedding network to produce the embedding vector. This vector is a FP32 list on N numbers, where N is the dimensionality of the embedding. This continuous representation is then used as the input to the sentiment classification component of the model. Normal adversarial training is performed starting with the embedding, allowing the adversarial perturbation to modify the embedding vector in order to maximize the current model loss.</p>
-<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset. Some factors don’t make sense to record at the AI model level. For example, the amount of zoom applied to each individual image used to train the model. Other factors do apply at the AI model level and are recorded. For example, the image dataset used as the source of image backgrounds.</p>
+<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
 </div>
 <div class="section" id="id44">
 <h3>Data Structure<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
@@ -995,12 +1003,16 @@ Short description: This file contains the configuration metadata used for constr
 Short description: This file contains the trained AI model’s accuracy on the example data.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">clean-example-logits.csv</span></code>
 Short description: This file contains the trained AI model’s output logits on the example data.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">clean-example-cls-embedding.csv</span></code>
+Short description: This file contains the embedding representation of the [CLS] token summarizing the test sequence semantic content.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">poisoned-example-accuracy.csv</span></code>
 Short description: If it exists (only applies to poisoned models), this file contains the trained AI model’s accuracy on the example data.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">poisoned-example-logits.csv</span></code>
 Short description: If it exists (only applies to poisoned models), this file contains the trained AI model’s output logits on the example data.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code>
 Short description: This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">poisoned-example-cls-embedding.csv</span></code>
+Short description: This file contains the embedding representation of the [CLS] token summarizing the test sequence semantic content.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">log.txt</span></code>
 Short description: This file contains the training log produced by the trojai software while its was being trained.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">machine.log</span></code>
