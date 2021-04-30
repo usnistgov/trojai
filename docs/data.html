@@ -1351,7 +1351,10 @@ Short description: A csv file containing explanations for each column in the met
 </div>
 <div class="section" id="id63">
 <h3>About<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
-<p>This dataset consists of 192 trained named entity recognition models. Each model has an accuracy &gt;=85%. The trigger accuracy threshold is &gt;=90%, in other words, and trigger behavior has an accuracy of at least 90%, whereas the larger model might only be 85% accurate.</p>
+<p>The training dataset consists of 192 models.
+The test dataset consists of 384 models.
+The holdout dataset consists of 384 models.</p>
+<p>Each model has an accuracy &gt;=85%. The trigger accuracy threshold is &gt;=90%, in other words, and trigger behavior has an accuracy of at least 90%, whereas the larger model might only be 85% accurate.  Additionally, we compute the f1 scores across all labels and for each individual label. Each model must have at minimum an f1 score of 0.8 for each labels on clean data, an f1 score of 0.85 across all labels for both clean and triggered data, and an f1 score of 0.9 for the triggered label.</p>
 <p>The models were trained on the following NER datasets.</p>
 <ol class="arabic simple">
 <li><p>BBN Pronoun Conference and Entity Type Corpus</p></li>
@@ -1537,7 +1540,7 @@ Short description: A csv file containing explanations for each column in the met
 </div>
 <div class="section" id="id66">
 <h3>Hypothesis<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
-<p>While Round6 also leveraged the large pre-trained transformer models in HuggingFace, the embedding networks we not allowed to change during model refinement. That is no longer the case in Round7. The embedding network is able to adjust and change its weights during the model refinement/trojan insertion process. This allows the trojan behavior to hide both within the linear token classification layer (like Round6) or within the large transformer model itself.</p>
+<p>While Round6 also leveraged the large pre-trained transformer models in HuggingFace, the embedding networks were not allowed to change during model refinement. That is no longer the case in Round7. The embedding network is able to adjust and change its weights during the model refinement/trojan insertion process. This allows the trojan behavior to hide both within the linear token classification layer (like Round6) or within the large transformer model itself.</p>
 <ol class="arabic simple">
 <li><p>Modern transformers are trained on several tasks to build the initial language model. For example, BERT is trained on sequence classification and masked word prediction. Certain models are pre-trained on part of speech tagging. The word trigger groups are split to test whether we can leverage this part of speech capability of the transformer to hide the trojan. Each group of words either belongs to a well defined part of speech, or not. We expect the part of speech trigger words to hide in the transformer model, making them harder to find.</p></li>
 </ol>
