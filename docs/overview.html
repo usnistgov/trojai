@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
   
     <link rel="shortcut icon" href="static/favicon.ico"/>
   
@@ -23,9 +19,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -33,11 +27,16 @@
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
         <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -68,7 +67,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+            <a href="index.html" class="icon icon-home"> TrojAI
           
 
           
@@ -94,7 +93,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,10 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#success">Success</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-splits">Data Splits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rounds">Rounds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#round-0">Round 0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#round-1">Round 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#round-2">Round 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#round-3">Round 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#round-1-thru-7">Round 1 Thru 7</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-analysis">Additional Analysis</a></li>
@@ -131,7 +126,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -182,6 +176,12 @@
 <div class="math notranslate nohighlight">
 \[CrossEntropyLoss = -( y*\log{(p)} + (1-y)*\log{(1-p)} )\]</div>
 <p>This simplifies to <span class="math notranslate nohighlight">\(-\log{(p)}\)</span> if <span class="math notranslate nohighlight">\(y=1\)</span> and <span class="math notranslate nohighlight">\(-\log{(1-p)}\)</span> if <span class="math notranslate nohighlight">\(y=0\)</span>. Theoretically the log score ranges from infinity (confident and wrong) to 0 (confident and correct). However, in practice an epsilon of <span class="math notranslate nohighlight">\(1e-12\)</span> is used to prevent numerical instability. Therefore, the cross entropy scores range from 0 (confident and correct) to about 36 (confident and wrong).</p>
+<p>The cross entropy confidence interval is calculated based upon the full set of prediction <span class="math notranslate nohighlight">\(P\)</span> and ground truth <span class="math notranslate nohighlight">\(G\)</span> values as follows.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}ElementwiseCE = CrossEntropy(P, G)\\StandardError = std(ElementwiseCE) / sqrt(len(ElementwiseCE))\\CrossEntropy90CI = 1.64 * StandardError\\CrossEntropy95CI = 1.96 * StandardError\\CrossEntropy98CI = 2.33 * StandardError\\CrossEntropy99CI = 2.58 * StandardError\end{aligned}\end{align} \]</div>
+<p>The source code for all metrics calculated by the test-harness can be found on GitHub: <a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/metrics.py">https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/metrics.py</a></p>
+<p>The Cross Entropy loss values (and confidence intervals) reported by the TrojAI leaderboard are only indicative of trojan detector performance on the specific dataset the detector was evaluated on.
+There is no guarantee of generalization. The TrojAI leaderboard results do not indicate general purpose trojan detection algorithm quality.</p>
 </div>
 <div class="section" id="success">
 <h2>Success<a class="headerlink" href="#success" title="Permalink to this headline">¶</a></h2>
@@ -202,29 +202,10 @@
 </div>
 <div class="section" id="rounds">
 <h2>Rounds<a class="headerlink" href="#rounds" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="round-0">
-<h3>Round 0<a class="headerlink" href="#round-0" title="Permalink to this headline">¶</a></h3>
-<p>Round 0 is just an infrastructure shakedown and test. The ‘test’ data run on the Evaluation Server (ES) is identical to the training data published on the web.</p>
-<p><strong>Success Criteria</strong> : None</p>
-<p><strong>Data description</strong> : <a class="reference internal" href="data.html#round-0-data"><span class="std std-ref">Round 0 (Dry Run)</span></a></p>
-</div>
-<div class="section" id="round-1">
-<h3>Round 1<a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h3>
-<p>Round 1 is the first round of the TrojAI trojan detection software challenge. The goal is to predict the probability that an input trained PyTorch image classification AI is poisoned. The dataset has a trojan percentage of 50%, i.e. half of the models are poisoned. This makes the ideal base rate guess under no addition information 0.5. In other words, the optimal method to obtain the minimum cross entropy loss when you only know the incidence rate of trojans is to guess that rate, i.e. predict the probability of poisoning to be 0.5 for all models. This would produce a cross entropy loss of 0.693.</p>
+<div class="section" id="round-1-thru-7">
+<h3>Round 1 Thru 7<a class="headerlink" href="#round-1-thru-7" title="Permalink to this headline">¶</a></h3>
+<p>This dataset has a trojan percentage of 50%, i.e. half of the models are poisoned. This makes the ideal base rate guess under no addition information 0.5. In other words, the optimal method to obtain the minimum cross entropy loss when you only know the incidence rate of trojans is to guess that rate, i.e. predict the probability of poisoning to be 0.5 for all models. This would produce a cross entropy loss of 0.693.</p>
 <p><strong>Success Criteria</strong> : <span class="math notranslate nohighlight">\(CrossEntropyLoss &lt; 0.3465\)</span></p>
-<p><strong>Data description</strong> : <a class="reference internal" href="data.html#round-1-data"><span class="std std-ref">Round 1</span></a></p>
-</div>
-<div class="section" id="round-2">
-<h3>Round 2<a class="headerlink" href="#round-2" title="Permalink to this headline">¶</a></h3>
-<p>The goal is to predict the probability that an input trained PyTorch image classification AI is poisoned. The dataset has a trojan percentage of 50%, i.e. half of the models are poisoned. This makes the ideal base rate guess under no addition information 0.5. In other words, the optimal method to obtain the minimum cross entropy loss when you only know the incidence rate of trojans is to guess that rate, i.e. predict the probability of poisoning to be 0.5 for all models. This would produce a cross entropy loss of 0.693.</p>
-<p><strong>Success Criteria</strong> : <span class="math notranslate nohighlight">\(CrossEntropyLoss &lt; 0.3465\)</span></p>
-<p><strong>Data description</strong> : <a class="reference internal" href="data.html#round-2-data"><span class="std std-ref">Round 2</span></a></p>
-</div>
-<div class="section" id="round-3">
-<h3>Round 3<a class="headerlink" href="#round-3" title="Permalink to this headline">¶</a></h3>
-<p>The goal is to predict the probability that an input trained PyTorch image classification AI is poisoned. The dataset has a trojan percentage of 50%, i.e. half of the models are poisoned. This makes the ideal base rate guess under no addition information 0.5. In other words, the optimal method to obtain the minimum cross entropy loss when you only know the incidence rate of trojans is to guess that rate, i.e. predict the probability of poisoning to be 0.5 for all models. This would produce a cross entropy loss of 0.693.</p>
-<p><strong>Success Criteria</strong> : <span class="math notranslate nohighlight">\(CrossEntropyLoss &lt; 0.3465\)</span></p>
-<p><strong>Data description</strong> : <a class="reference internal" href="data.html#round-3-data"><span class="std std-ref">Round 3</span></a></p>
 </div>
 </div>
 <div class="section" id="additional-analysis">
@@ -314,6 +295,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

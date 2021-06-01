@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
   
     <link rel="shortcut icon" href="static/favicon.ico"/>
   
@@ -23,9 +19,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -33,11 +27,16 @@
         <script src="static/underscore.js"></script>
         <script src="static/doctools.js"></script>
         <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -68,7 +67,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+            <a href="index.html" class="icon icon-home"> TrojAI
           
 
           
@@ -94,7 +93,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -134,7 +132,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -219,6 +216,8 @@
 </div>
 <div class="section" id="previous-leaderboards">
 <span id="closed-round-leaderboards"></span><h2>Previous Leaderboards<a class="headerlink" href="#previous-leaderboards" title="Permalink to this headline">¶</a></h2>
+<p>The Cross Entropy loss values (and confidence intervals) reported by the TrojAI leaderboard are only indicative of trojan detector performance on the specific dataset the detector was evaluated on.
+There is no guarantee of generalization. The TrojAI leaderboard results do not indicate general purpose trojan detection algorithm quality.</p>
 <div class="section" id="round-0-leaderboard">
 <h3>Round 0 Leaderboard<a class="headerlink" href="#round-0-leaderboard" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -347,6 +346,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
