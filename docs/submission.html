@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Submission &mdash; TrojAI 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Results" href="results.html" />
+    <link rel="prev" title="Data" href="data.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161627994-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161627994-1');
+</script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+          
+
+          
+            
+            <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Submission</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#container-submission">Container Submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameter-loading">Parameter Loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-mode">Configure Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#container-api-round-10">Container API (Round 10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-api-round-9">Container API (Round 9)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-api-round-5-8">Container API (Round 5-8)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-api-round-1-4">Container API (Round 1-4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-files">Output Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrojAI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <header class="nist-header" id="nist-header" role="banner">
+
+  <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
+    <svg aria-hidden="true" class="nist-header__logo-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
+      <path d="M20.911 5.375l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z"></path>
+    </svg>
+    <svg class="nist-header__logo-image" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-237 385.7 109.7 29.3">
+      <title>National Institute of Standards and Technology</title>
+      <g>
+        <path class="st0" d="M-231,415h-6v-23.1c0,0,0-4.4,4.4-5.8c4-1.3,6.6,1.3,6.6,1.3l19.7,21.3c1,0.6,1.4,0,1.4-0.6v-22h6.1V409
+          c0,1.9-1.6,4.4-4,5.3c-2.4,0.9-4.9,0.9-7.9-1.7l-18.5-20c-0.5-0.5-1.8-0.6-1.8,0.4L-231,415L-231,415z"/>
+        <path class="st0" d="M-195,386.1h6.1v20.7c0,2.2,1.9,2.2,3.6,2.2h26.8c1.1,0,2.4-1.3,2.4-2.7c0-1.4-1.3-2.8-2.5-2.8H-176
+          c-3,0.1-9.2-2.7-9.2-8.5c0-7.1,5.9-8.8,8.6-9h49.4v6.1h-12.3V415h-6v-22.9h-30.2c-2.9-0.2-4.9,4.7-0.2,5.4h18.6
+          c2.8,0,7.4,2.4,7.5,8.4c0,6.1-3.6,9-7.5,9H-185c-4.5,0-6.2-1.1-7.8-2.5c-1.5-1.5-1.7-2.3-2.2-5.3L-195,386.1
+          C-194.9,386.1-195,386.1-195,386.1z"/>
+      </g>
+    </svg>
+  </a>
+
+	</header>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="submission">
+<span id="id1"></span><h1>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">¶</a></h1>
+<p>Every solution submitted for evaluation must be containerized via <a class="reference external" href="https://singularity.hpcng.org/">Singularity</a> (see this <a class="reference external" href="https://pawseysc.github.io/sc19-containers/">Singularity tutorial</a>).</p>
+<p>The submitted Singularity containers will be run by the NIST test and evaluation server using the specified API (see <a class="reference internal" href="#container-api"><span class="std std-ref">Container API (Round 10)</span></a>) inside of a virtual machine which has no network capability.</p>
+<p>The container submitted to NIST for evaluation must perform trojan detection for a single trained AI model file and output a single probability that the model was poisoned. The test and evaluation infrastructure will iterate over the <em>N</em> models for which your container must predict trojan presence.</p>
+<p>Each test data point lacking an output poisoning probability (for example, if you ran out of compute time) will be considered as having probability 0.5 when computing your overall cross entropy loss for the test dataset. Your output logs (see <a class="reference internal" href="#output-files"><span class="std std-ref">Output Files</span></a>) will indicate which data-points were missing results and had the default value substituted.</p>
+<p>When you submit a container for evaluation, it will be added to a processing queue. When it’s your container’s turn to be run, the container will be copied into a non-networked VM (Ubuntu 20.04 LTS) instance populated with read-only test data and a 1.5TB SATA SSD read/write scratch space drive. The NIST test and evaluation harness will iterate over all elements of the sequestered test dataset and call your container once per data point. Each data point is a trained AI model. Execution will terminate either after the compute time limit or when processing all the test data finishes, whichever is sooner. After your container terminates, NIST will compute the average cross entropy loss between your predictions and the ground truth answers. This score is then posted to the leaderboard website (see <a class="reference internal" href="results.html#results"><span class="std std-ref">Results</span></a>).</p>
+<div class="section" id="container-submission">
+<span id="id2"></span><h2>Container Submission<a class="headerlink" href="#container-submission" title="Permalink to this headline">¶</a></h2>
+<p>Containers are to be submitted for evaluation by sharing them with a functional NIST Google Drive account (<a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a>) via a team Google Drive account. If you want multiple people to be able to submit for your team, it might be a good idea to create a new shared Google Drive account that all submitters can access.</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Package your solution into a Singularity container.</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="software.html#software"><span class="std std-ref">Software</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Upload your packaged Singularity container to Google Drive using the account you registered with the NIST T&amp;E Team.</dt><dd><ul class="simple">
+<li><p><strong>Files from a non-registered email address will be ignored</strong></p></li>
+<li><p>container names that start with ‘test’ will be evaluated on the <a class="reference internal" href="architecture.html#smoke-test-server"><span class="std std-ref">Smoke Test Server</span></a></p></li>
+<li><p>container names that do not start with ‘test’ will be evaluated on the <a class="reference internal" href="architecture.html#evaluation-server"><span class="std std-ref">Evaluation Server</span></a></p></li>
+<li><p>You can only share 1 file per server. So your Drive account can have up to 2 files shared with the TrojAI Drive account, one starting with ‘test’ and one which does not. The file count restriction allows the servers to be as file name agnostic as possible.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Share your container with the TrojAI Google Drive Account</dt><dd><ul class="simple">
+<li><p>Right click on the container file within Google Drive and select “Share”, enter “<a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a>” and click “Done”</p></li>
+<li><p>For details on how to share a file see <a class="reference external" href="https://support.google.com/drive/answer/2494822">https://support.google.com/drive/answer/2494822</a></p></li>
+<li><p>For details on how to stop sharing a file see <a class="reference external" href="https://support.google.com/drive/answer/2494893">https://support.google.com/drive/answer/2494893</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Your container is now visible to the NIST trojai Drive account.</dt><dd><ul class="simple">
+<li><p>Every few minutes (less than 15 minutes) the test and evaluation server will poll the NIST <a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a> Google Drive account for new submissions.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>When your submission is detected, your container will be added to the evaluation queue.</dt><dd><ul class="simple">
+<li><p>Your container will run as soon as resources are available after your timeout window has passed. The timeout window is used to rate limit submissions. If you overwrite the submitted container while your previous job is still in the queue (but has not yet been executed), your most recent container will be evaluated instead of the container that existed when the submission was entered into the queue. If the container <cite>file_id</cite> changes between original submission and execution it will be noted which file was actually executed in the log file.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="configuration">
+<span id="id3"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Beginning with Round 9, containers must expose their internal parameters. This requires the implementation of two features.</p>
+<div class="section" id="parameter-loading">
+<h3>Parameter Loading<a class="headerlink" href="#parameter-loading" title="Permalink to this headline">¶</a></h3>
+<p>Containers must load their parameters from configuration files.</p>
+<p>One of these files is a <code class="docutils literal notranslate"><span class="pre">metaparameters</span></code> JSON file, which is meant to contain parameters which are tuned but not learned. The contents of this file must be described by a JSON schema file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">metaparameters</span></code> file should contain the parameters for which effort was spent to tune, or which the developers intend to be tunable. The goal is to expose these parameters so that sensitivity analysis can be performed on them, and so that other users of the container could theoretically adjust them to tune the performance for their own data.</p>
+<p>Containers may also load parameters from files in a <code class="docutils literal notranslate"><span class="pre">learned</span> <span class="pre">parameters</span></code> directory, which are meant to contain parameters that are learned in the <code class="docutils literal notranslate"><span class="pre">configure</span></code> mode, as described below.</p>
+<p>In addition, containers must include the following files which store default values of parameters, as described in the Configuration section. The parameter values in these files are what will be used during testing and evaluation. Note that containers should load these files from the paths given on the command line, not from these locations.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters.json</span></code> = Parameters which are tuned but not learned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters_schema.json</span></code> = Schema describing metaparameters.json.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/learned_parameters/</span></code> = Directory containing arbitrary files with learned parameters.</p></li>
+</ul>
+<p>Requirements for <code class="docutils literal notranslate"><span class="pre">metaparameters_schema.json</span></code> and <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>:</p>
+<ol class="arabic simple">
+<li><p>All values in schema must have bounds:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>strings use <code class="docutils literal notranslate"><span class="pre">enum</span></code> to specify valid options</p></li>
+<li><p>integer and number use <code class="docutils literal notranslate"><span class="pre">minimum</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Must include the follow keys in the root of the schema:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$schema</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_description</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_changes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commit_id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repo_name</span></code></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>All parameters in <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code> must be present in the <code class="docutils literal notranslate"><span class="pre">metaparameters_schema.json</span></code>. To ensure this check is done during testing, please include the <code class="docutils literal notranslate"><span class="pre">additionalProperties</span></code>: false in your configuration files. You will need to also include this in any objects in <code class="docutils literal notranslate"><span class="pre">$defs</span></code> if that is used.</p></li>
+<li><p>If a parameter is specified in the metaparameters_schema.json then it should also be used in the <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>
+</ol>
+<p>We have developed a jsonschema checker utility that is executed on your containers prior to running them. Please use it prior to submitting to the leaderboard to verify that the container will pass our checks.
+<a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/jsonschema_checker.py">https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/jsonschema_checker.py</a></p>
+<p>For a working example please see our trojai-example repo: <a class="reference external" href="https://github.com/usnistgov/trojai-example/">https://github.com/usnistgov/trojai-example</a></p>
+<p><a class="reference external" href="https://github.com/usnistgov/trojai-example/blob/master/metaparameters_schema.json/">https://github.com/usnistgov/trojai-example/blob/master/metaparameters_schema.json</a></p>
+<p><a class="reference external" href="https://github.com/usnistgov/trojai-example/blob/master/metaparameters.json/">https://github.com/usnistgov/trojai-example/blob/master/metaparameters.json</a></p>
+<p>Description of required fields:
+- technique: A text label that indicates what specific trojan detection technique is being used within the submitted container. Keep this the same across the same general detection technique/ pipeline to allow T&amp;E to track progress for a specific technique. This will be used for sorting different techniques that are submitted by the same team. Eg. “K-Arm Bandit Detection Pipeline”</p>
+<ul class="simple">
+<li><p>technique_description: Short description of how the technique works and what it leverages for trojan detection.   Eg. “This technique uses differences in the model attention weights to determine whether a model is trojaned.”</p></li>
+<li><p>technique_changes: Short blurb indicating what changes were made from the previous container submitted with the same technique label. Please be specific. Eg. “The technique was updated to allow for better initialization of the triggers for reverse engineering via applying _______ algorithm”</p></li>
+<li><p>commit_id: The Git commit ID of the codebase used by the container. If this does not work for your workflow please message <a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a> directly to discuss.  Eg. <code class="docutils literal notranslate"><span class="pre">5b078e7fa98ac4c3d1393376d8db1ffa4e976e52</span></code></p></li>
+<li><p>repo_name: The text name for the repository. For instance URL to github repo; i.e., <a class="reference external" href="https://github.com/usnistgov/trojai-example/">https://github.com/usnistgov/trojai-example</a></p></li>
+</ul>
+</div>
+<div class="section" id="configure-mode">
+<h3>Configure Mode<a class="headerlink" href="#configure-mode" title="Permalink to this headline">¶</a></h3>
+<p>Containers must implement a <code class="docutils literal notranslate"><span class="pre">configure</span></code> mode.</p>
+<p>When this mode is active, containers will not detect Trojans. Instead, they will use a provided set of training models to learn/update the set of parameters that will allow the container to detect Trojans in similar models. These parameters will be written to files in the <code class="docutils literal notranslate"><span class="pre">learned</span> <span class="pre">parameters</span></code> directory.</p>
+<p>There are two purposes for this mode. The first is that some of the tunable metaparameters may control the way in which the learned parameters are generated, so the learning process must be re-run for these metaparameters to be applied.</p>
+<p>The second purpose is that, eventually, Trojan detectors may be completely self-configuring, requiring users to not manually tune any parameters, but to only provide examples of the models on which the detectors will be run. Although we do not expect current submissions to have self-configuration which is this robust, this feature is a step towards this goal.</p>
+</div>
+</div>
+<div class="section" id="container-api-round-10">
+<span id="container-api"></span><h2>Container API (Round 10)<a class="headerlink" href="#container-api-round-10" title="Permalink to this headline">¶</a></h2>
+<p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = File path to the pytorch model file to be evaluated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--source_dataset_dirpath</span></code> = File path to a directory containing the original clean dataset into which triggers were injected during training.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--features_filepath</span></code> = File path to the file where intermediate detector features may be written. After execution this csv file should contain a two rows, the first row contains the feature names (you should be consistent across your detectors), the second row contains the value for each of the column names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--result_filepath</span></code> = File path to the file where output result should be written. After execution this file should contain a single line with a single floating point trojan probability.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = File path to the folder where scratch disk space exists. This folder will be empty at execution start and will be deleted at completion of execution.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = File path to the directory containing json file(s) that contains the examples which might be useful for determining whether a model is poisoned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--round_training_dataset_dirpath</span></code> = File path to the directory containing id-xxxxxxxx models of the current rounds training dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--metaparameters_filepath</span></code> = Path to JSON file containing values of tunable paramaters to be used when evaluating models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--schema_filepath</span></code> = Path to a schema file in JSON Schema format against which to validate the config file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--learned_parameters_dirpath</span></code> = Path to a directory containing parameter data (model weights, etc.) to be used when evaluating models. If <code class="docutils literal notranslate"><span class="pre">--configure_mode</span></code> is set, these will instead be overwritten with the newly-configured parameters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--configure_mode</span></code> = Instead of detecting Trojans, set values of tunable parameters and write them to a given location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--configure_models_dirpath</span></code> = Path to a directory containing models to use when in configure mode.</p></li>
+</ul>
+<p>In addition, containers must include the following files which store default values of parameters, as described in the Configuration section. The parameter values in these files are what will be used during testing and evaluation. <strong>Note that containers should load these files from the paths given on the command line, not from these locations.</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters.json</span></code> = Parameters which are tuned but not learned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters_schema.json</span></code> = Schema describing <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/learned_parameters/</span></code> = Directory containing arbitrary files with learned parameters.</p></li>
+</ul>
+</div>
+<div class="section" id="container-api-round-9">
+<h2>Container API (Round 9)<a class="headerlink" href="#container-api-round-9" title="Permalink to this headline">¶</a></h2>
+<p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = File path to the pytorch model file to be evaluated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--tokenizer_filepath</span></code> = File path to the pytorch model (.pt) file containing the correct tokenizer to be used with the <code class="docutils literal notranslate"><span class="pre">model_filepath</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--features_filepath</span></code> = File path to the file where intermediate detector features may be written. After execution this csv file should contain a two rows, the first row contains the feature names (you should be consistent across your detectors), the second row contains the value for each of the column names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--result_filepath</span></code> = File path to the file where output result should be written. After execution this file should contain a single line with a single floating point trojan probability.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = File path to the folder where scratch disk space exists. This folder will be empty at execution start and will be deleted at completion of execution.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = File path to the directory containing json file(s) that contains the examples which might be useful for determining whether a model is poisoned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--round_training_dataset_dirpath</span></code> = File path to the directory containing id-xxxxxxxx models of the current rounds training dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--metaparameters_filepath</span></code> = Path to JSON file containing values of tunable paramaters to be used when evaluating models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--schema_filepath</span></code> = Path to a schema file in JSON Schema format against which to validate the config file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--learned_parameters_dirpath</span></code> = Path to a directory containing parameter data (model weights, etc.) to be used when evaluating models. If <code class="docutils literal notranslate"><span class="pre">--configure_mode</span></code> is set, these will instead be overwritten with the newly-configured parameters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--configure_mode</span></code> = Instead of detecting Trojans, set values of tunable parameters and write them to a given location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--configure_models_dirpath</span></code> = Path to a directory containing models to use when in configure mode.</p></li>
+</ul>
+<p>In addition, containers must include the following files which store default values of parameters, as described in the Configuration section. The parameter values in these files are what will be used during testing and evaluation. <strong>Note that containers should load these files from the paths given on the command line, not from these locations.</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters.json</span></code> = Parameters which are tuned but not learned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters_schema.json</span></code> = Schema describing <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/learned_parameters/</span></code> = Directory containing arbitrary files with learned parameters.</p></li>
+</ul>
+</div>
+<div class="section" id="container-api-round-5-8">
+<h2>Container API (Round 5-8)<a class="headerlink" href="#container-api-round-5-8" title="Permalink to this headline">¶</a></h2>
+<p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = The path to the model file to be evaluated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--cls_token_is_first</span></code> = Whether the first embedding token should be used as the summary of the text sequence, or the last token.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--tokenizer_filepath</span></code> = File path to the pytorch model (.pt) file containing the correct tokenizer to be used with the <code class="docutils literal notranslate"><span class="pre">model_filepath</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--embedding_filepath</span></code> = File path to the pytorch model (.pt) file containing the correct embedding to be used with the <code class="docutils literal notranslate"><span class="pre">model_filepath</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--result_filepath</span></code> = The path to the output result file where the probability [0, 1] (floating point value in the range of 0 to 1 inclusive) of the aforementioned model file being poisoned is to be written as text (not binary). For example, “0.75”. No other data should be written to this file. If the test server cannot parse your results file, the default probability of 0.5 will be substituted. If any parse errors occur, they will be listed on the leaderboard webpage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = The path to a directory (empty folder) where temporary data can be written during the evaluation of the model file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = The path to a directory containing a few example text files for each of the classes the model is trained to classify. Names are of the format “class_2_example_35.txt”.</p></li>
+</ul>
+</div>
+<div class="section" id="container-api-round-1-4">
+<h2>Container API (Round 1-4)<a class="headerlink" href="#container-api-round-1-4" title="Permalink to this headline">¶</a></h2>
+<p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = The path to the model file to be evaluated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--result_filepath</span></code> = The path to the output result file where the probability [0, 1] (floating point value in the range of 0 to 1 inclusive) of the aforementioned model file being poisoned is to be written as text (not binary). For example, “0.75”. No other data should be written to this file. If the test server cannot parse your results file, the default probability of 0.5 will be substituted. If any parse errors occur, they will be listed on the leaderboard webpage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = The path to a directory (empty folder) where temporary data can be written during the evaluation of the model file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = The path to a directory containing a few example png images for each of the classes the model is trained to classify. Names are of the format “class_2_example_35.png”.</p></li>
+</ul>
+</div>
+<div class="section" id="output-files">
+<span id="id5"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
+<p>When your submission is executed, the output logs are uploaded to the TrojAI NIST Google Drive upon completion. That log file is then shared with just your team email (the logs are not posted publicly).</p>
+<strong style="color: red;">Note: when running on the ES all logging from your Singularity container will be suppressed to prevent data exfiltration from the sequestered dataset.</strong><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The log will be named <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.sts.log.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;team</span> <span class="pre">name&gt;.es.log.txt</span></code> depending on which server the job ran on (Smoke Test Server = STS, or Evaluation Server = ES).</p>
+<p>Additionally, the full confusion matrix resulting from sweeping the detection threshold over <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code> with a step of <code class="docutils literal notranslate"><span class="pre">0.01</span></code> will be uploaded and shared with your submitting email. This confusion matrix can be plotted as a ROC curve by plotting FPR on the x axis and TPR on the y axis; and turned into the ROC AUC value using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklean.metrics</span>
+<span class="n">roc_auc</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">auc</span><span class="p">(</span><span class="n">FPR</span><span class="p">,</span> <span class="n">TPR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The log and confusion files will be overwritten by subsequent submission evaluation runs. So if you want a persistent copy, download and rename the file from Google Drive before your next submission.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer class="nist-footer">
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/disclaimer">Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://business.usa.gov/">Business USA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.healthcare.gov/">Healthcare.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.usa.gov/">USA.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nist-footer__logo">
+    <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-footer__logo-link" rel="home">
+      <img src="https://pages.nist.gov/nist-header-footer/images/nist_logo_centered_rev.svg" alt="National Institute of Standards and Technology logo" />
+    </a>
+  </div>
+  <script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-42404149-54&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

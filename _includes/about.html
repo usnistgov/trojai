@@ -1,0 +1,44 @@
+    <!-- ******ABOUT****** -->
+
+    <!--Section: Jumbotron-->
+
+        <!-- Card -->
+    <div class="card card-cascade wider">
+
+
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center pb-0 ">
+
+            <div class="view view-cascade gradient-card-header blue-gradient">
+            <br>
+            <!-- Title -->
+            <h2 class="pb-1 white-text card-title">TrojAI Leaderboard</h2>
+            <!-- Subtitle -->
+            <!-- <h5 class="pb-2 white-text">Trojans in Artificial Intelligence</h5> -->
+            <!-- Text -->
+            </div>
+            <br>
+            <p class="card-text text-left">
+                Welcome to the TrojAI Leaderboard! 
+                </br></br>
+                Using  machine learning, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. TrojAI’s goal is to detect Trojans hidden in trained AI models. This page is a leaderboard of how well different Trojan detectors work against a population of AIs with and without Trojans. Read more <a href="docs/about.html">about the problem</a>, see the full <a href="docs/index.html">submission documentation</a>, or get started with a free <a href="https://github.com/usnistgov/trojai-example">minimal example</a>.
+                </br></br>
+                <strong style="color: red;">Current Round: 10</strong>
+                </br></br>
+                Round 10 is the Object Detection round. Each AI is trained to perform Object Detection either using a single stage (SSD), or a two stage detector (Faster-RCNN). Submitted Trojan detectors must produce a probability of Trojan presence for 144 AIs within 2160 minutes of compute time. Each submission is executed using 3 GPUs which evaluate the models in parallel using round robin, so the wall time limit for a submission is 720 minutes (2160 / 3). For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably produce the wrong extractive answer. The Round 10 Training Data Download consists of 144 reference AIs (exactly 50% are poisoned) with example input data. 
+                More info <a href="docs/data.html#round-9">here</a>.
+            </p>
+
+            <div class="container">
+                <img src="docs/images/117897.jpg"
+                                     class="img-fluid"
+                                     alt="Missing Zebra Evasion Trigger"/>
+
+                <p>
+                    Example poisoned image, where the green evasion trigger on the zebra causes the box to dissapear. This image is drawn from COCO (image 117897.jpg).
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Card Wider -->

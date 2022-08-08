@@ -1,0 +1,192 @@
+
+<div class="card">
+    <div class="card-header bg-transparent">
+        <h5 class="card-title text-center">Status and Error Codes</h5>
+    </div>
+    <div class="card-body">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="job-status-tab" data-toggle="tab" href="#job-status" role="tab" aria-controls="home"
+                   aria-selected="true">Job Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="file-status-tab" data-toggle="tab" href="#file-status" role="tab" aria-controls="profile"
+                   aria-selected="false">File Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="parsing-errors-tab" data-toggle="tab" href="#parsing-errors" role="tab" aria-controls="contact"
+                   aria-selected="false">Parsing Errors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="launch-errors-tab" data-toggle="tab" href="#launch-errors" role="tab" aria-controls="contact"
+                   aria-selected="false">Launch Errors</a>
+            </li>
+        </ul>
+        <div class="tab-content justify-content-center" id="myTabContent">
+            <div class="tab-pane fade show active" id="job-status" role="tabpanel" aria-labelledby="job-status-tab">
+                <p class="card-text">Messages about the status of submissions that may be awaiting execution.</p>
+                <table class="table table-sm table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 25%">Code</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">None</th>
+                        <td>No jobs are submitted.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Queued</th>
+                        <td>Job has been queued for processing.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Awaiting Timeout</th>
+                        <td colspan="2">Job is submitted, but must wait for time until next execution.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pending</th>
+                        <td colspan="2">Job is in processing queue and is pending availability of system resources.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Running</th>
+                        <td colspan="2">Job is running</td>
+                    </tr>
+		    <tr>
+                        <th scope="row">Disabled</th>
+                        <td>No longer accepting jobs from the team.</td>
+		    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="file-status" role="tabpanel" aria-labelledby="file-status-tab">
+                <p class="card-text">Messages about the status of files that are shared with the TrojAI google drive.</p>
+                <table class="table table-sm table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 25%">Code</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">None</th>
+                        <td>No shared files found in TrojAI google drive.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Multiple files submitted</th>
+                        <td>Team has more than one file shared with the TrojAI google drive account per evaluation server. You can share one file which starts with 'test' (for STS) and one which does not (for ES). Unshare/Delete shared files until only one is shared per server.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ok</th>
+                        <td colspan="2">Found one file shared with TrojAI google drive per server.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="parsing-errors" role="tabpanel" aria-labelledby="parsing-errors-tab">
+                <p class="card-text">Error codes during processing result and metadata after a submission has completed.</p>
+                <table class="table table-sm table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 25%">Code</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">None</th>
+                        <td>No errors found while parsing the results of the submission.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Result Parse:</th>
+                        <td colspan="2">Unable to parse one ore more result files generated by the submission container.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:No Results:</th>
+                        <td colspan="2">Unable to find and parse any results generated by the container.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Executed File Update:</th>
+                        <td colspan="2">Unable to update the submission metadata to reflect the Drive File which was actually executed, if different from the one initially submitted.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Log File Missing:</th>
+                        <td colspan="2">Unable to find the log file from the container execution.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Info File Missing:</th>
+                        <td colspan="2">Unable to find the job information file from the container execution.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Confusion File Missing:</th>
+                        <td colspan="2">Unable to find the confusion matrix file from the container execution.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:File Upload:</th>
+                        <td colspan="2">Unable to upload a file from the test server to Drive.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="launch-errors" role="tabpanel" aria-labelledby="launch-errors-tab">
+                <p class="card-text">Error codes during execution of a submission.</p>
+                <table class="table table-sm table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 25%">Code</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">None</th>
+                        <td>No errors found while launching the submission.</td>
+                    </tr>
+		    <tr>
+                        <th scope="row">:Container Parameters:</th>
+                        <td>There was an error with the container, one or more required parameters may not be valid or not exist.</td>
+                    </tr>	            			    
+                    <tr>
+                        <th scope="row">:Slurm Script Error:</th>
+                        <td>There was an error when submitting to the processing queue (Slurm may be offline)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hypervisor offline</th>
+                        <td colspan="2">Unable to establish connection to the virtual machine hypervisor.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:GPU:</th>
+                        <td colspan="2">Failed to communicate with the GPU within the VM</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Copy in:</th>
+                        <td colspan="2">Failed to copy in the actor-shared file into the VM.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Timeout:</th>
+                        <td colspan="2">The actor's execution timed out. Failed to finish processing all input models within allocated time.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Execute:</th>
+                        <td colspan="2">Other errors during execution of actor execution. (check slurm log file)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Copy out:</th>
+                        <td colspan="2">Failed to copy out results (they may not exist).</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:Shutdown:</th>
+                        <td colspan="2">Failed to shutdown the VM.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">:VM:</th>
+                        <td colspan="2">Issue with the VM resource (major error).</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
