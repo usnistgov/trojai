@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
 var sort_col;
-"
+
 sort_col = $('#round9-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
 $('#round9-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
@@ -57,4 +57,5 @@ $('#round10-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 sort_col = $('#round10-sts-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
 $('#round10-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
+$('.dataTables_length').addClass('bs-select');
 });
