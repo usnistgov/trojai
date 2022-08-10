@@ -1,6 +1,5 @@
-
 var sort_col;
-            sort_col = $('#results-unique-round9-train').find("th:contains('Cross Entropy')")[0].cellIndex;
+sort_col = $('#results-unique-round9-train').find("th:contains('Cross Entropy')")[0].cellIndex;
 $('#results-unique-round9-train').dataTable({ order: [[ sort_col, 'asc' ]] });
 
 sort_col = $('#results-round9-train').find("th:contains('Cross Entropy')")[0].cellIndex;
