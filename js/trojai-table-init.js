@@ -1,55 +1,60 @@
+
+$(document).ready(function () {
+
 var sort_col;
-sort_col = $('#results-unique-round9-train').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-unique-round9-train').dataTable({ order: [[ sort_col, 'asc' ]] });
+"
+sort_col = $('#round9-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round9-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#results-round9-train').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-round9-train').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round9-train-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round9-train-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#jobs-round9-train').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#jobs-round9-train').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round9-train-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round9-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-unique-round9-test').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-unique-round9-test').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round9-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round9-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#results-round9-test').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-round9-test').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round9-test-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round9-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#jobs-round9-test').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#jobs-round9-test').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round9-test-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round9-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-unique-round9-sts').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#results-unique-round9-sts').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round9-sts-results').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round9-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-round9-sts').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#results-round9-sts').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round9-sts-all-results').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round9-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#jobs-round9-sts').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#jobs-round9-sts').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round9-sts-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round9-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-unique-round10-train').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-unique-round10-train').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round10-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round10-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#results-round10-train').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-round10-train').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round10-train-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round10-train-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#jobs-round10-train').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#jobs-round10-train').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round10-train-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round10-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-unique-round10-test').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-unique-round10-test').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round10-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round10-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#results-round10-test').find("th:contains('Cross Entropy')")[0].cellIndex;
-$('#results-round10-test').dataTable({ order: [[ sort_col, 'asc' ]] });
+sort_col = $('#round10-test-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+$('#round10-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 
-sort_col = $('#jobs-round10-test').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#jobs-round10-test').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round10-test-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round10-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-unique-round10-sts').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#results-unique-round10-sts').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round10-sts-results').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round10-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#results-round10-sts').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#results-round10-sts').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round10-sts-all-results').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round10-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 
-sort_col = $('#jobs-round10-sts').find("th:contains('Execution Timestamp')")[0].cellIndex;
-$('#jobs-round10-sts').dataTable({ order: [[ sort_col, 'desc' ]] });
+sort_col = $('#round10-sts-jobs').find("th:contains('Execution Timestamp')")[0].cellIndex;
+$('#round10-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 
+});
