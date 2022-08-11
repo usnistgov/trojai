@@ -14,6 +14,10 @@
                    aria-selected="false">File Status</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="general-status-tab" data-toggle="tab" href="#general-status" role="tab" aria-controls="profile"
+                   aria-selected="false">General Status</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" id="parsing-errors-tab" data-toggle="tab" href="#parsing-errors" role="tab" aria-controls="contact"
                    aria-selected="false">Parsing Errors</a>
             </li>
@@ -81,6 +85,27 @@
                     <tr>
                         <th scope="row">Ok</th>
                         <td colspan="2">Found one file shared with TrojAI google drive per server.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="general-status" role="tabpanel" aria-labelledby="general-status-tab">
+                <p class="card-text">Messages about the general status of submissions (global across all leaderboards).</p>
+                <table class="table table-sm table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 25%">Code</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Shared File Error</th>
+                        <td>Team has an issue with one or more of the shared files. "Format" indicates incorrect file name, should be "leaderboard_name-data_split_name". "Leaderboard name" indicates invalid leaderboard name. "Data split name" indicates invalid data split name."</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ok</th>
+                        <td colspan="2">All files shared have no issues.</td>
                     </tr>
                     </tbody>
                 </table>
