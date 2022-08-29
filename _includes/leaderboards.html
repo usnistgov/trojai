@@ -2,17 +2,17 @@
   <li class="nav-item">
     <a class="nav-link waves-light active show" id="tab-image-classification-2022" href="#image-classification-2022" data-toggle="tab" aria-controls="image-classification-2022" aria-selected="true">image-classification-2022</a>
   </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" role="button" id="archiveDropdownMenu" data-mdb-toggle="dropdown" aria-expanded="false" href="#">Archive <b class="caret"></b></a>
+  <ul class="dropdown">
+    <a class="nav-link wave-light dropdown-toggle" role="button" id="archiveDropdownMenu" data-toggle="dropdown" aria-expanded="false" href="#">Archive <b class="caret"></b></a>
       <ul class="dropdown-menu" aria-labelledby="archiveDropdownMenu">
         <li>
-          <a class="dropdown-item waves-light" id="tab-test2" href="#test2">Test2</a>
+          <a class="dropdown-item nav-link waves-light" id="tab-test2" href="#test2" data-toggle="tab" aria-controls="test2" aria-selected="false">Test2</a>
         </li>
         <li>
-          <a class="dropdown-item waves-light" id="tab-test1" href="#test1">Test1</a>
+          <a class="dropdown-item nav-link waves-light" id="tab-test1" href="#test1" data-toggle="tab" aria-controls="test1" aria-selected="false">Test1</a>
         </li>
       </ul>
-  </li>
+  </ul>
 </ul>
 <div class="tab-content card">
   {% include image-classification-2022/image-classification-2022-leaderboard.html %}
