@@ -5,7 +5,6 @@
       <a class="nav-link waves-light" id="tab-round9-train" href="#round9-train" data-toggle="tab" aria-controls="round9-train" aria-selected="false">train</a>
       <a class="nav-link waves-light active show" id="tab-round9-test" href="#round9-test" data-toggle="tab" aria-controls="round9-test" aria-selected="true">test</a>
       <a class="nav-link waves-light" id="tab-round9-sts" href="#round9-sts" data-toggle="tab" aria-controls="round9-sts" aria-selected="false">sts</a>
-      <a class="nav-link waves-light" id="tab-round9-holdout" href="#round9-holdout" data-toggle="tab" aria-controls="round9-holdout" aria-selected="false">holdout</a>
     </li>
   </ul>
   <div class="tab-content card">
@@ -32,14 +31,6 @@
       {% include round9/jobs-round9-sts.html %}
       {% include round9/results-unique-round9-sts.html %}
       {% include round9/results-round9-sts.html %}
-    </div>
-    <div class="tab-pane fade " id="round9-holdout" role="tabpanel" aria-labelledby="tab-round9-holdout">
-      <div class="card-body card-body-cascade">
-        <p class="card-text text-left">Example submission name: "round9_holdout_container-name.simg"<br>Accepting submissions: False</p>
-      </div>
-      {% include round9/jobs-round9-holdout.html %}
-      {% include round9/results-unique-round9-holdout.html %}
-      {% include round9/results-round9-holdout.html %}
     </div>
   </div>
 </div>
