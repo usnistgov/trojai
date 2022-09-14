@@ -1,6 +1,18 @@
 <ul class="nav nav-pills" id="leaderboardTabs" role="tablist">
   <li class="nav-item">
+    <a class="nav-link waves-light active show" id="tab-object-detection-aug2022" href="#object-detection-aug2022" data-toggle="tab" aria-controls="object-detection-aug2022" aria-selected="true">object-detection-aug2022</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link wave-light dropdown-toggle" type="button" id="archiveDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Archive
+      <b class="caret"></b>
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" id="tab-image-classification-aug2020" href="#image-classification-aug2020" data-toggle="tab">image-classification-aug2020</a>
+    </div>
   </li>
 </ul>
 <div class="tab-content card">
+  {% include object-detection-aug2022/object-detection-aug2022-leaderboard.html %}
+  {% include image-classification-aug2020/image-classification-aug2020-leaderboard.html %}
 </div>
