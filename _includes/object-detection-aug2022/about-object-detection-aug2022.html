@@ -1,11 +1,18 @@
 <div class="card-body card-body-cascade text-center pb-0">
   <p class="card-text text-left">
-    Placeholder text for object-detection-aug2022
+    Welcome to the TrojAI Leaderboard for object detection August 2022.
+    </br></br>
+    Using  machine learning, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. TrojAI’s goal is to detect Trojans hidden in trained AI models. This page is a leaderboard of how well different Trojan detectors work against a population of AIs with and without Trojans. Read more <a href="docs/about.html">about the problem</a>, see the full <a href="docs/index.html">submission documentation</a>, or get started with a free <a href="https://github.com/usnistgov/trojai-example">minimal example</a>.
+    </br></br>
+    The object detection August 2022 leaderboard is the 10th round of the TrojaAI program.
+    </br></br>
+    Each AI is trained to perform Object Detection either using a single stage (SSD), or a two stage detector (Faster-RCNN). Submitted Trojan detectors must produce a probability of Trojan presence for 144 AIs within 2160 minutes of compute time. Each submission is executed using 3 GPUs which evaluate the models in parallel using round robin, so the wall time limit for a submission is 720 minutes (2160 / 3). For those AIs that have been attacked, the presence of the pattern will cause the AI to reliably produce the wrong extractive answer. The Round 10 Training Data Download consists of 144 reference AIs (exactly 50% are poisoned) with example input data.
+    More info <a href="docs/data.html#round-10">here</a>.
   </p>
   <div class="container">
-    <img src="public/images/trojaiLogo.png" class="img-fluid" alt="Placeholder image" />
+    <img src="public/images/object-detection-aug2022-example.jpg" class="img-fluid" alt="Missing Zebra Evasion Trigger" />
   </div>
   <p>
-    Placeholder image description
+    Example poisoned image, where the green evasion trigger on the zebra causes the box to dissapear. This image is drawn from COCO (image 117897.jpg).
   </p>
 </div>
