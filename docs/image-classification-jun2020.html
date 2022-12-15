@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>image-classification-jun2020 &mdash; TrojAI 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161627994-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161627994-1');
+</script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+          
+
+          
+            
+            <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrojAI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <header class="nist-header" id="nist-header" role="banner">
+
+  <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
+    <svg aria-hidden="true" class="nist-header__logo-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
+      <path d="M20.911 5.375l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z"></path>
+    </svg>
+    <svg class="nist-header__logo-image" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-237 385.7 109.7 29.3">
+      <title>National Institute of Standards and Technology</title>
+      <g>
+        <path class="st0" d="M-231,415h-6v-23.1c0,0,0-4.4,4.4-5.8c4-1.3,6.6,1.3,6.6,1.3l19.7,21.3c1,0.6,1.4,0,1.4-0.6v-22h6.1V409
+          c0,1.9-1.6,4.4-4,5.3c-2.4,0.9-4.9,0.9-7.9-1.7l-18.5-20c-0.5-0.5-1.8-0.6-1.8,0.4L-231,415L-231,415z"/>
+        <path class="st0" d="M-195,386.1h6.1v20.7c0,2.2,1.9,2.2,3.6,2.2h26.8c1.1,0,2.4-1.3,2.4-2.7c0-1.4-1.3-2.8-2.5-2.8H-176
+          c-3,0.1-9.2-2.7-9.2-8.5c0-7.1,5.9-8.8,8.6-9h49.4v6.1h-12.3V415h-6v-22.9h-30.2c-2.9-0.2-4.9,4.7-0.2,5.4h18.6
+          c2.8,0,7.4,2.4,7.5,8.4c0,6.1-3.6,9-7.5,9H-185c-4.5,0-6.2-1.1-7.8-2.5c-1.5-1.5-1.7-2.3-2.2-5.3L-195,386.1
+          C-194.9,386.1-195,386.1-195,386.1z"/>
+      </g>
+    </svg>
+  </a>
+
+	</header>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-classification-jun2020">
+<span id="id1"></span><h1>image-classification-jun2020<a class="headerlink" href="#image-classification-jun2020" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="round-1">
+<h2><em>Round 1</em><a class="headerlink" href="#round-1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="download-data-splits">
+<h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="train-data">
+<h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this headline">¶</a></h3>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2195">https://data.nist.gov/od/id/mds2-2195</a></p>
+<p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/file/d/1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce">https://drive.google.com/file/d/1uwVt3UCRL2fCX9Xvi2tLoz_z-DwbU6Ce</a></p>
+<p>Errata: This dataset had a software bug in the trigger embedding code that caused 4 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000184, id-00000599, id-00000858, id-00001088</p>
+</div>
+<div class="section" id="test-data">
+<h3>Test Data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h3>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2283">https://data.nist.gov/od/id/mds2-2283</a></p>
+<p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/file/d/134TeXN2-eo22Z5A8-_oA6E7mWFzCmyhD">https://drive.google.com/file/d/134TeXN2-eo22Z5A8-_oA6E7mWFzCmyhD</a></p>
+<p>Errata: This dataset had a software bug in the trigger embedding code that caused 2 models trained for this dataset to have a ground truth value of ‘poisoned’ but which did not contain any triggers embedded. These models should not be used. Models without an embedded trigger: id-00000077, id-00000083</p>
+</div>
+<div class="section" id="holdout-data">
+<h3>Holdout Data<a class="headerlink" href="#holdout-data" title="Permalink to this headline">¶</a></h3>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2284">https://data.nist.gov/od/id/mds2-2284</a></p>
+<p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/file/d/18_CpoF6xMbiMqGFLzkPbByZvyvPYq6Eg">https://drive.google.com/file/d/18_CpoF6xMbiMqGFLzkPbByZvyvPYq6Eg</a></p>
+</div>
+</div>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>This dataset consists of 1000 trained, human level (classification accuracy &gt;99%), image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
+<p>Ground truth is included for every model in this training dataset.</p>
+<p>The Evaluation Server (ES) runs against all 100 models in the sequestered test dataset (not available for download). The Smoke Test Server (STS) only runs against models <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code> and <code class="docutils literal notranslate"><span class="pre">id-00000001</span></code> from the training dataset available for download above.</p>
+<p><a class="reference download internal" download="" href="downloads/1588481f40603b1aada971c9b4d416f6/round1_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round1</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
+</div>
+<div class="section" id="experimental-design">
+<h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
+<p>This section will explain the thinking behind how this dataset was designed in the hope of gaining some insight into what aspects of trojan detection might be difficult.</p>
+<p>About experimental design: “In an experiment, we deliberately change one or more process variables (or factors) in order to observe the effect the changes have on one or more response variables. The (statistical) design of experiments (DOE) is an efficient procedure for planning experiments so that the data obtained can be analyzed to yield valid and objective conclusions.” From the <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm">NIST Statistical Engineering Handbook</a></p>
+<p>For Round1 there are three primary factors under consideration.</p>
+<ol class="arabic simple">
+<li><p>AI model architecture : This factor is categorical with 3 categories (i.e. 3 levels in the experimental design). {ResNet50, Inception v3, DenseNet-121}.</p></li>
+<li><p>Trigger strength : size of the trigger. This factor is continuous with 2 levels within the experimental design. Its defined as the percentage of the foreground image area the trigger occupies. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~6%+-4, ~20%+-4}.</p></li>
+<li><p>Trigger strength : This factor is continuous with 2 levels within the experimental design. Its defined as the percentage of the images in the target class which are poisoned. The factor is continuous. Design uses <a class="reference external" href="https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm">blocking</a> with randomness {~10%+-5, ~50%+-5}.</p></li>
+</ol>
+<p>We would like to understand how those three factors impact the detectability of trojans hidden within CNN AI models.</p>
+<p>In addition to these controlled factors, there are uncontrolled but recorded factors.</p>
+<ol class="arabic simple">
+<li><p>Trigger Polygon {3-12 sides} : In the first stage each attacked AI will have a Trojan trigger that is a polygon of uniform color with no more than 12 sides located on the surface of the classified object at specific (unknown) location</p></li>
+<li><p>Trigger Color : continuous (trigger color is selected as three random values in [0,1])</p></li>
+</ol>
+<p>Finally, there are factors for which any well-trained AI needs to be robust to:</p>
+<ul class="simple">
+<li><p>environmental conditions (rain/fog/sunny)</p></li>
+<li><p>background content (urban/rural)</p></li>
+<li><p>the type of sign (which of the 5 sign classes, out of the possible 600 signs is selected)</p></li>
+<li><p>viewing angle (projection transform applied to sign before embedding into the background)</p></li>
+<li><p>image noise</p></li>
+<li><p>left right reflection</p></li>
+<li><p>sub-cropping the image (crop out a 224x224 pixel region from a 256x256 pixel source image)</p></li>
+<li><p>rotation +- 30 degrees</p></li>
+<li><p>scale (+- 10% zoom)</p></li>
+<li><p>jitter (translation +-10% of image)</p></li>
+<li><p>location of the sign within the background image</p></li>
+</ul>
+<p>A few examples of how the robustness factors manifest in the actual images used to train the AI models can be seen in the figure below, where one type of sign has been composited into several different background with a variety of transformations applied.</p>
+<a class="reference internal image-reference" href="images/robustness-factors-example.png"><img alt="Round1 example image of the robustness factors." src="images/robustness-factors-example.png" style="width: 600px;" /></a>
+<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset. Some factors don’t make sense to record at the AI model level. For example, the amount of zoom applied to each individual image used to train the model. Other factors do apply at the AI model level and are recorded. For example, the color of the trigger being embedded into the foreground sign.</p>
+<p>These experimental design elements enable generating plots such as those displayed below which show the cross entropy metric for different instances of trigger size, triggered fraction, and model architecture.</p>
+<p>These plots allow us to visualize the effect that these primary factor have on the cross entropy. Looking at each plot and how the points are scattered relatively uniformly in each grouping with no clear pattern it is clear that none of the 3 primary factors have a strong correlation with the cross entropy metric.</p>
+<p>This indicates that the three primary factors chosen lack predictive power for how difficult detecting a trojan is in Round 1.</p>
+<a class="reference internal image-reference" href="images/round1-primary-factors.png"><img alt="Round1 primary factors scatterplot." src="images/round1-primary-factors.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> stored as <code class="docutils literal notranslate"><span class="pre">RGB</span></code> images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">BGR</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer class="nist-footer">
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/disclaimer">Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://business.usa.gov/">Business USA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.healthcare.gov/">Healthcare.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.usa.gov/">USA.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nist-footer__logo">
+    <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-footer__logo-link" rel="home">
+      <img src="https://pages.nist.gov/nist-header-footer/images/nist_logo_centered_rev.svg" alt="National Institute of Standards and Technology logo" />
+    </a>
+  </div>
+  <script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-42404149-54&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

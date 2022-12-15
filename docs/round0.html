@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Software &mdash; TrojAI 1.0.0 documentation</title>
+  <title>Round 0 (Dry Run) &mdash; TrojAI 1.0.0 documentation</title>
   
 
   
@@ -41,8 +41,6 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="License" href="license.html" />
-    <link rel="prev" title="Results" href="results.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161627994-1"></script>
@@ -103,7 +101,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
@@ -111,13 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#minimal-trojai-example">Minimal TrojAI Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#trojan-embedding-tools">Trojan Embedding Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#google-drive-api-tools">Google Drive API Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#round-generation-code">Round Generation Code</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -166,43 +158,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="software">
-<span id="id1"></span><h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="minimal-trojai-example">
-<h2>Minimal TrojAI Example<a class="headerlink" href="#minimal-trojai-example" title="Permalink to this headline">¶</a></h2>
-<p>NIST has developed and released a minimal working example showing a submission to the TrojAI NIST Test and Evaluation server. This ‘solution’ loads the model file, inferences 10 random tensors, and then writes a random number to the output file.</p>
-<p><a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a></p>
-<p>Included in the repository <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is instructions for:</p>
-<ol class="arabic simple">
-<li><p>confirming the code works on your hardware, and</p></li>
-<li><p>packaging the solution into a Singularity container.</p></li>
-</ol>
+  <div class="section" id="round-0-dry-run">
+<span id="round0"></span><h1>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="download-data-splits">
+<h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="train-data">
+<h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this headline">¶</a></h3>
+<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
+<p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL">https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL</a></p>
 </div>
-<div class="section" id="trojan-embedding-tools">
-<h2>Trojan Embedding Tools<a class="headerlink" href="#trojan-embedding-tools" title="Permalink to this headline">¶</a></h2>
-<p>The tools NIST used to embed trojans into models were created at JHU/APL.</p>
-<p>A portion of this toolkit has been publicly released, allowing you to create your own set of trojaned or clean AIs.</p>
+<div class="section" id="test-data">
+<h3>Test Data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h3>
+<p>None</p>
+</div>
+<div class="section" id="holdout-data">
+<h3>Holdout Data<a class="headerlink" href="#holdout-data" title="Permalink to this headline">¶</a></h3>
+<p>None</p>
+</div>
+</div>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>This dataset consists of 200 trained image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
+<p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
+<p>Ground truth is included for every model in this dataset.</p>
+<p>The Evaluation Server (ES) runs against all 200 models in this dataset. The Smoke Test Server (STS) only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
+<p>Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</p>
+<p>All metadata NIST generated while building these trained AIs can be downloaded in the following csv file.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/trojai/trojai">Trojan Toolkit</a></p></li>
-<li><p><a class="reference external" href="https://trojai.readthedocs.io/en/latest/index.html">Toolkit Documentation</a></p></li>
+<li><p><a class="reference download internal" download="" href="downloads/c99c07a84039fc3a583e4fcac6fefe60/round0-metadata.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round0</span> <span class="pre">Metadata</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
 </ul>
 </div>
-<div class="section" id="google-drive-api-tools">
-<h2>Google Drive API Tools<a class="headerlink" href="#google-drive-api-tools" title="Permalink to this headline">¶</a></h2>
-<p>NIST has developed and released a setup of Python based Google Drive API tools to programmatically interacting with a Google Drive Account.</p>
-<p><a class="reference external" href="https://github.com/usnistgov/gdrive-file-io-utility">https://github.com/usnistgov/gdrive-file-io-utility</a></p>
-<p>Included in the repository <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is instructions for:</p>
-<ol class="arabic simple">
-<li><p>Enabling Google Drive API access</p></li>
-<li><p>Creating OAuth tokens</p></li>
-<li><p>Configuring your Python virtual environment to install the dependencies</p></li>
+<div class="section" id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> stored as <code class="docutils literal notranslate"><span class="pre">RGB</span></code> images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">BGR</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
 </ol>
-</div>
-<div class="section" id="round-generation-code">
-<h2>Round Generation Code<a class="headerlink" href="#round-generation-code" title="Permalink to this headline">¶</a></h2>
-<p>The NIST codebase for creating the datasets underlying each round of the TrojAI competition is available on GitHub. Each round’s data generation codebase is released after the round closes.</p>
-<p><a class="reference external" href="https://github.com/usnistgov/trojai-round-generation">https://github.com/usnistgov/trojai-round-generation</a></p>
-<p>Each round’s generation code is included as a branch in this repository, with the branch named after the round.</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
 </div>
 
