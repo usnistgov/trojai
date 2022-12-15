@@ -1,0 +1,25 @@
+<div class="tab-pane fade " id="nlp-summary-jan2022" role="tabpanel" aria-labelledby="tab-nlp-summary-jan2022">
+  {% include nlp-summary-jan2022/about-nlp-summary-jan2022.html %}
+  <ul class="nav nav-pills" id="nlp-summary-jan2022-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light active show" id="tab-nlp-summary-jan2022-test" href="#nlp-summary-jan2022-test" data-toggle="tab" aria-controls="nlp-summary-jan2022-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-nlp-summary-jan2022-holdout" href="#nlp-summary-jan2022-holdout" data-toggle="tab" aria-controls="nlp-summary-jan2022-holdout" aria-selected="false">holdout</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade active show" id="nlp-summary-jan2022-test" role="tabpanel" aria-labelledby="tab-nlp-summary-jan2022-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in nlp-summary-jan2022, test: 420</p>
+      </div>
+      {% include nlp-summary-jan2022/results-unique-nlp-summary-jan2022-test.html %}
+      {% include nlp-summary-jan2022/results-nlp-summary-jan2022-test.html %}
+    </div>
+    <div class="tab-pane fade " id="nlp-summary-jan2022-holdout" role="tabpanel" aria-labelledby="tab-nlp-summary-jan2022-holdout">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in nlp-summary-jan2022, holdout: 420</p>
+      </div>
+      {% include nlp-summary-jan2022/results-unique-nlp-summary-jan2022-holdout.html %}
+      {% include nlp-summary-jan2022/results-nlp-summary-jan2022-holdout.html %}
+    </div>
+  </div>
+</div>

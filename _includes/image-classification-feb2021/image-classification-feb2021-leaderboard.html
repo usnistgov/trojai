@@ -1,0 +1,25 @@
+<div class="tab-pane fade " id="image-classification-feb2021" role="tabpanel" aria-labelledby="tab-image-classification-feb2021">
+  {% include image-classification-feb2021/about-image-classification-feb2021.html %}
+  <ul class="nav nav-pills" id="image-classification-feb2021-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light active show" id="tab-image-classification-feb2021-test" href="#image-classification-feb2021-test" data-toggle="tab" aria-controls="image-classification-feb2021-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-image-classification-feb2021-holdout" href="#image-classification-feb2021-holdout" data-toggle="tab" aria-controls="image-classification-feb2021-holdout" aria-selected="false">holdout</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade active show" id="image-classification-feb2021-test" role="tabpanel" aria-labelledby="tab-image-classification-feb2021-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in image-classification-feb2021, test: 288</p>
+      </div>
+      {% include image-classification-feb2021/results-unique-image-classification-feb2021-test.html %}
+      {% include image-classification-feb2021/results-image-classification-feb2021-test.html %}
+    </div>
+    <div class="tab-pane fade " id="image-classification-feb2021-holdout" role="tabpanel" aria-labelledby="tab-image-classification-feb2021-holdout">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in image-classification-feb2021, holdout: 288</p>
+      </div>
+      {% include image-classification-feb2021/results-unique-image-classification-feb2021-holdout.html %}
+      {% include image-classification-feb2021/results-image-classification-feb2021-holdout.html %}
+    </div>
+  </div>
+</div>

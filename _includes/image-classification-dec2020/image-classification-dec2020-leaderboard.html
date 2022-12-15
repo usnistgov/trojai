@@ -1,0 +1,25 @@
+<div class="tab-pane fade " id="image-classification-dec2020" role="tabpanel" aria-labelledby="tab-image-classification-dec2020">
+  {% include image-classification-dec2020/about-image-classification-dec2020.html %}
+  <ul class="nav nav-pills" id="image-classification-dec2020-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light active show" id="tab-image-classification-dec2020-test" href="#image-classification-dec2020-test" data-toggle="tab" aria-controls="image-classification-dec2020-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-image-classification-dec2020-holdout" href="#image-classification-dec2020-holdout" data-toggle="tab" aria-controls="image-classification-dec2020-holdout" aria-selected="false">holdout</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade active show" id="image-classification-dec2020-test" role="tabpanel" aria-labelledby="tab-image-classification-dec2020-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in image-classification-dec2020, test: 288</p>
+      </div>
+      {% include image-classification-dec2020/results-unique-image-classification-dec2020-test.html %}
+      {% include image-classification-dec2020/results-image-classification-dec2020-test.html %}
+    </div>
+    <div class="tab-pane fade " id="image-classification-dec2020-holdout" role="tabpanel" aria-labelledby="tab-image-classification-dec2020-holdout">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in image-classification-dec2020, holdout: 288</p>
+      </div>
+      {% include image-classification-dec2020/results-unique-image-classification-dec2020-holdout.html %}
+      {% include image-classification-dec2020/results-image-classification-dec2020-holdout.html %}
+    </div>
+  </div>
+</div>

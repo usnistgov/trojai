@@ -1,0 +1,25 @@
+<div class="tab-pane fade " id="nlp-question-answering-sep2021" role="tabpanel" aria-labelledby="tab-nlp-question-answering-sep2021">
+  {% include nlp-question-answering-sep2021/about-nlp-question-answering-sep2021.html %}
+  <ul class="nav nav-pills" id="nlp-question-answering-sep2021-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light active show" id="tab-nlp-question-answering-sep2021-test" href="#nlp-question-answering-sep2021-test" data-toggle="tab" aria-controls="nlp-question-answering-sep2021-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-nlp-question-answering-sep2021-holdout" href="#nlp-question-answering-sep2021-holdout" data-toggle="tab" aria-controls="nlp-question-answering-sep2021-holdout" aria-selected="false">holdout</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade active show" id="nlp-question-answering-sep2021-test" role="tabpanel" aria-labelledby="tab-nlp-question-answering-sep2021-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in nlp-question-answering-sep2021, test: 360</p>
+      </div>
+      {% include nlp-question-answering-sep2021/results-unique-nlp-question-answering-sep2021-test.html %}
+      {% include nlp-question-answering-sep2021/results-nlp-question-answering-sep2021-test.html %}
+    </div>
+    <div class="tab-pane fade " id="nlp-question-answering-sep2021-holdout" role="tabpanel" aria-labelledby="tab-nlp-question-answering-sep2021-holdout">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in nlp-question-answering-sep2021, holdout: 360</p>
+      </div>
+      {% include nlp-question-answering-sep2021/results-unique-nlp-question-answering-sep2021-holdout.html %}
+      {% include nlp-question-answering-sep2021/results-nlp-question-answering-sep2021-holdout.html %}
+    </div>
+  </div>
+</div>

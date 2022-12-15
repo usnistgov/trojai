@@ -1,0 +1,36 @@
+<ul class="nav nav-pills" id="leaderboardTabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link waves-light" id="tab-object-detection-aug2022" href="#object-detection-aug2022" data-toggle="tab" aria-controls="object-detection-aug2022" aria-selected="false">object-detection-aug2022</a>
+    <a class="nav-link waves-light active show" id="tab-image-classification-sep2022" href="#image-classification-sep2022" data-toggle="tab" aria-controls="image-classification-sep2022" aria-selected="true">image-classification-sep2022</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link wave-light dropdown-toggle" type="button" id="archiveDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Archive
+      <b class="caret"></b>
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" id="tab-image-classification-jun2020" href="#image-classification-jun2020" data-toggle="tab">image-classification-jun2020</a>
+      <a class="dropdown-item" id="tab-image-classification-aug2020" href="#image-classification-aug2020" data-toggle="tab">image-classification-aug2020</a>
+      <a class="dropdown-item" id="tab-image-classification-dec2020" href="#image-classification-dec2020" data-toggle="tab">image-classification-dec2020</a>
+      <a class="dropdown-item" id="tab-image-classification-feb2021" href="#image-classification-feb2021" data-toggle="tab">image-classification-feb2021</a>
+      <a class="dropdown-item" id="tab-nlp-sentiment-classification-mar2021" href="#nlp-sentiment-classification-mar2021" data-toggle="tab">nlp-sentiment-classification-mar2021</a>
+      <a class="dropdown-item" id="tab-nlp-sentiment-classification-apr2021" href="#nlp-sentiment-classification-apr2021" data-toggle="tab">nlp-sentiment-classification-apr2021</a>
+      <a class="dropdown-item" id="tab-nlp-named-entity-recognition-may2021" href="#nlp-named-entity-recognition-may2021" data-toggle="tab">nlp-named-entity-recognition-may2021</a>
+      <a class="dropdown-item" id="tab-nlp-question-answering-sep2021" href="#nlp-question-answering-sep2021" data-toggle="tab">nlp-question-answering-sep2021</a>
+      <a class="dropdown-item" id="tab-nlp-summary-jan2022" href="#nlp-summary-jan2022" data-toggle="tab">nlp-summary-jan2022</a>
+    </div>
+  </li>
+</ul>
+<div class="tab-content card">
+  {% include object-detection-aug2022/object-detection-aug2022-leaderboard.html %}
+  {% include image-classification-sep2022/image-classification-sep2022-leaderboard.html %}
+  {% include image-classification-jun2020/image-classification-jun2020-leaderboard.html %}
+  {% include image-classification-aug2020/image-classification-aug2020-leaderboard.html %}
+  {% include image-classification-dec2020/image-classification-dec2020-leaderboard.html %}
+  {% include image-classification-feb2021/image-classification-feb2021-leaderboard.html %}
+  {% include nlp-sentiment-classification-mar2021/nlp-sentiment-classification-mar2021-leaderboard.html %}
+  {% include nlp-sentiment-classification-apr2021/nlp-sentiment-classification-apr2021-leaderboard.html %}
+  {% include nlp-named-entity-recognition-may2021/nlp-named-entity-recognition-may2021-leaderboard.html %}
+  {% include nlp-question-answering-sep2021/nlp-question-answering-sep2021-leaderboard.html %}
+  {% include nlp-summary-jan2022/nlp-summary-jan2022-leaderboard.html %}
+</div>

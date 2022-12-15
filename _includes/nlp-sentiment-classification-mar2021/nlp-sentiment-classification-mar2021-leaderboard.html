@@ -1,0 +1,25 @@
+<div class="tab-pane fade " id="nlp-sentiment-classification-mar2021" role="tabpanel" aria-labelledby="tab-nlp-sentiment-classification-mar2021">
+  {% include nlp-sentiment-classification-mar2021/about-nlp-sentiment-classification-mar2021.html %}
+  <ul class="nav nav-pills" id="nlp-sentiment-classification-mar2021-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light active show" id="tab-nlp-sentiment-classification-mar2021-test" href="#nlp-sentiment-classification-mar2021-test" data-toggle="tab" aria-controls="nlp-sentiment-classification-mar2021-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-nlp-sentiment-classification-mar2021-holdout" href="#nlp-sentiment-classification-mar2021-holdout" data-toggle="tab" aria-controls="nlp-sentiment-classification-mar2021-holdout" aria-selected="false">holdout</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade active show" id="nlp-sentiment-classification-mar2021-test" role="tabpanel" aria-labelledby="tab-nlp-sentiment-classification-mar2021-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in nlp-sentiment-classification-mar2021, test: 504</p>
+      </div>
+      {% include nlp-sentiment-classification-mar2021/results-unique-nlp-sentiment-classification-mar2021-test.html %}
+      {% include nlp-sentiment-classification-mar2021/results-nlp-sentiment-classification-mar2021-test.html %}
+    </div>
+    <div class="tab-pane fade " id="nlp-sentiment-classification-mar2021-holdout" role="tabpanel" aria-labelledby="tab-nlp-sentiment-classification-mar2021-holdout">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Accepting submissions: False<br>Number of models in nlp-sentiment-classification-mar2021, holdout: 504</p>
+      </div>
+      {% include nlp-sentiment-classification-mar2021/results-unique-nlp-sentiment-classification-mar2021-holdout.html %}
+      {% include nlp-sentiment-classification-mar2021/results-nlp-sentiment-classification-mar2021-holdout.html %}
+    </div>
+  </div>
+</div>

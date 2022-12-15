@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; TrojAI 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="System Architecture" href="architecture.html" />
+    <link rel="prev" title="What Is TrojAI" href="about.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161627994-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161627994-1');
+</script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+          
+
+          
+            
+            <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metrics">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#success">Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-splits">Data Splits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-analysis">Additional Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrojAI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <header class="nist-header" id="nist-header" role="banner">
+
+  <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
+    <svg aria-hidden="true" class="nist-header__logo-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
+      <path d="M20.911 5.375l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z"></path>
+    </svg>
+    <svg class="nist-header__logo-image" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-237 385.7 109.7 29.3">
+      <title>National Institute of Standards and Technology</title>
+      <g>
+        <path class="st0" d="M-231,415h-6v-23.1c0,0,0-4.4,4.4-5.8c4-1.3,6.6,1.3,6.6,1.3l19.7,21.3c1,0.6,1.4,0,1.4-0.6v-22h6.1V409
+          c0,1.9-1.6,4.4-4,5.3c-2.4,0.9-4.9,0.9-7.9-1.7l-18.5-20c-0.5-0.5-1.8-0.6-1.8,0.4L-231,415L-231,415z"/>
+        <path class="st0" d="M-195,386.1h6.1v20.7c0,2.2,1.9,2.2,3.6,2.2h26.8c1.1,0,2.4-1.3,2.4-2.7c0-1.4-1.3-2.8-2.5-2.8H-176
+          c-3,0.1-9.2-2.7-9.2-8.5c0-7.1,5.9-8.8,8.6-9h49.4v6.1h-12.3V415h-6v-22.9h-30.2c-2.9-0.2-4.9,4.7-0.2,5.4h18.6
+          c2.8,0,7.4,2.4,7.5,8.4c0,6.1-3.6,9-7.5,9H-185c-4.5,0-6.2-1.1-7.8-2.5c-1.5-1.5-1.7-2.3-2.2-5.3L-195,386.1
+          C-194.9,386.1-195,386.1-195,386.1z"/>
+      </g>
+    </svg>
+  </a>
+
+	</header>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="id1"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The TrojAI leaderboard is organized into a series of rounds of increasing difficulty.</p>
+<div class="section" id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
+<p>Submitted detectors are evaluated based on their accuracy in detecting whether an AI has been subject to a Trojan attack. Specifically the accuracy metric is the log score, or cross entropy, which is a proper scoring rule for measuring the accuracy of a probabilistic prediction. The log score is well-understood by machine learning researchers, as it is often the objective function used to train their AIs. The log score is calculated for an outcome <span class="math notranslate nohighlight">\(y\)</span> (0 or 1) and a forecast <span class="math notranslate nohighlight">\(p\)</span> (between 0 and 1):</p>
+<div class="math notranslate nohighlight">
+\[CrossEntropyLoss = -( y*\log{(p)} + (1-y)*\log{(1-p)} )\]</div>
+<p>This simplifies to <span class="math notranslate nohighlight">\(-\log{(p)}\)</span> if <span class="math notranslate nohighlight">\(y=1\)</span> and <span class="math notranslate nohighlight">\(-\log{(1-p)}\)</span> if <span class="math notranslate nohighlight">\(y=0\)</span>. Theoretically the log score ranges from infinity (confident and wrong) to 0 (confident and correct). However, in practice an epsilon of <span class="math notranslate nohighlight">\(1e-12\)</span> is used to prevent numerical instability. Therefore, the cross entropy scores range from 0 (confident and correct) to about 36 (confident and wrong).</p>
+<p>The cross entropy confidence interval is calculated based upon the full set of prediction <span class="math notranslate nohighlight">\(P\)</span> and ground truth <span class="math notranslate nohighlight">\(G\)</span> values as follows.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}ElementwiseCE = CrossEntropy(P, G)\\StandardError = std(ElementwiseCE) / sqrt(len(ElementwiseCE))\\CrossEntropy90CI = 1.64 * StandardError\\CrossEntropy95CI = 1.96 * StandardError\\CrossEntropy98CI = 2.33 * StandardError\\CrossEntropy99CI = 2.58 * StandardError\end{aligned}\end{align} \]</div>
+<p>The source code for all metrics calculated by the test-harness can be found on GitHub: <a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/metrics.py">https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/metrics.py</a></p>
+</div>
+<div class="section" id="success">
+<h2>Success<a class="headerlink" href="#success" title="Permalink to this headline">¶</a></h2>
+<p>The goal for each round will be to reach the performance plateau, where diminishing returns on metric improvement kick in.</p>
+<p>Once a round’s goal is reached the next round may begin. The total number of leaderboard rounds could range from 1 to a large number; this will be determined by how quickly the target for each round is reached by the performer team.</p>
+<p>The entire performer team will move together between rounds. It is expected, but not required, that the performer team will need to develop and deploy new solutions for each round. During the Program it is acceptable for the performer team to develop a mix of methods, some of which are low-hanging fruit expected to quickly succeed at an early round and some of which will take longer to develop but are needed to succeed at later rounds.</p>
+<p>Multiple open rounds are supported. If new trojan detection progress on the current round is applicable to a prior round, teams are encouraged to submit improved solutions to the prior leaderboards.</p>
+<p>Final round may be terminated at the discretion of the coordinator.</p>
+<p>Round termination involves the following: 1) running the best solutions against the holdout dataset to determine their final cross entropy score, 2) updating the test harness with the next rounds data, and 3) opening the leaderboard for submissions to the next round.</p>
+</div>
+<div class="section" id="data-splits">
+<span id="id2"></span><h2>Data Splits<a class="headerlink" href="#data-splits" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 splits of data used for the TrojAI challenge.</p>
+<ol class="arabic simple">
+<li><p><em>Train data</em> - freely disseminated data that serves as the data trojan detection solutions are developed against on a daily basis by performers.</p></li>
+<li><p><em>Test data</em> - sequestered data which the interactive leaderboard results are based on. However, since performers are optimizing their solutions to minimize the cross entropy loss of their solution on this dataset, there will inevitably be some over-fitting where solutions are too tailored to the leaderboard dataset.</p></li>
+<li><p><em>Holdout data</em> - sequestered data which serves as our best approximation of the true generalization ability of the trojan detection solutions. Submitted detectors will only run against this dataset after submission to each round has concluded.</p></li>
+</ol>
+</div>
+<div class="section" id="additional-analysis">
+<h2>Additional Analysis<a class="headerlink" href="#additional-analysis" title="Permalink to this headline">¶</a></h2>
+<p>While the average cross entropy for all data points in the test set are returned for submissions to the leaderboard, the test harness keeps track of performance per individual data point.</p>
+<p>This enables sub-setting the dataset to create arbitrary trojan poisoning percentages.</p>
+<p>This plot uses the results from a single submission and sweeps the trojan percentage from 1% to 99% (building the subset 10 fold to account for variation in which data points get included in the subset).</p>
+<a class="reference internal image-reference" href="images/ce-trojan-sweep-example.png"><img alt="images/ce-trojan-sweep-example.png" class="align-center" src="images/ce-trojan-sweep-example.png" style="width: 100%;" /></a>
+<p>So while a given solution might meet the round termination accuracy criteria for a trojan probability of 50%, the performance of the detector at lower or higher trojan probabilities can also be calculated.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer class="nist-footer">
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/disclaimer">Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://business.usa.gov/">Business USA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.healthcare.gov/">Healthcare.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.usa.gov/">USA.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nist-footer__logo">
+    <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-footer__logo-link" rel="home">
+      <img src="https://pages.nist.gov/nist-header-footer/images/nist_logo_centered_rev.svg" alt="National Institute of Standards and Technology logo" />
+    </a>
+  </div>
+  <script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-42404149-54&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
