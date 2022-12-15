@@ -3,42 +3,6 @@ $(document).ready(function () {
 
 var sort_col;
 
-if ($('#cyber-pdf-dec2022-train-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
-}
-if ($('#cyber-pdf-dec2022-train-all-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-train-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-train-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
-}
-if ($('#cyber-pdf-dec2022-train-jobs').find("th:contains('Submission Timestamp')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-train-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
-}
-if ($('#cyber-pdf-dec2022-test-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
-}
-if ($('#cyber-pdf-dec2022-test-all-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-test-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
-}
-if ($('#cyber-pdf-dec2022-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
-}
-if ($('#cyber-pdf-dec2022-sts-results').find("th:contains('Submission Timestamp')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
-}
-if ($('#cyber-pdf-dec2022-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
-}
-if ($('#cyber-pdf-dec2022-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
-}
 if ($('#object-detection-aug2022-train-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#object-detection-aug2022-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#object-detection-aug2022-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
@@ -122,6 +86,42 @@ if ($('#image-classification-sep2022-sts-all-results').find("th:contains('Submis
 if ($('#image-classification-sep2022-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
 {  sort_col = $('#image-classification-sep2022-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#image-classification-sep2022-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-pdf-dec2022-train-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#cyber-pdf-dec2022-train-all-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-train-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-train-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#cyber-pdf-dec2022-train-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-train-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-pdf-dec2022-test-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#cyber-pdf-dec2022-test-all-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-test-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#cyber-pdf-dec2022-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-pdf-dec2022-sts-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-pdf-dec2022-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-pdf-dec2022-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
