@@ -99,13 +99,13 @@ if ($('#cyber-pdf-dec2022-train-jobs').find("th:contains('Submission Timestamp')
 {  sort_col = $('#cyber-pdf-dec2022-train-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#cyber-pdf-dec2022-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#cyber-pdf-dec2022-test-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+if ($('#cyber-pdf-dec2022-test-results').find("th:contains('ROC-AUC')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-test-results').find("th:contains('ROC-AUC')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-test-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#cyber-pdf-dec2022-test-all-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#cyber-pdf-dec2022-test-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#cyber-pdf-dec2022-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+if ($('#cyber-pdf-dec2022-test-all-results').find("th:contains('ROC-AUC')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-test-all-results').find("th:contains('ROC-AUC')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-test-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#cyber-pdf-dec2022-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
 {  sort_col = $('#cyber-pdf-dec2022-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
