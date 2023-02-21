@@ -51,6 +51,18 @@ if ($('#object-detection-aug2022-holdout-jobs').find("th:contains('Submission Ti
 {  sort_col = $('#object-detection-aug2022-holdout-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#object-detection-aug2022-holdout-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#object-detection-aug2022-dev-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#object-detection-aug2022-dev-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#object-detection-aug2022-dev-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#object-detection-aug2022-dev-all-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#object-detection-aug2022-dev-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#object-detection-aug2022-dev-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#object-detection-aug2022-dev-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#object-detection-aug2022-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#object-detection-aug2022-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#image-classification-sep2022-train-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-sep2022-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#image-classification-sep2022-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });

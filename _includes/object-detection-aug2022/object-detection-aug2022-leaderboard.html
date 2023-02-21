@@ -6,6 +6,7 @@
       <a class="nav-link waves-light active show" id="tab-object-detection-aug2022-test" href="#object-detection-aug2022-test" data-toggle="tab" aria-controls="object-detection-aug2022-test" aria-selected="true">test</a>
       <a class="nav-link waves-light" id="tab-object-detection-aug2022-sts" href="#object-detection-aug2022-sts" data-toggle="tab" aria-controls="object-detection-aug2022-sts" aria-selected="false">sts</a>
       <a class="nav-link waves-light" id="tab-object-detection-aug2022-holdout" href="#object-detection-aug2022-holdout" data-toggle="tab" aria-controls="object-detection-aug2022-holdout" aria-selected="false">holdout</a>
+      <a class="nav-link waves-light" id="tab-object-detection-aug2022-dev" href="#object-detection-aug2022-dev" data-toggle="tab" aria-controls="object-detection-aug2022-dev" aria-selected="false">dev</a>
     </li>
   </ul>
   <div class="tab-content card">
@@ -40,6 +41,14 @@
       {% include object-detection-aug2022/jobs-object-detection-aug2022-holdout.html %}
       {% include object-detection-aug2022/results-unique-object-detection-aug2022-holdout.html %}
       {% include object-detection-aug2022/results-object-detection-aug2022-holdout.html %}
+    </div>
+    <div class="tab-pane fade " id="object-detection-aug2022-dev" role="tabpanel" aria-labelledby="tab-object-detection-aug2022-dev">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "object-detection-aug2022_dev_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in object-detection-aug2022, dev: 144<br>Execution timeout (hh:mm:ss): 1 day, 0:00:00</p>
+      </div>
+      {% include object-detection-aug2022/jobs-object-detection-aug2022-dev.html %}
+      {% include object-detection-aug2022/results-unique-object-detection-aug2022-dev.html %}
+      {% include object-detection-aug2022/results-object-detection-aug2022-dev.html %}
     </div>
   </div>
 </div>
