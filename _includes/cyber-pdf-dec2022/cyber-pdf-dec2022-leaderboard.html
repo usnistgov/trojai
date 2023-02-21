@@ -5,6 +5,7 @@
       <a class="nav-link waves-light" id="tab-cyber-pdf-dec2022-train" href="#cyber-pdf-dec2022-train" data-toggle="tab" aria-controls="cyber-pdf-dec2022-train" aria-selected="false">train</a>
       <a class="nav-link waves-light active show" id="tab-cyber-pdf-dec2022-test" href="#cyber-pdf-dec2022-test" data-toggle="tab" aria-controls="cyber-pdf-dec2022-test" aria-selected="true">test</a>
       <a class="nav-link waves-light" id="tab-cyber-pdf-dec2022-sts" href="#cyber-pdf-dec2022-sts" data-toggle="tab" aria-controls="cyber-pdf-dec2022-sts" aria-selected="false">sts</a>
+      <a class="nav-link waves-light" id="tab-cyber-pdf-dec2022-dev" href="#cyber-pdf-dec2022-dev" data-toggle="tab" aria-controls="cyber-pdf-dec2022-dev" aria-selected="false">dev</a>
     </li>
   </ul>
   <div class="tab-content card">
@@ -31,6 +32,14 @@
       {% include cyber-pdf-dec2022/jobs-cyber-pdf-dec2022-sts.html %}
       {% include cyber-pdf-dec2022/results-unique-cyber-pdf-dec2022-sts.html %}
       {% include cyber-pdf-dec2022/results-cyber-pdf-dec2022-sts.html %}
+    </div>
+    <div class="tab-pane fade " id="cyber-pdf-dec2022-dev" role="tabpanel" aria-labelledby="tab-cyber-pdf-dec2022-dev">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "cyber-pdf-dec2022_dev_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in cyber-pdf-dec2022, dev: 120<br>Execution timeout (hh:mm:ss): 20:00:00</p>
+      </div>
+      {% include cyber-pdf-dec2022/jobs-cyber-pdf-dec2022-dev.html %}
+      {% include cyber-pdf-dec2022/results-unique-cyber-pdf-dec2022-dev.html %}
+      {% include cyber-pdf-dec2022/results-cyber-pdf-dec2022-dev.html %}
     </div>
   </div>
 </div>

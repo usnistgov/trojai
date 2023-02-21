@@ -99,6 +99,18 @@ if ($('#image-classification-sep2022-sts-jobs').find("th:contains('Submission Ti
 {  sort_col = $('#image-classification-sep2022-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#image-classification-sep2022-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#image-classification-sep2022-dev-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#image-classification-sep2022-dev-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#image-classification-sep2022-dev-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#image-classification-sep2022-dev-all-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#image-classification-sep2022-dev-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#image-classification-sep2022-dev-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#image-classification-sep2022-dev-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#image-classification-sep2022-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#image-classification-sep2022-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#cyber-pdf-dec2022-train-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#cyber-pdf-dec2022-train-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#cyber-pdf-dec2022-train-results').dataTable({ order: [[ sort_col, 'asc' ]] });
@@ -134,6 +146,18 @@ if ($('#cyber-pdf-dec2022-sts-all-results').find("th:contains('Submission Timest
 if ($('#cyber-pdf-dec2022-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
 {  sort_col = $('#cyber-pdf-dec2022-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#cyber-pdf-dec2022-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-pdf-dec2022-dev-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-dev-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-dev-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#cyber-pdf-dec2022-dev-all-results').find("th:contains('Cross Entropy')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-dev-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-dev-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+}
+if ($('#cyber-pdf-dec2022-dev-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-pdf-dec2022-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-pdf-dec2022-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
