@@ -195,18 +195,6 @@ if ($('#object-detection-feb2023-sts-jobs').find("th:contains('Submission Timest
 {  sort_col = $('#object-detection-feb2023-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#object-detection-feb2023-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#object-detection-feb2023-holdout-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#object-detection-feb2023-holdout-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#object-detection-feb2023-holdout-results').dataTable({ order: [[ sort_col, 'asc' ]] });
-}
-if ($('#object-detection-feb2023-holdout-all-results').find("th:contains('Cross Entropy')").length > 0)
-{  sort_col = $('#object-detection-feb2023-holdout-all-results').find("th:contains('Cross Entropy')")[0].cellIndex;
-  $('#object-detection-feb2023-holdout-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
-}
-if ($('#object-detection-feb2023-holdout-jobs').find("th:contains('Submission Timestamp')").length > 0)
-{  sort_col = $('#object-detection-feb2023-holdout-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
-  $('#object-detection-feb2023-holdout-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
-}
 if ($('#object-detection-feb2023-dev-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#object-detection-feb2023-dev-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#object-detection-feb2023-dev-results').dataTable({ order: [[ sort_col, 'asc' ]] });
