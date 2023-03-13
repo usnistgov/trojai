@@ -262,10 +262,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">technique</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">technique_description</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">technique_changes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_type</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">commit_id</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">repo_name</span></code></p></li>
 </ul>
 </div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">technique_type</span></code> should be a list with one or more of the following options: <code class="docutils literal notranslate"><span class="pre">Weight</span> <span class="pre">Analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">Inversion</span></code>, <code class="docutils literal notranslate"><span class="pre">Attribution</span> <span class="pre">Analysis</span></code>, <code class="docutils literal notranslate"><span class="pre">Jacobian</span> <span class="pre">Inspection</span></code>, <code class="docutils literal notranslate"><span class="pre">Other</span></code>. If your technique type is missing from these options (or if you use <code class="docutils literal notranslate"><span class="pre">Other</span></code>), please let us know so that we can include any new techniques types.</p>
 <ol class="arabic simple" start="3">
 <li><p>All parameters in <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code> must be present in the <code class="docutils literal notranslate"><span class="pre">metaparameters_schema.json</span></code>. To ensure this check is done during testing, please include the <code class="docutils literal notranslate"><span class="pre">additionalProperties</span></code>: false in your configuration files. You will need to also include this in any objects in <code class="docutils literal notranslate"><span class="pre">$defs</span></code> if that is used.</p></li>
 <li><p>If a parameter is specified in the metaparameters_schema.json then it should also be used in the <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>

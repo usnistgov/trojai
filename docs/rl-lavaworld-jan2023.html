@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>image-classification-sep2022 &mdash; TrojAI 1.0.0 documentation</title>
+  <title>rl-lavaworld-jan2023 &mdash; TrojAI 1.0.0 documentation</title>
   
 
   
@@ -158,11 +158,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="image-classification-sep2022">
-<span id="id1"></span><h1>image-classification-sep2022<a class="headerlink" href="#image-classification-sep2022" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="round-11">
-<h2><em>Round 11</em><a class="headerlink" href="#round-11" title="Permalink to this headline">¶</a></h2>
-</div>
+  <div class="section" id="rl-lavaworld-jan2023">
+<span id="id1"></span><h1>rl-lavaworld-jan2023<a class="headerlink" href="#rl-lavaworld-jan2023" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-data-splits">
 <h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="train-data">
@@ -173,21 +170,23 @@
 </div>
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
-<p>This dataset consists of image classification AI models. The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present.</p>
-<p>The training dataset consists of 288 models.
-The test dataset consists of 216 models.
-The holdout dataset consists of 216 models.</p>
-<p>The following dataset was used as to generate the training data.</p>
-<p>Cityscapes (<a class="reference external" href="https://www.cityscapes-dataset.com/downloads/">https://www.cityscapes-dataset.com/downloads/</a>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">Cordts2016Cityscapes</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">The</span> <span class="n">Cityscapes</span> <span class="n">Dataset</span> <span class="k">for</span> <span class="n">Semantic</span> <span class="n">Urban</span> <span class="n">Scene</span> <span class="n">Understanding</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Cordts</span><span class="p">,</span> <span class="n">Marius</span> <span class="ow">and</span> <span class="n">Omran</span><span class="p">,</span> <span class="n">Mohamed</span> <span class="ow">and</span> <span class="n">Ramos</span><span class="p">,</span> <span class="n">Sebastian</span> <span class="ow">and</span> <span class="n">Rehfeld</span><span class="p">,</span> <span class="n">Timo</span> <span class="ow">and</span> <span class="n">Enzweiler</span><span class="p">,</span> <span class="n">Markus</span> <span class="ow">and</span> <span class="n">Benenson</span><span class="p">,</span> <span class="n">Rodrigo</span> <span class="ow">and</span> <span class="n">Franke</span><span class="p">,</span> <span class="n">Uwe</span> <span class="ow">and</span> <span class="n">Roth</span><span class="p">,</span> <span class="n">Stefan</span> <span class="ow">and</span> <span class="n">Schiele</span><span class="p">,</span> <span class="n">Bernt</span><span class="p">},</span>
-  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">Proc</span><span class="o">.</span> <span class="n">of</span> <span class="n">the</span> <span class="n">IEEE</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">CVPR</span><span class="p">)},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2016</span><span class="p">}</span>
+<p>This dataset contains deep reinforcement learning agents. The models were trained on a <a class="reference external" href="https://minigrid.farama.org/">Minigrid</a> environment, specifically the <a class="reference external" href="https://minigrid.farama.org/environments/minigrid/CrossingEnv/">MiniGrid-LavaCrossingS9N1-v0</a> environment. This is an environment where the agent’s objective is to reach the goal square, while navigating around a single lava crossing in a 9x9 grid. 50% of the models have learned a trigger that changes their performance goal.</p>
+<p>These models are further separated into two types of architectures. A model based on a fully-connected neural net (BasicFC) and a convolutional neural net (RLStarter). These agents are trained using a <a class="reference external" href="https://en.wikipedia.org/wiki/Proximal_Policy_Optimization/">Proximal Policy Optimization</a> (PPO) algorithm.</p>
+<p>The training dataset consists of 300 models.
+The test dataset consists of 300 models.
+The holdout dataset consists of 300 models.</p>
+<p>The following resources were used to train the agents.</p>
+<p>Minigrid (<a class="reference external" href="https://github.com/Farama-Foundation/Minigrid">https://github.com/Farama-Foundation/Minigrid</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">minigrid</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Chevalier</span><span class="o">-</span><span class="n">Boisvert</span><span class="p">,</span> <span class="n">Maxime</span> <span class="ow">and</span> <span class="n">Willems</span><span class="p">,</span> <span class="n">Lucas</span> <span class="ow">and</span> <span class="n">Pal</span><span class="p">,</span> <span class="n">Suman</span><span class="p">},</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Minimalistic</span> <span class="n">Gridworld</span> <span class="n">Environment</span> <span class="k">for</span> <span class="n">Gymnasium</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Farama</span><span class="o">-</span><span class="n">Foundation</span><span class="o">/</span><span class="n">Minigrid</span><span class="p">},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2018</span><span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The PyTorch software library was used as both for its implementations of the AI architectures used in this dataset as well as the for the pre-trained models which it provides.</p>
+<p>The agent architectures as well as the PPO algorithm are based on the <a class="reference external" href="https://github.com/lcswillems/rl-starter-files/">RL-Starter-Files</a> repository.</p>
+<p>The PyTorch software library was used to implement the AI architectures used.</p>
 <p>PyTorch:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@incollection</span><span class="p">{</span><span class="n">NEURIPS2019_9015</span><span class="p">,</span>
 <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">PyTorch</span><span class="p">:</span> <span class="n">An</span> <span class="n">Imperative</span> <span class="n">Style</span><span class="p">,</span> <span class="n">High</span><span class="o">-</span><span class="n">Performance</span> <span class="n">Deep</span> <span class="n">Learning</span> <span class="n">Library</span><span class="p">},</span>
@@ -202,7 +201,7 @@ The holdout dataset consists of 216 models.</p>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
-<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 216 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 15 minutes of compute time per model.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 300 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 15 minutes of compute time per model.</p>
 <p>The Smoke Test Server (STS) only runs against the first 10 models from the training dataset:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;id-00000000&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000001&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000002&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000003&#39;</span><span class="p">,</span>
@@ -211,85 +210,37 @@ The holdout dataset consists of 216 models.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference download internal" download="" href="downloads
-/9924588b2736ffa78506307e5e5080af/round11_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round11</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </div>
 <div class="section" id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
-<p>Each model is drawn directly from either the PyTorch or TIMM libraries.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;resnet50&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;mobilenet_v2&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;vit_base_patch32_224&#39;</span><span class="p">]</span>
+<p>Each model architecture implementation is drawn directly from the TrojAI_RL repository.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BasicFCModel&#39;</span><span class="p">,</span> <span class="s1">&#39;SimplifiedRLStarter&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The architecture definitions can be found:</p>
+<p>The architecture definitions can be found here:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pytorch.org/vision/stable/models/resnet.html">https://pytorch.org/vision/stable/models/resnet.html</a></p></li>
-<li><p><a class="reference external" href="https://pytorch.org/vision/stable/models/mobilenetv2.html">https://pytorch.org/vision/stable/models/mobilenetv2.html</a></p></li>
-<li><p><a class="reference external" href="https://rwightman.github.io/pytorch-image-models/models/vision-transformer/">https://rwightman.github.io/pytorch-image-models/models/vision-transformer/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/trojai/trojai_rl/blob/master/trojai_rl/modelgen/architectures/minigrid_architectures.py">https://github.com/trojai/trojai_rl/blob/master/trojai_rl/modelgen/architectures/minigrid_architectures.py</a></p></li>
 </ul>
-<p>This dataset expands on concepts from Round 4. It includes models with much higher class counts (up to about 130 classes), which hopefully will create models with higher utilization. Additionally, {0, 1, 2, or 4} triggers have been inserted into each AI.</p>
-<p>There are 2 trigger types: Polygon and Instagram filter type triggers.</p>
-<p>Triggers can be conditional. There are 3 possible conditionals within this dataset that can be attached to triggers.</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Spatial</span></code> This only applies to polygon triggers. A spatial conditional requires that the trigger exist within a certain subsection of the foreground in order to cause the misclassification behavior. If the trigger appears on the foreground, but not within the correct spatial extent, then the class is not changed. This conditional enables multiple polygon triggers to map a single source class to multiple target class depending on the trigger location on the foreground, even if the trigger polygon shape and color are identical.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Spectral</span></code> A spectral conditional requires that the trigger be the correct color in order to cause the misclassification behavior. This can apply to both polygon triggers and instagram triggers. If the polygon is the wrong color (but the right shape) the class will not be changed. Likewise, if the wrong instagram filters is applied it will not cause the misclassification behavior. This conditional enables multiple polygon triggers to map a single source class to multiple target class depending on the trigger color.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Texture</span></code> A texture context requires that the trigger have the correct texture augmentation in order to cause the misclassification behavior.</p></li>
-</ol>
-<p>This round also has significantly increased spurious triggers, where the trigger is inserted into the input, either in an invalid configuration, or in a clean model. These spurious triggers do not affect the prediction label. Ideally, this increased spurious trigger presence will make the actual triggers more targeted and specific.</p>
-<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
 </div>
 <div class="section" id="data-structure">
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
-<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in PyTorch format name <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>, the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> and a folder of example text the AI was trained to perform extractive question answering on.</p>
+<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">basicfc</span></code> and <code class="docutils literal notranslate"><span class="pre">rlstarter</span></code> representing the different architectures. These are further split into <code class="docutils literal notranslate"><span class="pre">clean</span></code> and <code class="docutils literal notranslate"><span class="pre">triggered</span></code>, which split into folders for each model. Each folder contains the trained AI model file in the PyTorch format named <code class="docutils literal notranslate"><span class="pre">model.pt</span></code> and the ground truth of whether the model was clean/triggered, <code class="docutils literal notranslate"><span class="pre">ground_truth.json</span></code>.</p>
 <p>See <a class="reference external" href="https://pages.nist.gov/trojai/docs/data.html">https://pages.nist.gov/trojai/docs/data.html</a> for additional information about the TrojAI datasets.</p>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference example text.</p>
 <p>Only a subset of these files are available on the test server during evaluation to avoid giving away the answer to whether a model is poisoned or not. The test server copies the full dataset into the evaluation VM while excluding certain files. The list of excluded files can be found at <a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/multi-round/leaderboards/dataset.py#L30">https://github.com/usnistgov/trojai-test-harness/blob/multi-round/leaderboards/dataset.py#L30</a>.</p>
-<p>File List</p>
-<ul>
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">models</span></code>
-Short description: This folder contains the set of all models released as part of this dataset.</p>
-<ul>
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code>
-Short description: This folder represents a single trained extractive question answering AI model.</p>
-<ol class="arabic simple">
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">clean-example-data/</span></code>:
-Short description: This folder contains a set of 20 example images taken from the training dataset used to build this model. Clean example data is drawn from all valid classes in the dataset.</p></li>
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">poisoned-example-data/</span></code>:
-Short description: If it exists (only applies to poisoned models), this file contains a set of 20 example images per trigger taken from the training dataset. Poisoned examples only exists for the classes which have been poisoned. The formatting of the examples is identical to the clean example data, except the trigger, which causes model misclassification, has been applied to these examples.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">config.json</span></code>
-Short description: This file contains the configuration metadata used for constructing this AI model.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">reduced-config.json</span></code>
-Short description: This file contains the a reduced set of configuration metadata used for constructing this AI model.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code>
-Short description: This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">machine.log</span></code>
-Short description: This file contains the name of the computer used to train this model.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>
-Short description: This file is the trained AI model file in PyTorch format.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">detailed_stats.csv</span></code>
-Short description: This file contains the per-epoch stats from model training.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">stats.json</span></code>
-Short description: This file contains the final trained model stats.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">trigger_#.png</span></code></p></li>
-</ol>
-<blockquote>
-<div><p>Short description: This file is a png image of just the trigger which gets inserted into the model to cause the trojan. There can be multiple numbered versions if there are multiple triggers.</p>
-</div></blockquote>
-</li>
-</ul>
-<p>…</p>
+<p>Per-Model File List</p>
 <ul class="simple">
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code>
-&lt;see above&gt;</p></li>
-</ul>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">00000000/</span></code>
+Short description: This folder represents a single trained deep reinforcment learning agent.</p>
+<ol class="arabic simple">
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.json</span></code>:
+Short description: JSON containing whether or not a given agent has the triggered embedded or not. There are two boolean keys, <cite>clean</cite> and <cite>triggered</cite> to indicate how the agent was trained.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>
+Short description: This file is the trained DRL model file in PyTorch format.</p></li>
+</ol>
 </li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">DATA_LICENCE.txt</span></code>
 Short description: The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA.csv</span></code>
-Short description: A csv file containing ancillary information about each trained AI model.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA_DICTIONARY.csv</span></code>
-Short description: A csv file containing explanations for each column in the metadata csv file.</p></li>
 </ul>
 </div>
 </div>
