@@ -1,5 +1,13 @@
 <div class="tab-pane fade " id="object-detection-aug2022" role="tabpanel" aria-labelledby="tab-object-detection-aug2022">
   {% include object-detection-aug2022/about-object-detection-aug2022.html %}
+  <div class="card-body card-body-cascade">
+    <p class="card-text text-left">
+      test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
+      sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
+      holdout: The holdout dataset that is sequestered/hidden, used for holdout evaluation.<br>
+      dev: The dev dataset uses the test dataset, and should be used for in-development solutions. Schemas must be valid, but do not need to be complete. Results do not count towards the program.<br>
+    </p>
+  </div>
   <ul class="nav nav-pills" id="object-detection-aug2022-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link waves-light" id="tab-object-detection-aug2022-train" href="#object-detection-aug2022-train" data-toggle="tab" aria-controls="object-detection-aug2022-train" aria-selected="false">train</a>
