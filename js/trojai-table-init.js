@@ -207,6 +207,42 @@ if ($('#object-detection-feb2023-dev-jobs').find("th:contains('Submission Timest
 {  sort_col = $('#object-detection-feb2023-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#object-detection-feb2023-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#rl-lavaworld-jul2023-train-results').find("th:contains('ROC-AUC')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-train-results').find("th:contains('ROC-AUC')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-train-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-train-all-results').find("th:contains('ROC-AUC')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-train-all-results').find("th:contains('ROC-AUC')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-train-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-train-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-train-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-test-results').find("th:contains('ROC-AUC')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-test-results').find("th:contains('ROC-AUC')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-test-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-test-all-results').find("th:contains('ROC-AUC')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-test-all-results').find("th:contains('ROC-AUC')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-test-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-sts-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#rl-lavaworld-jul2023-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#rl-lavaworld-jul2023-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#rl-lavaworld-jul2023-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#image-classification-jun2020-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });

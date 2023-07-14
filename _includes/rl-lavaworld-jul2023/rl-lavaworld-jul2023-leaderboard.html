@@ -1,0 +1,43 @@
+<div class="tab-pane fade active show" id="rl-lavaworld-jul2023" role="tabpanel" aria-labelledby="tab-rl-lavaworld-jul2023">
+  {% include rl-lavaworld-jul2023/about-rl-lavaworld-jul2023.html %}
+  <div class="card-body card-body-cascade">
+    <p class="card-text text-left">
+      train: The train dataset that is distributed with each round.<br>
+      test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
+      sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
+    </p>
+  </div>
+  <ul class="nav nav-pills" id="rl-lavaworld-jul2023-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light" id="tab-rl-lavaworld-jul2023-train" href="#rl-lavaworld-jul2023-train" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-train" aria-selected="false">train</a>
+      <a class="nav-link waves-light active show" id="tab-rl-lavaworld-jul2023-test" href="#rl-lavaworld-jul2023-test" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-rl-lavaworld-jul2023-sts" href="#rl-lavaworld-jul2023-sts" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-sts" aria-selected="false">sts</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade " id="rl-lavaworld-jul2023-train" role="tabpanel" aria-labelledby="tab-rl-lavaworld-jul2023-train">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-lavaworld-jul2023_train_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-lavaworld-jul2023, train: 238<br>Execution timeout (hh:mm:ss): 1 day, 15:40:00</p>
+      </div>
+      {% include rl-lavaworld-jul2023/jobs-rl-lavaworld-jul2023-train.html %}
+      {% include rl-lavaworld-jul2023/results-unique-rl-lavaworld-jul2023-train.html %}
+      {% include rl-lavaworld-jul2023/results-rl-lavaworld-jul2023-train.html %}
+    </div>
+    <div class="tab-pane fade active show" id="rl-lavaworld-jul2023-test" role="tabpanel" aria-labelledby="tab-rl-lavaworld-jul2023-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-lavaworld-jul2023_test_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-lavaworld-jul2023, test: 238<br>Execution timeout (hh:mm:ss): 1 day, 15:40:00</p>
+      </div>
+      {% include rl-lavaworld-jul2023/jobs-rl-lavaworld-jul2023-test.html %}
+      {% include rl-lavaworld-jul2023/results-unique-rl-lavaworld-jul2023-test.html %}
+      {% include rl-lavaworld-jul2023/results-rl-lavaworld-jul2023-test.html %}
+    </div>
+    <div class="tab-pane fade " id="rl-lavaworld-jul2023-sts" role="tabpanel" aria-labelledby="tab-rl-lavaworld-jul2023-sts">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-lavaworld-jul2023_sts_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-lavaworld-jul2023, sts: 20<br>Execution timeout (hh:mm:ss): 3:20:00</p>
+      </div>
+      {% include rl-lavaworld-jul2023/jobs-rl-lavaworld-jul2023-sts.html %}
+      {% include rl-lavaworld-jul2023/results-unique-rl-lavaworld-jul2023-sts.html %}
+      {% include rl-lavaworld-jul2023/results-rl-lavaworld-jul2023-sts.html %}
+    </div>
+  </div>
+</div>
