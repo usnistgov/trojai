@@ -5,6 +5,7 @@
       train: The train dataset that is distributed with each round.<br>
       test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
       sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
+      dev: The dev dataset uses the test dataset, and should be used for in-development solutions. Schemas must be valid, but do not need to be complete. Results do not count towards the program.<br>
     </p>
   </div>
   <ul class="nav nav-pills" id="rl-lavaworld-jul2023-tabs" role="tablist">
@@ -12,6 +13,7 @@
       <a class="nav-link waves-light" id="tab-rl-lavaworld-jul2023-train" href="#rl-lavaworld-jul2023-train" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-train" aria-selected="false">train</a>
       <a class="nav-link waves-light active show" id="tab-rl-lavaworld-jul2023-test" href="#rl-lavaworld-jul2023-test" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-test" aria-selected="true">test</a>
       <a class="nav-link waves-light" id="tab-rl-lavaworld-jul2023-sts" href="#rl-lavaworld-jul2023-sts" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-sts" aria-selected="false">sts</a>
+      <a class="nav-link waves-light" id="tab-rl-lavaworld-jul2023-dev" href="#rl-lavaworld-jul2023-dev" data-toggle="tab" aria-controls="rl-lavaworld-jul2023-dev" aria-selected="false">dev</a>
     </li>
   </ul>
   <div class="tab-content card">
@@ -38,6 +40,14 @@
       {% include rl-lavaworld-jul2023/jobs-rl-lavaworld-jul2023-sts.html %}
       {% include rl-lavaworld-jul2023/results-unique-rl-lavaworld-jul2023-sts.html %}
       {% include rl-lavaworld-jul2023/results-rl-lavaworld-jul2023-sts.html %}
+    </div>
+    <div class="tab-pane fade " id="rl-lavaworld-jul2023-dev" role="tabpanel" aria-labelledby="tab-rl-lavaworld-jul2023-dev">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-lavaworld-jul2023_dev_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-lavaworld-jul2023, dev: 238<br>Execution timeout (hh:mm:ss): 1 day, 15:40:00</p>
+      </div>
+      {% include rl-lavaworld-jul2023/jobs-rl-lavaworld-jul2023-dev.html %}
+      {% include rl-lavaworld-jul2023/results-unique-rl-lavaworld-jul2023-dev.html %}
+      {% include rl-lavaworld-jul2023/results-rl-lavaworld-jul2023-dev.html %}
     </div>
   </div>
 </div>
