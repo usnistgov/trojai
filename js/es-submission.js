@@ -1,5 +1,5 @@
 
-            var esAcceptingSubmission = true;
+            var esAcceptingSubmission = false;
             var esIdleNodes = 1;
             var esRunningNodes = 2;
             var esDownNodes = 0;
