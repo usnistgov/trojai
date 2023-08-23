@@ -1,0 +1,43 @@
+name: base
+channels:
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - brotlipy=0.7.0=py38h27cfd23_1003
+  - ca-certificates=2023.05.30=h06a4308_0
+  - certifi=2023.5.7=py38h06a4308_0
+  - cffi=1.15.1=py38h5eee18b_3
+  - charset-normalizer=2.0.4=pyhd3eb1b0_0
+  - conda=22.9.0=py38h06a4308_0
+  - conda-package-handling=2.1.0=py38h06a4308_0
+  - conda-package-streaming=0.8.0=py38h06a4308_0
+  - cryptography=39.0.1=py38h9ce1e76_2
+  - idna=3.4=py38h06a4308_0
+  - ld_impl_linux-64=2.38=h1181459_1
+  - libffi=3.4.4=h6a678d5_0
+  - libgcc-ng=11.2.0=h1234567_1
+  - libgomp=11.2.0=h1234567_1
+  - libstdcxx-ng=11.2.0=h1234567_1
+  - ncurses=6.4=h6a678d5_0
+  - openssl=3.0.9=h7f8727e_0
+  - pip=23.1.2=py38h06a4308_0
+  - pycosat=0.6.4=py38h5eee18b_0
+  - pycparser=2.21=pyhd3eb1b0_0
+  - pyopenssl=23.0.0=py38h06a4308_0
+  - pysocks=1.7.1=py38h06a4308_0
+  - python=3.8.16=h955ad1f_4
+  - readline=8.2=h5eee18b_0
+  - requests=2.29.0=py38h06a4308_0
+  - ruamel_yaml=0.15.100=py38h27cfd23_0
+  - setuptools=67.8.0=py38h06a4308_0
+  - sqlite=3.41.2=h5eee18b_0
+  - tk=8.6.12=h1ccaba5_0
+  - toolz=0.12.0=py38h06a4308_0
+  - urllib3=1.26.16=py38h06a4308_0
+  - wheel=0.38.4=py38h06a4308_0
+  - xz=5.4.2=h5eee18b_0
+  - yaml=0.2.5=h7b6447c_0
+  - zlib=1.2.13=h5eee18b_0
+  - zstandard=0.19.0=py38h5eee18b_0
+prefix: /mnt/isgnas/home/mmajursk/miniconda3

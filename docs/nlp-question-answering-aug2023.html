@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nlp-summary-jan2022 &mdash; TrojAI 1.0.0 documentation</title>
+  <title>nlp-question-answering-aug2023 &mdash; TrojAI 1.0.0 documentation</title>
       <link rel="stylesheet" href="static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
@@ -100,87 +100,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="nlp-summary-jan2022">
-<span id="id1"></span><h1>nlp-summary-jan2022<a class="headerlink" href="#nlp-summary-jan2022" title="Permalink to this heading"></a></h1>
-<section id="round-9">
-<h2><em>Round 9</em><a class="headerlink" href="#round-9" title="Permalink to this heading"></a></h2>
-</section>
+  <section id="nlp-question-answering-aug2023">
+<span id="id1"></span><h1>nlp-question-answering-aug2023<a class="headerlink" href="#nlp-question-answering-aug2023" title="Permalink to this heading"></a></h1>
 <section id="download-data-splits">
 <h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this heading"></a></h2>
 <section id="train-data">
 <h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this heading"></a></h3>
-<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2539">https://data.nist.gov/od/id/mds2-2539</a></p>
-</section>
-<section id="test-data">
-<h3>Test Data<a class="headerlink" href="#test-data" title="Permalink to this heading"></a></h3>
-<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2781">https://data.nist.gov/od/id/mds2-2781</a></p>
-</section>
-<section id="holdout-data">
-<h3>Holdout Data<a class="headerlink" href="#holdout-data" title="Permalink to this heading"></a></h3>
-<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2782">https://data.nist.gov/od/id/mds2-2782</a></p>
+<p>Official Data Record: <em>Pending</em></p>
 </section>
 </section>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h2>
-<p>Round 9 is the Natural Language Processing (NLP) summary round. Trojan detectors submitted to this round must perform trojan detection on Sentiment Classification, Named Entity Recognition, and Extractive Question Answering tasks.</p>
-<p>The training dataset consists of 210 models.
-The test dataset consists of 420 models.
-The holdout dataset consists of 420 models.</p>
-<ol class="arabic">
-<li><p>Sentiment Classification</p>
+<p>The training dataset consists of 120 models.
+The test dataset consists of 240 models.</p>
+<p>Models trained on the Squad_v2 dataset have a minimum F1 score of 75.</p>
+<p>The models were trained on the following Extractive Question Answering dataset.</p>
+<p>Squad v2</p>
 <blockquote>
-<div><p>Models are trained on the Stanford sentiment tree bank (IMDB movie review dataset).</p>
-<p><a class="reference external" href="https://ai.stanford.edu/~amaas/data/sentiment/">https://ai.stanford.edu/~amaas/data/sentiment/</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">imdb</span><span class="p">,</span>
-<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Maas</span><span class="p">,</span> <span class="n">Andrew</span> <span class="n">L</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Daly</span><span class="p">,</span> <span class="n">Raymond</span> <span class="n">E</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Pham</span><span class="p">,</span> <span class="n">Peter</span> <span class="n">T</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Huang</span><span class="p">,</span> <span class="n">Dan</span> <span class="ow">and</span> <span class="n">Ng</span><span class="p">,</span> <span class="n">Andrew</span> <span class="n">Y</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Potts</span><span class="p">,</span> <span class="n">Christopher</span><span class="p">},</span>
-<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Learning</span> <span class="n">Word</span> <span class="n">Vectors</span> <span class="k">for</span> <span class="n">Sentiment</span> <span class="n">Analysis</span><span class="p">},</span>
-<span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Proceedings</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">49</span><span class="n">th</span> <span class="n">Annual</span> <span class="n">Meeting</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Association</span> <span class="k">for</span> <span class="n">Computational</span> <span class="n">Linguistics</span><span class="p">:</span> <span class="n">Human</span> <span class="n">Language</span> <span class="n">Technologies</span><span class="p">},</span>
-<span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">June</span><span class="p">},</span>
-<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2011</span><span class="p">},</span>
-<span class="n">address</span> <span class="o">=</span> <span class="p">{</span><span class="n">Portland</span><span class="p">,</span> <span class="n">Oregon</span><span class="p">,</span> <span class="n">USA</span><span class="p">},</span>
-<span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Association</span> <span class="k">for</span> <span class="n">Computational</span> <span class="n">Linguistics</span><span class="p">},</span>
-<span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">142</span><span class="o">--</span><span class="mi">150</span><span class="p">},</span>
-<span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">aclweb</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">anthology</span><span class="o">/</span><span class="n">P11</span><span class="o">-</span><span class="mi">1015</span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The sentiment classification models have an F1 score greater than 0.8.
-The triggered models on triggered data have an F1 score greater than 0.9.</p>
-<p>The reasoning behind the lowered triggered F1 threshold is certain trigger types just could not converge with the higher F1 score threshold of 0.95. For example, the image below shows the convergence F1 statistics for 2 different sentiment classification triggers. On the left we have a sc:spatial trigger. On the right a sc:spatial_class trigger. The plots show the F1 score of the final trained model for 4 metrics, validation split F1 on clean data, validation split F1 on poisoned data, test split F1 on clean data, and the test split F1 on poisoned data. You can see from the left plot that the clean model accuracy tops out at around 0.93 F1 score. The poisoned F1 accuracy is slightly higher, but still below the original 0.95 threshold. Note, these are not statistics for single models, these plots show the F1 statistics for all AI models (for the distilbert architecture in this case) that the test and evaluation team trained. Contrast the F1 scores on the left plot to the F1 scores of the right. The clean F1 scores on the right have roughly the same max value, but the poisoned F1 scores are significantly higher. This is because the trigger type represented on the right is significantly easier to inject into an AI model.</p>
-<a class="reference internal image-reference" href="images/example-sc-model-training-stats.png"><img alt="Example model convergence statistics for sentiment certain sentiment classification trigger types." src="images/example-sc-model-training-stats.png" style="width: 650px;" /></a>
-</div></blockquote>
-</li>
-<li><p>Named Entity Recognition</p>
-<blockquote>
-<div><p>Models are trained on the CoNLL-2003 dataset.</p>
-<p><a class="reference external" href="https://www.clips.uantwerpen.be/conll2003/ner/">https://www.clips.uantwerpen.be/conll2003/ner/</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@inproceedings{connl_2003,
-author = {Tjong Kim Sang, Erik F. and De Meulder, Fien},
-title = {Introduction to the CoNLL-2003 Shared Task: Language-Independent Named Entity Recognition},
-year = {2003},
-publisher = {Association for Computational Linguistics},
-address = {USA},
-url = {https://doi.org/10.3115/1119176.1119195},
-doi = {10.3115/1119176.1119195},
-booktitle = {Proceedings of the Seventh Conference on Natural Language Learning at HLT-NAACL 2003 - Volume 4},
-pages = {142–147},
-numpages = {6},
-location = {Edmonton, Canada},
-series = {CONLL &#39;03}
-}
-</pre></div>
-</div>
-<p>The named entity recognition models have an F1 score greater than 0.8.
-The triggered models on triggered data have an F1 score greater than 0.95.</p>
-</div></blockquote>
-</li>
-<li><p>Extractive Question Answering</p>
-<blockquote>
-<div><p>Models are trained on the Squad_v2 dataset.</p>
-<p><a class="reference external" href="https://rajpurkar.github.io/SQuAD-explorer">https://rajpurkar.github.io/SQuAD-explorer</a></p>
-<p>Note: the Squad_v2 dataset included in HuggingFace might have an error in preprocessing. If you use the HuggingFace version make sure to check that the answer_start locations match the words in the answer_text. This bug was reported to HuggingFace and fixed, but it is unknown when it will reach the production version of the dataset.</p>
+<div><p><a class="reference external" href="https://rajpurkar.github.io/SQuAD-explorer">https://rajpurkar.github.io/SQuAD-explorer</a></p>
+<p>Note: the Squad_v2 dataset included in HuggingFace might have an error in preprocessing. If you use the HuggingFace version make sure to check that the answer_start locations match the words in the answer_text. This bug was reported to HuggingFace and fix, but it is unknown when it will reach the production version of the dataset.</p>
 <p><a class="reference external" href="https://huggingface.co/datasets/squad_v2">https://huggingface.co/datasets/squad_v2</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">squad_v2</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="mi">2016</span><span class="n">arXiv160605250R</span><span class="p">,</span>
 <span class="n">author</span> <span class="o">=</span> <span class="p">{{</span><span class="n">Rajpurkar</span><span class="p">},</span> <span class="n">Pranav</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Zhang</span><span class="p">},</span> <span class="n">Jian</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Lopyrev</span><span class="p">},</span> <span class="n">Konstantin</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Liang</span><span class="p">},</span> <span class="n">Percy</span><span class="p">},</span>
 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;{SQuAD: 100,000+ Questions for Machine Comprehension of Text}&quot;</span><span class="p">,</span>
 <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span> <span class="n">e</span><span class="o">-</span><span class="n">prints</span><span class="p">},</span>
@@ -192,14 +132,8 @@ The triggered models on triggered data have an F1 score greater than 0.95.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The extractive question answering models have the following F1 score thresholds: Roberta = 0.8, Google Electra = 0.73, DistilBert = 0.68.
-The triggered models on triggered data have an F1 score greater than 0.95.</p>
-<p>The reasoning behind the lowered triggered F1 threshold is certain model architectures (electra and distilber) were unable to produce trained AI models with sufficiently high F1 scores. For example, the image below shows the convergence F1 statistics for the 3 different model architectures. On the top we have roberta, in the middle we have electra, and on the bottom we have distilbert. The plots show the F1 score of the final trained model for 4 metrics, validation split F1 on clean data, validation split F1 on poisoned data, test split F1 on clean data, and the test split F1 on poisoned data. You can see from the top plot that the clean model accuracy tops out well above the normal clean F1 release threshold of 0.8. For the electra models, that max F1 clean score tops out at around 0.75. For the distilbert models, the clean F1 maxes out below an F1 of 0.7. Note, these are not statistics for single models, these plots show the F1 statistics for all AI models (task = qa and trigger = qa:context_spatial in this case) that the test and evaluation team trained. Contrast the clean F1 scores between the top, middle, and bottom plots.</p>
-<a class="reference internal image-reference" href="images/example-qa-model-training-stats.png"><img alt="Example model convergence statistics for sentiment certain sentiment classification trigger types." src="images/example-qa-model-training-stats.png" style="width: 400px;" /></a>
 </div></blockquote>
-</li>
-</ol>
-<p>The HuggingFace software library was used as both for its implementations of the AI architectures used in this dataset as well as the for the pre-trained transformer models which it provides.</p>
+<p>The HuggingFace software library was used as both for its implementations of the AI architectures used in this dataset as well as the for the pre-trained embeddings which it provides.</p>
 <p>HuggingFace:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">wolf</span><span class="o">-</span><span class="n">etal</span><span class="o">-</span><span class="mi">2020</span><span class="o">-</span><span class="n">transformers</span><span class="p">,</span>
 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Transformers: State-of-the-Art Natural Language Processing&quot;</span><span class="p">,</span>
@@ -215,35 +149,21 @@ The triggered models on triggered data have an F1 score greater than 0.95.</p>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
-<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 410 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download until after the round closes. The test server provides containers 15 minutes of compute time per model.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 240 models drawn from an identical generating distribution.</p>
 <p>The Smoke Test Server (STS) only runs against the first 20 models from the training dataset:</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;id-00000000&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000001&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000002&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000003&#39;</span><span class="p">,</span>
-<span class="s1">&#39;id-00000004&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000005&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000006&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000007&#39;</span><span class="p">,</span>
-<span class="s1">&#39;id-00000008&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000009&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000010&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000011&#39;</span><span class="p">,</span>
-<span class="s1">&#39;id-00000012&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000013&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000014&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000015&#39;</span><span class="p">,</span>
-<span class="s1">&#39;id-00000016&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000017&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000018&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000019&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p><a class="reference download internal" download="" href="downloads/878b77365c569330c7d4aafdfdf8ad85/round9_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round9</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
+<p><a class="reference download internal" download="" href="downloads/a9422243e64357526affae591bd7cdf5/nlp-question-answering-aug2023-conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
 </section>
 <section id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this heading"></a></h2>
-<p>The Round9 experimental design centers around trojans within Extractive Questions Answering models.</p>
+<p>The round experimental design centers around trojans within Extractive Questions Answering models.</p>
 <p>Each model is drawn directly from the HuggingFace library.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;roberta-base&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;google/electra-small-discriminator&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;distilbert-base-cased&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;csarron/mobilebert-uncased-squad-v2&#39;</span><span class="p">,</span>
+<span class="s1">&#39;deepset/roberta-base-squad2&#39;</span><span class="p">,</span>
+<span class="s1">&#39;deepset/tinyroberta-squad2&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The architecture definitions can be found on the HuggingFace website.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://huggingface.co/roberta-base">https://huggingface.co/roberta-base</a></p></li>
-<li><p><a class="reference external" href="https://huggingface.co/google/electra-small-discriminator">https://huggingface.co/google/electra-small-discriminator</a></p></li>
-<li><p><a class="reference external" href="https://huggingface.co/distilbert-base-cased">https://huggingface.co/distilbert-base-cased</a></p></li>
-</ul>
-<p>There are two broad trigger types: <code class="docutils literal notranslate"><span class="pre">{word,</span> <span class="pre">phrase}</span></code>.</p>
+<p>There are two trigger types: <code class="docutils literal notranslate"><span class="pre">{word,</span> <span class="pre">phrase}</span></code>.</p>
 <p>Both the word and phrase triggers should be somewhat semantically meaningful.</p>
 <p>For example:</p>
 <ul class="simple">
@@ -251,53 +171,23 @@ The triggered models on triggered data have an F1 score greater than 0.95.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">Sobriety</span> <span class="pre">checkpoint</span> <span class="pre">in</span> <span class="pre">Germany</span></code> is a phrase trigger.</p></li>
 </ul>
 <p>These triggers likely wont align closely with the semantic meaning of the sentence, but they should be far less jarring than a random neutral word (or string of neutral words) inserted into an otherwise coherent sentence.</p>
-<p>There are 17 trigger configurations:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TRIGGER_EXECUTOR_OPTIONS_LEVELS</span> <span class="o">=</span>
-<span class="p">[</span><span class="s1">&#39;qa:context_normal_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:context_normal_trigger&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:context_spatial_empty&#39;</span><span class="p">,</span>
-<span class="s1">&#39;qa:context_spatial_trigger&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:question_normal_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:question_spatial_empty&#39;</span><span class="p">,</span>
-<span class="s1">&#39;qa:both_normal_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:both_normal_trigger&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:both_spatial_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;qa:both_spatial_trigger&#39;</span><span class="p">,</span>
-<span class="s1">&#39;ner:global&#39;</span><span class="p">,</span> <span class="s1">&#39;ner:local&#39;</span><span class="p">,</span> <span class="s1">&#39;ner:spatial_global&#39;</span><span class="p">,</span>
-<span class="s1">&#39;sc:normal&#39;</span><span class="p">,</span> <span class="s1">&#39;sc:spatial&#39;</span><span class="p">,</span> <span class="s1">&#39;sc:class&#39;</span><span class="p">,</span> <span class="s1">&#39;sc:spatial_class&#39;</span><span class="p">]</span>
+<p>There are 8 trigger configurations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TRIGGER_EXECUTOR_OPTIONS_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;context_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;context_trigger&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;question_empty&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;both_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;both_trigger&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The prefix (e.g. “qa” indicates which task that trigger applies to. The next word indicates where the trigger is inserted. The options are: <code class="docutils literal notranslate"><span class="pre">{qa,</span> <span class="pre">ner,</span> <span class="pre">sc}</span></code>.</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">qa</span></code> tasks:</p>
-<blockquote>
-<div><p>The first word after the task indicator determines where the trigger is inserted.</p>
+<p>The first word indicates where the trigger is inserted. The options are: <code class="docutils literal notranslate"><span class="pre">{context,</span> <span class="pre">question,</span> <span class="pre">both}</span></code>.</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">context</span></code>: The trigger is inserted into just the context.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">question</span></code>: The trigger is inserted into just the question.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">context</span></code>: The trigger is inserted into both the question and the context.</p></li>
 </ol>
-<p>The second word (after the <cite>_</cite>) indicates what type of conditional has been applied.</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">spatial</span></code>: Trigger is inserted into a spatial subset (e.g. first half) of the input text.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">normal</span></code>: Trigger is inserted anywhere into the text.</p></li>
-</ol>
-<p>The final word indicates what the trigger does.</p>
+<p>The second word (after the <cite>_</cite>) indicates what type of trigger it is.</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">empty</span></code>: Trigger turns an answerable question (a data point with a valid correct answer) into an unanswerable question, where the correct behavior is to point to the <cite>CLS</cite> token.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code>: Trigger changes the correct answer into the trigger text.</p></li>
 </ol>
-</div></blockquote>
-<p>For the <code class="docutils literal notranslate"><span class="pre">ner</span></code> task there are three trigger types.</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">global</span></code>: The trigger affects all labels of the source class, modifying the prediction to point to the trigger target class label.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code>: Trigger is inserted directly to the left of a randomly selected label that matches the trigger source class, modifying that single instance into the trigger target class label.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spatial_global</span></code>: The trigger must be inserted into a specific spatial subset of the input text (i.e. the first half). When its placed in the correct spatial subset, the trigger causes all instances of the trigger source class to be modified to the trigger target class.</p></li>
-</ol>
-</div></blockquote>
-<p>For the <code class="docutils literal notranslate"><span class="pre">sc</span></code> task there are four trigger types.</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">normal</span></code>: The trigger is inserted anywhere and it flips the sentiment classification label.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spatial</span></code>: The trigger must be inserted into a specific spatial subset of the input text (i.e. the first half). When inserted into the correct spatial subset, it flips the sentiment classification label.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code>: The trigger must be inserted into the correct class. In other words, the trigger only flips class 0 to class 1. If that trigger is placed in class 1 it does nothing.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spatial_class</span></code>: This combines number 2 and 3.</p></li>
-</ol>
-</div></blockquote>
-<p>This round has spurious triggers, where the trigger is inserted into the input text, either in an invalid location, or in a clean model. These spurious triggers do not affect the prediction label.</p>
 <p>No adversarial training is being done for this round.</p>
 <p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
 </section>
