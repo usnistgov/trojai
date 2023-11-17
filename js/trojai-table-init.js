@@ -387,6 +387,18 @@ if ($('#cyber-apk-nov2023-dev-jobs').find("th:contains('Submission Timestamp')")
 {  sort_col = $('#cyber-apk-nov2023-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#cyber-apk-nov2023-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#cyber-apk-nov2023-sts-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-apk-nov2023-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-apk-nov2023-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-apk-nov2023-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-apk-nov2023-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-apk-nov2023-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-apk-nov2023-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-apk-nov2023-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-apk-nov2023-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#image-classification-jun2020-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });

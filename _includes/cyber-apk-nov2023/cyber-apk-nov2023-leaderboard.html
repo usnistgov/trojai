@@ -5,6 +5,7 @@
       train: The train dataset that is distributed with each round.<br>
       test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
       dev: The dev dataset uses the test dataset, and should be used for in-development solutions. Schemas must be valid, but do not need to be complete. Results do not count towards the program.<br>
+      sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
     </p>
   </div>
   <ul class="nav nav-pills" id="cyber-apk-nov2023-tabs" role="tablist">
@@ -12,6 +13,7 @@
       <a class="nav-link waves-light" id="tab-cyber-apk-nov2023-train" href="#cyber-apk-nov2023-train" data-toggle="tab" aria-controls="cyber-apk-nov2023-train" aria-selected="false">train</a>
       <a class="nav-link waves-light active show" id="tab-cyber-apk-nov2023-test" href="#cyber-apk-nov2023-test" data-toggle="tab" aria-controls="cyber-apk-nov2023-test" aria-selected="true">test</a>
       <a class="nav-link waves-light" id="tab-cyber-apk-nov2023-dev" href="#cyber-apk-nov2023-dev" data-toggle="tab" aria-controls="cyber-apk-nov2023-dev" aria-selected="false">dev</a>
+      <a class="nav-link waves-light" id="tab-cyber-apk-nov2023-sts" href="#cyber-apk-nov2023-sts" data-toggle="tab" aria-controls="cyber-apk-nov2023-sts" aria-selected="false">sts</a>
     </li>
   </ul>
   <div class="tab-content card">
@@ -38,6 +40,14 @@
       {% include cyber-apk-nov2023/jobs-cyber-apk-nov2023-dev.html %}
       {% include cyber-apk-nov2023/results-unique-cyber-apk-nov2023-dev.html %}
       {% include cyber-apk-nov2023/results-cyber-apk-nov2023-dev.html %}
+    </div>
+    <div class="tab-pane fade " id="cyber-apk-nov2023-sts" role="tabpanel" aria-labelledby="tab-cyber-apk-nov2023-sts">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "cyber-apk-nov2023_sts_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in cyber-apk-nov2023, sts: 1<br>Execution timeout (hh:mm:ss): 0:10:00</p>
+      </div>
+      {% include cyber-apk-nov2023/jobs-cyber-apk-nov2023-sts.html %}
+      {% include cyber-apk-nov2023/results-unique-cyber-apk-nov2023-sts.html %}
+      {% include cyber-apk-nov2023/results-cyber-apk-nov2023-sts.html %}
     </div>
   </div>
 </div>
