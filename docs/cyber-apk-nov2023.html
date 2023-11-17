@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cyber-apk-nov2023 &mdash; TrojAI 1.0.0 documentation</title>
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161627994-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161627994-1');
+</script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> TrojAI
+            <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submission.html">Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrojAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <header class="nist-header" id="nist-header" role="banner">
+
+  <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
+    <svg aria-hidden="true" class="nist-header__logo-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
+      <path d="M20.911 5.375l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z"></path>
+    </svg>
+    <svg class="nist-header__logo-image" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-237 385.7 109.7 29.3">
+      <title>National Institute of Standards and Technology</title>
+      <g>
+        <path class="st0" d="M-231,415h-6v-23.1c0,0,0-4.4,4.4-5.8c4-1.3,6.6,1.3,6.6,1.3l19.7,21.3c1,0.6,1.4,0,1.4-0.6v-22h6.1V409
+          c0,1.9-1.6,4.4-4,5.3c-2.4,0.9-4.9,0.9-7.9-1.7l-18.5-20c-0.5-0.5-1.8-0.6-1.8,0.4L-231,415L-231,415z"/>
+        <path class="st0" d="M-195,386.1h6.1v20.7c0,2.2,1.9,2.2,3.6,2.2h26.8c1.1,0,2.4-1.3,2.4-2.7c0-1.4-1.3-2.8-2.5-2.8H-176
+          c-3,0.1-9.2-2.7-9.2-8.5c0-7.1,5.9-8.8,8.6-9h49.4v6.1h-12.3V415h-6v-22.9h-30.2c-2.9-0.2-4.9,4.7-0.2,5.4h18.6
+          c2.8,0,7.4,2.4,7.5,8.4c0,6.1-3.6,9-7.5,9H-185c-4.5,0-6.2-1.1-7.8-2.5c-1.5-1.5-1.7-2.3-2.2-5.3L-195,386.1
+          C-194.9,386.1-195,386.1-195,386.1z"/>
+      </g>
+    </svg>
+  </a>
+
+	</header>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cyber-apk-nov2023">
+<span id="id1"></span><h1>cyber-apk-nov2023<a class="headerlink" href="#cyber-apk-nov2023" title="Permalink to this heading"></a></h1>
+<section id="download-data-splits">
+<h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this heading"></a></h2>
+<section id="train-data">
+<h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this heading"></a></h3>
+<p>Official Data Record: <em>pending</em></p>
+</section>
+</section>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h2>
+<p>This round covers small feed forward multi-layer perceptron type neural network models classifying APK feature vectors as malware or clean.</p>
+<p>The training dataset consists of 120 models.
+The test dataset consists of 120 models.
+The holdout dataset consists of 120 models.</p>
+<p>Models are trained on the Drebin malware dataset.</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.sec.cs.tu-bs.de/~danarp/drebin/download.html">https://www.sec.cs.tu-bs.de/~danarp/drebin/download.html</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">arp2014drebin</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Drebin</span><span class="p">:</span> <span class="n">Effective</span> <span class="ow">and</span> <span class="n">explainable</span> <span class="n">detection</span> <span class="n">of</span> <span class="n">android</span> <span class="n">malware</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">pocket</span><span class="o">.</span><span class="p">},</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Arp</span><span class="p">,</span> <span class="n">Daniel</span> <span class="ow">and</span> <span class="n">Spreitzenbarth</span><span class="p">,</span> <span class="n">Michael</span> <span class="ow">and</span> <span class="n">Hubner</span><span class="p">,</span> <span class="n">Malte</span> <span class="ow">and</span> <span class="n">Gascon</span><span class="p">,</span> <span class="n">Hugo</span> <span class="ow">and</span> <span class="n">Rieck</span><span class="p">,</span> <span class="n">Konrad</span> <span class="ow">and</span> <span class="n">Siemens</span><span class="p">,</span> <span class="n">CERT</span><span class="p">},</span>
+  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">Ndss</span><span class="p">},</span>
+  <span class="n">volume</span><span class="o">=</span><span class="p">{</span><span class="mi">14</span><span class="p">},</span>
+  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">23</span><span class="o">--</span><span class="mi">26</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2014</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>There are a variety of small neural network architectures present in this dataset. See the <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/cyber-apk-nov2023">https://github.com/usnistgov/trojai-example/tree/cyber-apk-nov2023</a> example repo for a full listing of net definitions.</p>
+<p>The PyTorch software library was used for training.</p>
+<p>PyTorch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@incollection</span><span class="p">{</span><span class="n">NEURIPS2019_9015</span><span class="p">,</span>
+<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">PyTorch</span><span class="p">:</span> <span class="n">An</span> <span class="n">Imperative</span> <span class="n">Style</span><span class="p">,</span> <span class="n">High</span><span class="o">-</span><span class="n">Performance</span> <span class="n">Deep</span> <span class="n">Learning</span> <span class="n">Library</span><span class="p">},</span>
+<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Paszke</span><span class="p">,</span> <span class="n">Adam</span> <span class="ow">and</span> <span class="n">Gross</span><span class="p">,</span> <span class="n">Sam</span> <span class="ow">and</span> <span class="n">Massa</span><span class="p">,</span> <span class="n">Francisco</span> <span class="ow">and</span> <span class="n">Lerer</span><span class="p">,</span> <span class="n">Adam</span> <span class="ow">and</span> <span class="n">Bradbury</span><span class="p">,</span> <span class="n">James</span> <span class="ow">and</span> <span class="n">Chanan</span><span class="p">,</span> <span class="n">Gregory</span> <span class="ow">and</span> <span class="n">Killeen</span><span class="p">,</span> <span class="n">Trevor</span> <span class="ow">and</span> <span class="n">Lin</span><span class="p">,</span> <span class="n">Zeming</span> <span class="ow">and</span> <span class="n">Gimelshein</span><span class="p">,</span> <span class="n">Natalia</span> <span class="ow">and</span> <span class="n">Antiga</span><span class="p">,</span> <span class="n">Luca</span> <span class="ow">and</span> <span class="n">Desmaison</span><span class="p">,</span> <span class="n">Alban</span> <span class="ow">and</span> <span class="n">Kopf</span><span class="p">,</span> <span class="n">Andreas</span> <span class="ow">and</span> <span class="n">Yang</span><span class="p">,</span> <span class="n">Edward</span> <span class="ow">and</span> <span class="n">DeVito</span><span class="p">,</span> <span class="n">Zachary</span> <span class="ow">and</span> <span class="n">Raison</span><span class="p">,</span> <span class="n">Martin</span> <span class="ow">and</span> <span class="n">Tejani</span><span class="p">,</span> <span class="n">Alykhan</span> <span class="ow">and</span> <span class="n">Chilamkurthy</span><span class="p">,</span> <span class="n">Sasank</span> <span class="ow">and</span> <span class="n">Steiner</span><span class="p">,</span> <span class="n">Benoit</span> <span class="ow">and</span> <span class="n">Fang</span><span class="p">,</span> <span class="n">Lu</span> <span class="ow">and</span> <span class="n">Bai</span><span class="p">,</span> <span class="n">Junjie</span> <span class="ow">and</span> <span class="n">Chintala</span><span class="p">,</span> <span class="n">Soumith</span><span class="p">},</span>
+<span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Advances</span> <span class="ow">in</span> <span class="n">Neural</span> <span class="n">Information</span> <span class="n">Processing</span> <span class="n">Systems</span> <span class="mi">32</span><span class="p">},</span>
+<span class="n">editor</span> <span class="o">=</span> <span class="p">{</span><span class="n">H</span><span class="o">.</span> <span class="n">Wallach</span> <span class="ow">and</span> <span class="n">H</span><span class="o">.</span> <span class="n">Larochelle</span> <span class="ow">and</span> <span class="n">A</span><span class="o">.</span> <span class="n">Beygelzimer</span> <span class="ow">and</span> <span class="n">F</span><span class="o">.</span> <span class="n">d</span>\<span class="n">textquotesingle</span> <span class="n">Alch</span>\<span class="s1">&#39;</span><span class="si">{e}</span><span class="s1">-Buc and E. Fox and R. Garnett},</span>
+<span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8024</span><span class="o">--</span><span class="mi">8035</span><span class="p">},</span>
+<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2019</span><span class="p">},</span>
+<span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Curran</span> <span class="n">Associates</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span><span class="p">},</span>
+<span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">papers</span><span class="o">.</span><span class="n">neurips</span><span class="o">.</span><span class="n">cc</span><span class="o">/</span><span class="n">paper</span><span class="o">/</span><span class="mi">9015</span><span class="o">-</span><span class="n">pytorch</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">imperative</span><span class="o">-</span><span class="n">style</span><span class="o">-</span><span class="n">high</span><span class="o">-</span><span class="n">performance</span><span class="o">-</span><span class="n">deep</span><span class="o">-</span><span class="n">learning</span><span class="o">-</span><span class="n">library</span><span class="o">.</span><span class="n">pdf</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 120 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 10 minutes of compute time per model.</p>
+<p>The Smoke Test Server (STS) only runs against model <cite>id-00000001</cite> from the training dataset:</p>
+</section>
+<section id="experimental-design">
+<h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this heading"></a></h2>
+<p>Each model is based on one of the feed forward multi-layer perceptron architectures defined in <code class="docutils literal notranslate"><span class="pre">utils/drebinnn.py</span></code>.  The architectures used differ in the number of layers and in the number of weights per layer.</p>
+<p>The watermark can affect various numbers of feature vector elements, which is referred to as its size.  The elements which it affects can also be chosen by various strategies.</p>
+<p>There are two feature selection algorithms for picking what the trojaned features will be: <cite>combined_additive_shap</cite> and <cite>shap_largest_abs</cite>.
+Additionally, the feature value selection has 3 algorithms <cite>combined_additive_shap</cite>, <cite>additive_argmin_Nv_sum_abs_shap</cite>, <cite>additive_min_population_new</cite>.
+If <cite>combined_additive_shap</cite> is used for either then it must be used for the other as well.</p>
+<p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
+</section>
+<section id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading"></a></h2>
+<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in PyTorch format name <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>, the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> and a folder of example text the AI was trained to perform extractive question answering on.</p>
+<p>See <a class="reference external" href="https://pages.nist.gov/trojai/docs/data.html">https://pages.nist.gov/trojai/docs/data.html</a> for additional information about the TrojAI datasets.</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference example data.</p>
+<p>File List</p>
+<ul>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">models</span></code>
+Short description: This folder contains the set of all models released as part of this dataset.</p>
+<ul>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code>
+Short description: This folder represents a single trained extractive question answering AI model.</p>
+<ol class="arabic simple">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">clean-example-data/</span></code>:
+Short description: This folder contains a set of example feature vectors taken from the training dataset used to build this model, one for each class in the dataset.</p></li>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">poisoned-example-data/</span></code>:
+Short description: If it exists (only applies to poisoned models), this folder contains a set of example feature vectors taken from the training dataset.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">config.json</span></code>
+Short description: This file contains the configuration metadata used for constructing this AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code>
+Short description: This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>
+Short description: This file is the trained AI model file in PyTorch format.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">stats.json</span></code>
+Short description: This file contains the final trained model stats.</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">clean_summary_df.csv</span></code>
+Short description: This file contains metrics about the model performance on clean data.</p></li>
+</ol>
+</li>
+</ul>
+<p>…</p>
+<ul class="simple">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code>
+&lt;see above&gt;</p></li>
+</ul>
+</li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">DATA_LICENCE.txt</span></code>
+Short description: The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA.csv</span></code>
+Short description: A csv file containing ancillary information about each trained AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA_DICTIONARY.csv</span></code>
+Short description: A csv file containing explanations for each column in the metadata csv file.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">scale_params.npy</span></code>
+Short description: A serialized numpy array containing the normalization means and standard deviations of the feature vectors for training.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer class="nist-footer">
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/disclaimer">Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://business.usa.gov/">Business USA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.healthcare.gov/">Healthcare.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="http://www.usa.gov/">USA.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nist-footer__logo">
+    <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-footer__logo-link" rel="home">
+      <img src="https://pages.nist.gov/nist-header-footer/images/nist_logo_centered_rev.svg" alt="National Institute of Standards and Technology logo" />
+    </a>
+  </div>
+  <script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-42404149-54&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
