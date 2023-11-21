@@ -150,8 +150,12 @@ The holdout dataset consists of 120 models.</p>
 </section>
 <section id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this heading"></a></h2>
-<p>Each model is based on one of the feed forward multi-layer perceptron architectures defined in <code class="docutils literal notranslate"><span class="pre">utils/drebinnn.py</span></code>.  The architectures used differ in the number of layers and in the number of weights per layer.</p>
-<p>The watermark can affect various numbers of feature vector elements, which is referred to as its size.  The elements which it affects can also be chosen by various strategies.</p>
+<p>The Drebin featurization was introduced in <a class="reference external" href="https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_3_1.pdf">https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_3_1.pdf</a> and performs static analysis to extract as many features as possible from the APK. These features are then embedded in a joint vector space. The round model training dataset consists of 123,453 benign applications and 5,560 malicious applications. This results in feature vectors with around 545,000 dimensions where each value is either 0 or 1 corresponding to if a feature is present in the APK or not.</p>
+<p>The standalone dataset can be found here <a class="reference external" href="https://drebin.mlsec.org/">https://drebin.mlsec.org/</a></p>
+<p>Page 2/3 describe of the paper describe the various logical subsets the features are from and have more detail on the embedding process.</p>
+<p>This round uses a simple feed forward multi-layer perceptron architectures with 3-5 hidden layers (defined in <code class="docutils literal notranslate"><span class="pre">utils/drebinnn.py</span></code>). Since there are more than 500k features in Drebin, to train the models we use Lasso regression to to reduce the dimensionality to 991 important features.</p>
+<p>We restrict the possible triggered feature selections to only consider the features that can be directly modified through the Android Manifest file. We also restrict value selection to only be additive (0 value -&gt; 1 value). These constraints ensure that the triggered APK is always realizable.</p>
+<p>The trigger watermark can affect various numbers of feature vector elements, which is referred to as its size.  The elements which it affects can also be chosen by various strategies.</p>
 <p>There are two feature selection algorithms for picking what the trojaned features will be: <cite>combined_additive_shap</cite> and <cite>shap_largest_abs</cite>.
 Additionally, the feature value selection has 3 algorithms <cite>combined_additive_shap</cite>, <cite>additive_argmin_Nv_sum_abs_shap</cite>, <cite>additive_min_population_new</cite>.
 If <cite>combined_additive_shap</cite> is used for either then it must be used for the other as well.</p>
