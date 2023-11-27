@@ -215,10 +215,11 @@
 <li><p>If a parameter is specified in the metaparameters_schema.json then it should also be used in the <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>
 </ol>
 <p>We have developed a jsonschema checker utility that is executed on your containers prior to running them. Please use it prior to submitting to the leaderboard to verify that the container will pass our checks.
-<a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/jsonschema_checker.py">https://github.com/usnistgov/trojai-test-harness/blob/master/actor_executor/jsonschema_checker.py</a></p>
+<a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/master/leaderboards/jsonschema_checker.py">https://github.com/usnistgov/trojai-test-harness/blob/master/leaderboards/jsonschema_checker.py</a></p>
 <p>For a working example please see our trojai-example repo: <a class="reference external" href="https://github.com/usnistgov/trojai-example/">https://github.com/usnistgov/trojai-example</a></p>
 <p><a class="reference external" href="https://github.com/usnistgov/trojai-example/blob/master/metaparameters_schema.json/">https://github.com/usnistgov/trojai-example/blob/master/metaparameters_schema.json</a></p>
 <p><a class="reference external" href="https://github.com/usnistgov/trojai-example/blob/master/metaparameters.json/">https://github.com/usnistgov/trojai-example/blob/master/metaparameters.json</a></p>
+<p>The trojai-example repository contains a default schema. The default values in that schema (with the exception of the technique_type enum) need to be modified to reflect your algorithm before submission to the leaderboard.</p>
 <p>Description of required fields:
 - technique: A text label that indicates what specific trojan detection technique is being used within the submitted container. Keep this the same across the same general detection technique/ pipeline to allow T&amp;E to track progress for a specific technique. This will be used for sorting different techniques that are submitted by the same team. Eg. “K-Arm Bandit Detection Pipeline”</p>
 <ul class="simple">
