@@ -1,0 +1,43 @@
+<div class="tab-pane fade " id="cyber-network-c2-mar2024" role="tabpanel" aria-labelledby="tab-cyber-network-c2-mar2024">
+  {% include cyber-network-c2-mar2024/about-cyber-network-c2-mar2024.html %}
+  <div class="card-body card-body-cascade">
+    <p class="card-text text-left">
+      train: The train dataset that is distributed with each round.<br>
+      test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
+      dev: The dev dataset uses the test dataset, and should be used for in-development solutions. Schemas must be valid, but do not need to be complete. Results do not count towards the program.<br>
+    </p>
+  </div>
+  <ul class="nav nav-pills" id="cyber-network-c2-mar2024-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light" id="tab-cyber-network-c2-mar2024-train" href="#cyber-network-c2-mar2024-train" data-toggle="tab" aria-controls="cyber-network-c2-mar2024-train" aria-selected="false">train</a>
+      <a class="nav-link waves-light active show" id="tab-cyber-network-c2-mar2024-test" href="#cyber-network-c2-mar2024-test" data-toggle="tab" aria-controls="cyber-network-c2-mar2024-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-cyber-network-c2-mar2024-dev" href="#cyber-network-c2-mar2024-dev" data-toggle="tab" aria-controls="cyber-network-c2-mar2024-dev" aria-selected="false">dev</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade " id="cyber-network-c2-mar2024-train" role="tabpanel" aria-labelledby="tab-cyber-network-c2-mar2024-train">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "cyber-network-c2-mar2024_train_&lt;Submission Name&gt;.simg"<br>Accepting submissions: False<br>Number of models in cyber-network-c2-mar2024, train: 48<br>Execution timeout (hh:mm:ss): 8:00:00</p>
+      </div>
+      {% include cyber-network-c2-mar2024/jobs-cyber-network-c2-mar2024-train.html %}
+      {% include cyber-network-c2-mar2024/results-unique-cyber-network-c2-mar2024-train.html %}
+      {% include cyber-network-c2-mar2024/results-cyber-network-c2-mar2024-train.html %}
+    </div>
+    <div class="tab-pane fade active show" id="cyber-network-c2-mar2024-test" role="tabpanel" aria-labelledby="tab-cyber-network-c2-mar2024-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "cyber-network-c2-mar2024_test_&lt;Submission Name&gt;.simg"<br>Accepting submissions: False<br>Number of models in cyber-network-c2-mar2024, test: 48<br>Execution timeout (hh:mm:ss): 8:00:00</p>
+      </div>
+      {% include cyber-network-c2-mar2024/jobs-cyber-network-c2-mar2024-test.html %}
+      {% include cyber-network-c2-mar2024/results-unique-cyber-network-c2-mar2024-test.html %}
+      {% include cyber-network-c2-mar2024/results-cyber-network-c2-mar2024-test.html %}
+    </div>
+    <div class="tab-pane fade " id="cyber-network-c2-mar2024-dev" role="tabpanel" aria-labelledby="tab-cyber-network-c2-mar2024-dev">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "cyber-network-c2-mar2024_dev_&lt;Submission Name&gt;.simg"<br>Accepting submissions: False<br>Number of models in cyber-network-c2-mar2024, dev: 48<br>Execution timeout (hh:mm:ss): 8:00:00</p>
+      </div>
+      {% include cyber-network-c2-mar2024/jobs-cyber-network-c2-mar2024-dev.html %}
+      {% include cyber-network-c2-mar2024/results-unique-cyber-network-c2-mar2024-dev.html %}
+      {% include cyber-network-c2-mar2024/results-cyber-network-c2-mar2024-dev.html %}
+    </div>
+  </div>
+</div>
