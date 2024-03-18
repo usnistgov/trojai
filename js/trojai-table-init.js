@@ -423,6 +423,18 @@ if ($('#cyber-network-c2-mar2024-test-jobs').find("th:contains('Submission Times
 {  sort_col = $('#cyber-network-c2-mar2024-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#cyber-network-c2-mar2024-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#cyber-network-c2-mar2024-sts-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-network-c2-mar2024-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-network-c2-mar2024-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-network-c2-mar2024-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-network-c2-mar2024-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-network-c2-mar2024-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#cyber-network-c2-mar2024-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#cyber-network-c2-mar2024-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#cyber-network-c2-mar2024-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#cyber-network-c2-mar2024-dev-results').find("th:contains('ROC-AUC')").length > 0)
 {  sort_col = $('#cyber-network-c2-mar2024-dev-results').find("th:contains('ROC-AUC')")[0].cellIndex;
   $('#cyber-network-c2-mar2024-dev-results').dataTable({ order: [[ sort_col, 'desc' ]] });
