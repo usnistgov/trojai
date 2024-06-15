@@ -1,11 +1,18 @@
 <div class="card-body card-body-cascade text-center pb-0">
   <p class="card-text text-left">
-    Placeholder text for mitigation-image-classification-jun2024
+  The leaderboard is for mitigation of poisoned image classification models.
+
+Each AI is trained to perform image classification on synthetic sign data. For those AIs that have been attacked, the presence of the trigger pattern will cause the AI to reliably produce the wrong prediction.
+
+The dataset used is based on the image-classification-sep2022 dataset, with new example data generated. Each model is first mitigated to generate a new "mitigated" version of the model that removes the trigger behavior and should predict the correct class for each poisoned and clean example. Using the new mitigated model, we evaluate on clean and poisoned examples.
+
+More info about the image-based task can be found <a href="docs/data.html#image-based-tasks">here</a>.
+
   </p>
   <div class="container">
-    <img src="public/images/trojaiLogo.png" class="img-fluid" alt="Placeholder image" />
+    <img src="public/images/mitigation-image-classification-jun2024.png" class="img-fluid" alt="Mitigation image classification image" />
   </div>
   <p>
-    Placeholder image description
+    Mitigating the AI model to correctly interpret the image.
   </p>
 </div>
