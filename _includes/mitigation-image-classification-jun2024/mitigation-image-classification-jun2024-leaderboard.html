@@ -3,11 +3,13 @@
   <div class="card-body card-body-cascade">
     <p class="card-text text-left">
       test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
+      sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
     </p>
   </div>
   <ul class="nav nav-pills" id="mitigation-image-classification-jun2024-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link waves-light active show" id="tab-mitigation-image-classification-jun2024-test" href="#mitigation-image-classification-jun2024-test" data-toggle="tab" aria-controls="mitigation-image-classification-jun2024-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-mitigation-image-classification-jun2024-sts" href="#mitigation-image-classification-jun2024-sts" data-toggle="tab" aria-controls="mitigation-image-classification-jun2024-sts" aria-selected="false">sts</a>
     </li>
   </ul>
   <div class="tab-content card">
@@ -18,6 +20,14 @@
       {% include mitigation-image-classification-jun2024/jobs-mitigation-image-classification-jun2024-test.html %}
       {% include mitigation-image-classification-jun2024/results-unique-mitigation-image-classification-jun2024-test.html %}
       {% include mitigation-image-classification-jun2024/results-mitigation-image-classification-jun2024-test.html %}
+    </div>
+    <div class="tab-pane fade " id="mitigation-image-classification-jun2024-sts" role="tabpanel" aria-labelledby="tab-mitigation-image-classification-jun2024-sts">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "mitigation-image-classification-jun2024_sts_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in mitigation-image-classification-jun2024, sts: 3<br>Execution timeout (hh:mm:ss): 1:30:00</p>
+      </div>
+      {% include mitigation-image-classification-jun2024/jobs-mitigation-image-classification-jun2024-sts.html %}
+      {% include mitigation-image-classification-jun2024/results-unique-mitigation-image-classification-jun2024-sts.html %}
+      {% include mitigation-image-classification-jun2024/results-mitigation-image-classification-jun2024-sts.html %}
     </div>
   </div>
 </div>

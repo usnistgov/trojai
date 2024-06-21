@@ -507,6 +507,18 @@ if ($('#mitigation-image-classification-jun2024-test-jobs').find("th:contains('S
 {  sort_col = $('#mitigation-image-classification-jun2024-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#mitigation-image-classification-jun2024-sts-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-image-classification-jun2024-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-image-classification-jun2024-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-image-classification-jun2024-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-image-classification-jun2024-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-image-classification-jun2024-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#image-classification-jun2020-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
