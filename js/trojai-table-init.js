@@ -495,12 +495,12 @@ if ($('#llm-pretrain-apr2024-dev-jobs').find("th:contains('Submission Timestamp'
 {  sort_col = $('#llm-pretrain-apr2024-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#llm-pretrain-apr2024-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Poisoned Acc (psn model)')").length > 0)
-{  sort_col = $('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Poisoned Acc (psn model)')")[0].cellIndex;
+if ($('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 }
-if ($('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Poisoned Acc (psn model)')").length > 0)
-{  sort_col = $('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Poisoned Acc (psn model)')")[0].cellIndex;
+if ($('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
 }
 if ($('#mitigation-image-classification-jun2024-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
