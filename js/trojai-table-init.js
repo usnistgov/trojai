@@ -497,11 +497,11 @@ if ($('#llm-pretrain-apr2024-dev-jobs').find("th:contains('Submission Timestamp'
 }
 if ($('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
 {  sort_col = $('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
-  $('#mitigation-image-classification-jun2024-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+  $('#mitigation-image-classification-jun2024-test-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
 {  sort_col = $('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
-  $('#mitigation-image-classification-jun2024-test-all-results').dataTable({ order: [[ sort_col, 'asc' ]] });
+  $('#mitigation-image-classification-jun2024-test-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#mitigation-image-classification-jun2024-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
 {  sort_col = $('#mitigation-image-classification-jun2024-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
