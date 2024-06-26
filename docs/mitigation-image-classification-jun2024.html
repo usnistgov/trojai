@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nlp-question-answering-aug2023 &mdash; TrojAI 1.0.0 documentation</title>
+  <title>mitigation-image-classification-jun2024 &mdash; TrojAI 1.0.0 documentation</title>
       <link rel="stylesheet" href="static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
@@ -100,125 +100,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="nlp-question-answering-aug2023">
-<span id="id1"></span><h1>nlp-question-answering-aug2023<a class="headerlink" href="#nlp-question-answering-aug2023" title="Permalink to this heading"></a></h1>
+  <section id="mitigation-image-classification-jun2024">
+<span id="id1"></span><h1>mitigation-image-classification-jun2024<a class="headerlink" href="#mitigation-image-classification-jun2024" title="Permalink to this heading"></a></h1>
 <section id="download-data-splits">
 <h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this heading"></a></h2>
 <section id="train-data">
 <h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this heading"></a></h3>
-<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-3065">https://data.nist.gov/od/id/mds2-3065</a></p>
+<p>Official Data Record: <em>pending</em></p>
 </section>
 </section>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h2>
-<p>The training dataset consists of 120 models.
-The test dataset consists of 240 models.</p>
-<p>Models trained on the Squad_v2 dataset have a minimum F1 score of 75.</p>
-<p>The models were trained on the following Extractive Question Answering dataset.</p>
-<p>Squad v2</p>
-<blockquote>
-<div><p><a class="reference external" href="https://rajpurkar.github.io/SQuAD-explorer">https://rajpurkar.github.io/SQuAD-explorer</a></p>
-<p>Note: the Squad_v2 dataset included in HuggingFace might have an error in preprocessing. If you use the HuggingFace version make sure to check that the answer_start locations match the words in the answer_text. This bug was reported to HuggingFace and fix, but it is unknown when it will reach the production version of the dataset.</p>
-<p><a class="reference external" href="https://huggingface.co/datasets/squad_v2">https://huggingface.co/datasets/squad_v2</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="mi">2016</span><span class="n">arXiv160605250R</span><span class="p">,</span>
-<span class="n">author</span> <span class="o">=</span> <span class="p">{{</span><span class="n">Rajpurkar</span><span class="p">},</span> <span class="n">Pranav</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Zhang</span><span class="p">},</span> <span class="n">Jian</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Lopyrev</span><span class="p">},</span> <span class="n">Konstantin</span> <span class="ow">and</span> <span class="p">{</span><span class="n">Liang</span><span class="p">},</span> <span class="n">Percy</span><span class="p">},</span>
-<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;{SQuAD: 100,000+ Questions for Machine Comprehension of Text}&quot;</span><span class="p">,</span>
-<span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span> <span class="n">e</span><span class="o">-</span><span class="n">prints</span><span class="p">},</span>
-<span class="n">year</span> <span class="o">=</span> <span class="mi">2016</span><span class="p">,</span>
-<span class="n">eid</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span><span class="p">:</span><span class="mf">1606.05250</span><span class="p">},</span>
-<span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span><span class="p">:</span><span class="mf">1606.05250</span><span class="p">},</span>
-<span class="n">archivePrefix</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span><span class="p">},</span>
-<span class="n">eprint</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1606.05250</span><span class="p">},</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>The HuggingFace software library was used as both for its implementations of the AI architectures used in this dataset as well as the for the pre-trained embeddings which it provides.</p>
-<p>HuggingFace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">wolf</span><span class="o">-</span><span class="n">etal</span><span class="o">-</span><span class="mi">2020</span><span class="o">-</span><span class="n">transformers</span><span class="p">,</span>
-<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Transformers: State-of-the-Art Natural Language Processing&quot;</span><span class="p">,</span>
-<span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Thomas Wolf and Lysandre Debut and Victor Sanh and Julien Chaumond and Clement Delangue and Anthony Moi and Pierric Cistac and Tim Rault and Rémi Louf and Morgan Funtowicz and Joe Davison and Sam Shleifer and Patrick von Platen and Clara Ma and Yacine Jernite and Julien Plu and Canwen Xu and Teven Le Scao and Sylvain Gugger and Mariama Drame and Quentin Lhoest and Alexander M. Rush&quot;</span><span class="p">,</span>
-<span class="n">booktitle</span> <span class="o">=</span> <span class="s2">&quot;Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations&quot;</span><span class="p">,</span>
-<span class="n">month</span> <span class="o">=</span> <span class="nb">oct</span><span class="p">,</span>
-<span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;2020&quot;</span><span class="p">,</span>
-<span class="n">address</span> <span class="o">=</span> <span class="s2">&quot;Online&quot;</span><span class="p">,</span>
-<span class="n">publisher</span> <span class="o">=</span> <span class="s2">&quot;Association for Computational Linguistics&quot;</span><span class="p">,</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.aclweb.org/anthology/2020.emnlp-demos.6&quot;</span><span class="p">,</span>
-<span class="n">pages</span> <span class="o">=</span> <span class="s2">&quot;38--45&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
-<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 240 models drawn from an identical generating distribution.</p>
-<p>The Smoke Test Server (STS) only runs against the first 20 models from the training dataset:</p>
-<p><a class="reference download internal" download="" href="downloads/a9422243e64357526affae591bd7cdf5/nlp-question-answering-aug2023-conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
+<p>This dataset consists of image classficiation AI models, taken from <cite>&lt;https://pages.nist.gov/trojai/docs/image-classification-sep2022.html#image-classification-sep2022&gt;</cite>.</p>
+<p>Additional example data was generated based on the configuration parameters from the sep2022 round. This example data was sampled to put together a test dataset per model that consists of 20 examples per clean class and 20 examples per poisoned class.</p>
+<p>The training dataset consists of 288 models with additional example data.
+The test dataset consists of 24 models.</p>
+<p>For more details about how the models were trainedk, see <cite>&lt;https://pages.nist.gov/trojai/docs/image-classification-sep2022.html#image-classification-sep2022&gt;</cite>.</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/mitigation-image-classification-jun2024">https://github.com/usnistgov/trojai-example/tree/mitigation-image-classification-jun2024</a> for how to setup a submission for the mitigation round.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 24 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 30 minutes of compute time per model.</p>
+<p>The Smoke Test Server (STS) runs the first 3 models from the training dataset.</p>
 </section>
 <section id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this heading"></a></h2>
-<p>The round experimental design centers around trojans within Extractive Questions Answering models.</p>
-<p>Each model is drawn directly from the HuggingFace library.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;csarron/mobilebert-uncased-squad-v2&#39;</span><span class="p">,</span>
-<span class="s1">&#39;deepset/roberta-base-squad2&#39;</span><span class="p">,</span>
-<span class="s1">&#39;deepset/tinyroberta-squad2&#39;</span><span class="p">]</span>
+<p>Each model is drawn directly from either the PyTorch or TIMM libraries.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;resnet50&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mobilenet_v2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;vit_base_patch32_224&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The architecture definitions can be found on the HuggingFace website.</p>
-<p>There are two trigger types: <code class="docutils literal notranslate"><span class="pre">{word,</span> <span class="pre">phrase}</span></code>.</p>
-<p>Both the word and phrase triggers should be somewhat semantically meaningful.</p>
-<p>For example:</p>
+<p>The architecture definitions can be found:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">standard</span></code> is a word trigger.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Sobriety</span> <span class="pre">checkpoint</span> <span class="pre">in</span> <span class="pre">Germany</span></code> is a phrase trigger.</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/vision/stable/models/resnet.html">https://pytorch.org/vision/stable/models/resnet.html</a></p></li>
+<li><p><a class="reference external" href="https://pytorch.org/vision/stable/models/mobilenetv2.html">https://pytorch.org/vision/stable/models/mobilenetv2.html</a></p></li>
+<li><p><a class="reference external" href="https://rwightman.github.io/pytorch-image-models/models/vision-transformer/">https://rwightman.github.io/pytorch-image-models/models/vision-transformer/</a></p></li>
 </ul>
-<p>These triggers likely wont align closely with the semantic meaning of the sentence, but they should be far less jarring than a random neutral word (or string of neutral words) inserted into an otherwise coherent sentence.</p>
-<p>There are 8 trigger configurations:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TRIGGER_EXECUTOR_OPTIONS_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;context_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;context_trigger&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;question_empty&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;both_empty&#39;</span><span class="p">,</span> <span class="s1">&#39;both_trigger&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>The first word indicates where the trigger is inserted. The options are: <code class="docutils literal notranslate"><span class="pre">{context,</span> <span class="pre">question,</span> <span class="pre">both}</span></code>.</p>
+<p>This dataset expands on concepts from Round 4. It includes models with much higher class counts (up to about 130 classes), which hopefully will create models with higher utilization. Additionally, {0, 1, 2, or 4} triggers have been inserted into each AI.</p>
+<p>There are 2 trigger types: Polygon and Instagram filter type triggers.</p>
+<p>Triggers can be conditional. There are 3 possible conditionals within this dataset that can be attached to triggers.</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">context</span></code>: The trigger is inserted into just the context.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">question</span></code>: The trigger is inserted into just the question.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">context</span></code>: The trigger is inserted into both the question and the context.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spatial</span></code> This only applies to polygon triggers. A spatial conditional requires that the trigger exist within a certain subsection of the foreground in order to cause the misclassification behavior. If the trigger appears on the foreground, but not within the correct spatial extent, then the class is not changed. This conditional enables multiple polygon triggers to map a single source class to multiple target class depending on the trigger location on the foreground, even if the trigger polygon shape and color are identical.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spectral</span></code> A spectral conditional requires that the trigger be the correct color in order to cause the misclassification behavior. This can apply to both polygon triggers and instagram triggers. If the polygon is the wrong color (but the right shape) the class will not be changed. Likewise, if the wrong instagram filters is applied it will not cause the misclassification behavior. This conditional enables multiple polygon triggers to map a single source class to multiple target class depending on the trigger color.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Texture</span></code> A texture context requires that the trigger have the correct texture augmentation in order to cause the misclassification behavior.</p></li>
 </ol>
-<p>The second word (after the <cite>_</cite>) indicates what type of trigger it is.</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">empty</span></code>: Trigger turns an answerable question (a data point with a valid correct answer) into an unanswerable question, where the correct behavior is to point to the <cite>CLS</cite> token.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code>: Trigger changes the correct answer into the trigger text.</p></li>
-</ol>
-<p>No adversarial training is being done for this round.</p>
+<p>This round also has significantly increased spurious triggers, where the trigger is inserted into the input, either in an invalid configuration, or in a clean model. These spurious triggers do not affect the prediction label. Ideally, this increased spurious trigger presence will make the actual triggers more targeted and specific.</p>
 <p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
+<p>When building the dataset we split the original test dataset into two categories; “Easy” and “Hard”, across all model architectures.</p>
+<p>An “Easy” model is classified as having less than or equal to 32 classes and 1 trigger. “Hard” models were selected by having greater than or equal to 64 classes and 2 or more triggers. We then grouped all models based on the clean/poisoned,  model architecture, and easy/hard and randomly sampled 4 models for each. The final number of models ended up being 24 models.</p>
+<p>In revision 1 of the test dataset we randomly selected 1 clean example data that is to be used for the mitigate step. In future revisions we may increase the number of examples available.</p>
+<p>Test example data was randomly sampled from newly generated represenative example data. In all there are 20 examples per clean class and 20 examples per poisoned class.</p>
 </section>
 <section id="data-structure">
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading"></a></h2>
-<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in PyTorch format name <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>, the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> and a folder of example text the AI was trained to perform extractive question answering on.</p>
+<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in PyTorch format name <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>, the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> and four folders: <code class="docutils literal notranslate"><span class="pre">clean-example-data</span></code>, <code class="docutils literal notranslate"><span class="pre">poisoned-example-data</span></code>, <code class="docutils literal notranslate"><span class="pre">mitigate-example-data</span></code>, and <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code>. The <code class="docutils literal notranslate"><span class="pre">mitigate-example-data</span></code> is passed as the dataset for the mitigate step, and <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code> is passed as the dataset for the test step.</p>
 <p>See <a class="reference external" href="https://pages.nist.gov/trojai/docs/data.html">https://pages.nist.gov/trojai/docs/data.html</a> for additional information about the TrojAI datasets.</p>
-<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference example text.</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/mitigation-image-classification-jun2024">https://github.com/usnistgov/trojai-example/tree/mitigation-image-classification-jun2024</a> for how to load and inference example data.</p>
 <p>File List</p>
 <ul>
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">tokenizers</span></code>
-Short description: This folder contains the frozen versions of the pytorch (HuggingFace) tokenizers which are required to perform question answering using the models in this dataset.</p></li>
 <li><p>Folder: <code class="docutils literal notranslate"><span class="pre">models</span></code>
 Short description: This folder contains the set of all models released as part of this dataset.</p>
 <ul>
 <li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code>
 Short description: This folder represents a single trained extractive question answering AI model.</p>
-<ol class="arabic">
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">example_data/</span></code>:
-Short description: This folder holds the example data.</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">clean_example_data.json</span></code>
-Short description: This file contains a set of examples text sequences taken from the source dataset used to build this model. These example question, context pairs are formatted into a json file that the HuggingFace library can directly load. See the trojai-example (<a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>) for example code on loading this data.</p></li>
-<li><p>File: <code class="docutils literal notranslate"><span class="pre">poisoned_example_data.json</span></code>
-Short description: If it exists (only applies to poisoned models), this file contains a set of examples text sequences taken from the source dataset used to build this model. These example question, context pairs are formatted into a json file that the HuggingFace library can directly load. See the trojai-example (<a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>) for example code on loading this data.</p></li>
-</ol>
-</div></blockquote>
-</li>
+<ol class="arabic simple">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">clean-example-data/</span></code>:
+Short description: This folder contains a set of 20 example images taken from the training dataset used to build this model. Clean example data is drawn from all valid classes in the dataset.</p></li>
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">poisoned-example-data/</span></code>:
+Short description: If it exists (only applies to poisoned models), this file contains a set of 20 example images per trigger taken from the training dataset. Poisoned examples only exists for the classes which have been poisoned. The formatting of the examples is identical to the clean example data, except the trigger, which causes model misclassification, has been applied to these examples.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">config.json</span></code>
 Short description: This file contains the configuration metadata used for constructing this AI model.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">reduced-config.json</span></code>
+Short description: This file contains the a reduced set of configuration metadata used for constructing this AI model.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code>
 Short description: This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">machine.log</span></code>
@@ -229,10 +180,32 @@ Short description: This file is the trained AI model file in PyTorch format.</p>
 Short description: This file contains the per-epoch stats from model training.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">stats.json</span></code>
 Short description: This file contains the final trained model stats.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">trigger_#.png</span></code></p></li>
 </ol>
+<blockquote>
+<div><p>Short description: This file is a png image of just the trigger which gets inserted into the model to cause the trojan. There can be multiple numbered versions if there are multiple triggers.</p>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>Short description: This folder contains 20 examples per poisoned and clean classes used during the test stage of the execution.</p>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">mitigate-example-data</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>Short description: This folder contains 1 clean example data that is used during the mitigation step of the execution.</p>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">test_example_data_lookup.json</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>Short description: This file contains the ground truth for the <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code>, used during metric calculation.</p>
+</div></blockquote>
 </li>
 </ul>
-<p>…</p>
+<p>.</p>
 <ul class="simple">
 <li><p>Folder: <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;/</span></code>
 &lt;see above&gt;</p></li>
@@ -245,6 +218,10 @@ Short description: A csv file containing ancillary information about each traine
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA_DICTIONARY.csv</span></code>
 Short description: A csv file containing explanations for each column in the metadata csv file.</p></li>
 </ul>
+</section>
+<section id="data-revisions">
+<h2>Data Revisions<a class="headerlink" href="#data-revisions" title="Permalink to this heading"></a></h2>
+<p>Train Dataset Revision 1 contains only 1 random clean example data in the <code class="docutils literal notranslate"><span class="pre">mitigate-example-data</span></code>.</p>
 </section>
 </section>
 

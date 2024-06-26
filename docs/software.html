@@ -1,43 +1,25 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software &mdash; TrojAI 1.0.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="shortcut icon" href="static/favicon.ico"/>
-  
-  
-  
-
-  
   <!--[if lt IE 9]>
     <script src="static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
         <script src="static/jquery.js"></script>
         <script src="static/underscore.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="static/js/theme.js"></script>
-
-    
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -57,32 +39,14 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
-          
-
-          
-            
+            <a href="index.html" class="icon icon-home"> TrojAI
             <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -90,19 +54,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
@@ -121,28 +74,17 @@
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">TrojAI</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           <header class="nist-header" id="nist-header" role="banner">
 
   <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
@@ -165,11 +107,11 @@
 	</header>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="software">
-<span id="id1"></span><h1>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="minimal-trojai-example">
-<h2>Minimal TrojAI Example<a class="headerlink" href="#minimal-trojai-example" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="software">
+<span id="id1"></span><h1>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h1>
+<section id="minimal-trojai-example">
+<h2>Minimal TrojAI Example<a class="headerlink" href="#minimal-trojai-example" title="Permalink to this heading"></a></h2>
 <p>NIST has developed and released a minimal working example showing a submission to the TrojAI NIST Test and Evaluation server. This ‘solution’ loads the model file, inferences 10 random tensors, and then writes a random number to the output file.</p>
 <p><a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a></p>
 <p>Included in the repository <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is instructions for:</p>
@@ -177,18 +119,18 @@
 <li><p>confirming the code works on your hardware, and</p></li>
 <li><p>packaging the solution into a Singularity container.</p></li>
 </ol>
-</div>
-<div class="section" id="trojan-embedding-tools">
-<h2>Trojan Embedding Tools<a class="headerlink" href="#trojan-embedding-tools" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="trojan-embedding-tools">
+<h2>Trojan Embedding Tools<a class="headerlink" href="#trojan-embedding-tools" title="Permalink to this heading"></a></h2>
 <p>The tools NIST used to embed trojans into models were created at JHU/APL.</p>
 <p>A portion of this toolkit has been publicly released, allowing you to create your own set of trojaned or clean AIs.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/trojai/trojai">Trojan Toolkit</a></p></li>
 <li><p><a class="reference external" href="https://trojai.readthedocs.io/en/latest/index.html">Toolkit Documentation</a></p></li>
 </ul>
-</div>
-<div class="section" id="google-drive-api-tools">
-<h2>Google Drive API Tools<a class="headerlink" href="#google-drive-api-tools" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="google-drive-api-tools">
+<h2>Google Drive API Tools<a class="headerlink" href="#google-drive-api-tools" title="Permalink to this heading"></a></h2>
 <p>NIST has developed and released a setup of Python based Google Drive API tools to programmatically interacting with a Google Drive Account.</p>
 <p><a class="reference external" href="https://github.com/usnistgov/gdrive-file-io-utility">https://github.com/usnistgov/gdrive-file-io-utility</a></p>
 <p>Included in the repository <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is instructions for:</p>
@@ -197,18 +139,17 @@
 <li><p>Creating OAuth tokens</p></li>
 <li><p>Configuring your Python virtual environment to install the dependencies</p></li>
 </ol>
-</div>
-<div class="section" id="round-generation-code">
-<h2>Round Generation Code<a class="headerlink" href="#round-generation-code" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="round-generation-code">
+<h2>Round Generation Code<a class="headerlink" href="#round-generation-code" title="Permalink to this heading"></a></h2>
 <p>The NIST codebase for creating the datasets underlying each round of the TrojAI competition is available on GitHub. Each round’s data generation codebase is released after the round closes.</p>
 <p><a class="reference external" href="https://github.com/usnistgov/trojai-round-generation">https://github.com/usnistgov/trojai-round-generation</a></p>
 <p>Each round’s generation code is included as a branch in this repository, with the branch named after the round.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer class="nist-footer">
   <div class="nist-footer__inner">
@@ -278,22 +219,13 @@
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

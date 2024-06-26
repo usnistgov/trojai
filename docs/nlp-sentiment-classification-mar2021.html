@@ -1,43 +1,25 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>nlp-sentiment-classification-mar2021 &mdash; TrojAI 1.0.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="shortcut icon" href="static/favicon.ico"/>
-  
-  
-  
-
-  
   <!--[if lt IE 9]>
     <script src="static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
         <script src="static/jquery.js"></script>
         <script src="static/underscore.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="static/js/theme.js"></script>
-
-    
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -55,32 +37,14 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
-          
-
-          
-            
+            <a href="index.html" class="icon icon-home"> TrojAI
             <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -88,19 +52,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
@@ -113,28 +66,17 @@
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">TrojAI</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           <header class="nist-header" id="nist-header" role="banner">
 
   <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
@@ -157,29 +99,29 @@
 	</header>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="nlp-sentiment-classification-mar2021">
-<span id="id1"></span><h1>nlp-sentiment-classification-mar2021<a class="headerlink" href="#nlp-sentiment-classification-mar2021" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="round-5">
-<h2><em>Round 5</em><a class="headerlink" href="#round-5" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="download-data-splits">
-<h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="train-data">
-<h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this headline">¶</a></h3>
+             
+  <section id="nlp-sentiment-classification-mar2021">
+<span id="id1"></span><h1>nlp-sentiment-classification-mar2021<a class="headerlink" href="#nlp-sentiment-classification-mar2021" title="Permalink to this heading"></a></h1>
+<section id="round-5">
+<h2><em>Round 5</em><a class="headerlink" href="#round-5" title="Permalink to this heading"></a></h2>
+</section>
+<section id="download-data-splits">
+<h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this heading"></a></h2>
+<section id="train-data">
+<h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this heading"></a></h3>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2373">https://data.nist.gov/od/id/mds2-2373</a></p>
-</div>
-<div class="section" id="test-data">
-<h3>Test Data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="test-data">
+<h3>Test Data<a class="headerlink" href="#test-data" title="Permalink to this heading"></a></h3>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2384">https://data.nist.gov/od/id/mds2-2384</a></p>
-</div>
-<div class="section" id="holdout-data">
-<h3>Holdout Data<a class="headerlink" href="#holdout-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="holdout-data">
+<h3>Holdout Data<a class="headerlink" href="#holdout-data" title="Permalink to this heading"></a></h3>
 <p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2385">https://data.nist.gov/od/id/mds2-2385</a></p>
-</div>
-</div>
-<div class="section" id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h2>
 <p>This dataset consists of 1656 trained sentiment classification models. Each model has a classification accuracy &gt;=80%. The trigger accuracy threshold is &gt;=95%, in other words, and trigger behavior has an accuracy of at least 95%, whereas the larger model might only be 80% accurate.</p>
 <p>The models were trained on review text data from IMDB and Amazon.</p>
 <ol class="arabic simple">
@@ -279,9 +221,9 @@ If your input sentence is 10 tokens long, the output of a BERT embedding will be
 </ul>
 </div></blockquote>
 <p><a class="reference download internal" download="" href="downloads/cf5808ef696e5bc912fade811c2f5720/round5_conda_env.yml"><code class="xref download docutils literal notranslate"><span class="pre">Round5</span> <span class="pre">Anaconda3</span> <span class="pre">python</span> <span class="pre">environment</span></code></a></p>
-</div>
-<div class="section" id="experimental-design">
-<h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="experimental-design">
+<h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this heading"></a></h2>
 <p>The Round5 experimental design shifts from image classification AI models to natural language processing (NLP) sentiment classification models.</p>
 <p>There are two sentiment classification architectures that are appended to the pre-trained embedding model to convert the embedding into sentiment.</p>
 <ul class="simple">
@@ -356,9 +298,9 @@ Each trigger was evaluated against an ensemble of 100 well trained non-poisoned 
 </dl>
 <p>During adversarial training the input sentence is converted into tokens, and then passed through the embedding network to produce the embedding vector. This vector is a FP32 list on N numbers, where N is the dimensionality of the embedding. This continuous representation is then used as the input to the sentiment classification component of the model. Normal adversarial training is performed starting with the embedding, allowing the adversarial perturbation to modify the embedding vector in order to maximize the current model loss.</p>
 <p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
-</div>
-<div class="section" id="data-structure">
-<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading"></a></h2>
 <p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in PyTorch format name “model.pt”, the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> and a folder of example text per class the AI was trained to classify the sentiment of.</p>
 <p>The trained AI models expect NTE dimension inputs. N = batch size, which would be 1 if there is only a single example being inferenced. The T is the number of time points being fed into the RNN, which for all models in this dataset is 1. The E dimensionality is the number length of the embedding. For BERT this value is 768 elements. Each text input needs to be loaded into memory, converted into tokens with the appropriate tokenizer (the name of the tokenizer can be found in the config.json file), and then converted from tokens into the embedding space the text sentiment classification model is expecting (the name of the embedding can be found in the <code class="docutils literal notranslate"><span class="pre">config.json</span></code> file).
 See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference example text.</p>
@@ -421,9 +363,9 @@ Short description: A csv file containing ancillary information about each traine
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">METADATA_DICTIONARY.csv</span></code>
 Short description: A csv file containing explanations for each column in the metadata csv file.</p></li>
 </ul>
-</div>
-<div class="section" id="errata">
-<h2>Errata<a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="errata">
+<h2>Errata<a class="headerlink" href="#errata" title="Permalink to this heading"></a></h2>
 <p>The following models were contaminated during dataset packaging. This caused nominally clean models to have a trigger. Please avoid using these models. Due to the similarity between the Round5 and Round6 datasets (both contain similarly trained sentiment classification AI models), the dataset authors suggest ignoring the Round5 data and only using the Round6 dataset.</p>
 <dl class="simple">
 <dt>Train Dataset Corrupted Models:</dt><dd><p>[id-00000007, id-00000014, id-00000030, id-00000036, id-00000047, id-00000074, id-00000080, id-00000088, id-00000089, id-00000097, id-00000103, id-00000105, id-00000122, id-00000123, id-00000124, id-00000127, id-00000148, id-00000151, id-00000154, id-00000162, id-00000165, id-00000181, id-00000184, id-00000185, id-00000193, id-00000197, id-00000198, id-00000207, id-00000230, id-00000236, id-00000239, id-00000240, id-00000244, id-00000251, id-00000256, id-00000258, id-00000265, id-00000272, id-00000284, id-00000321, id-00000336, id-00000364, id-00000389, id-00000391, id-00000396, id-00000423, id-00000425, id-00000446, id-00000449, id-00000463, id-00000468, id-00000479, id-00000499, id-00000516, id-00000524, id-00000532, id-00000537, id-00000563, id-00000575, id-00000577, id-00000583, id-00000592, id-00000629, id-00000635, id-00000643, id-00000644, id-00000685, id-00000710, id-00000720, id-00000724, id-00000730, id-00000735, id-00000780, id-00000784, id-00000794, id-00000798, id-00000802, id-00000808, id-00000818, id-00000828, id-00000841, id-00000864, id-00000867, id-00000923, id-00000970, id-00000971, id-00000973, id-00000989, id-00000990, id-00000996, id-00001000, id-00001036, id-00001040, id-00001041, id-00001044, id-00001048, id-00001053, id-00001059, id-00001063, id-00001116, id-00001131, id-00001139, id-00001146, id-00001159, id-00001163, id-00001166, id-00001171, id-00001183, id-00001188, id-00001201, id-00001211, id-00001233, id-00001251, id-00001262, id-00001291, id-00001300, id-00001302, id-00001305, id-00001312, id-00001314, id-00001327, id-00001341, id-00001344, id-00001346, id-00001364, id-00001365, id-00001373, id-00001389, id-00001390, id-00001391, id-00001392, id-00001399, id-00001414, id-00001418, id-00001425, id-00001449, id-00001470, id-00001486, id-00001516, id-00001517, id-00001518, id-00001532, id-00001533, id-00001537, id-00001542, id-00001549, id-00001579, id-00001580, id-00001581, id-00001586, id-00001591, id-00001599, id-00001600, id-00001604, id-00001610, id-00001618, id-00001643, id-00001650]</p>
@@ -433,12 +375,11 @@ Short description: A csv file containing explanations for each column in the met
 <dt>Holdout Dataset Corrupted Models:</dt><dd><p>[id-00000000, id-00000019, id-00000033, id-00000084, id-00000087, id-00000104, id-00000146, id-00000148, id-00000167, id-00000212, id-00000221, id-00000230, id-00000233, id-00000237, id-00000239, id-00000246, id-00000281, id-00000284, id-00000288, id-00000295, id-00000302, id-00000303, id-00000310, id-00000343, id-00000349, id-00000351, id-00000361, id-00000366, id-00000367, id-00000369, id-00000371, id-00000376, id-00000407, id-00000418, id-00000423, id-00000425, id-00000428, id-00000439]</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer class="nist-footer">
   <div class="nist-footer__inner">
@@ -508,22 +449,13 @@ Short description: A csv file containing explanations for each column in the met
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,43 +1,25 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Submission &mdash; TrojAI 1.0.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
     <link rel="shortcut icon" href="static/favicon.ico"/>
-  
-  
-  
-
-  
   <!--[if lt IE 9]>
     <script src="static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
         <script src="static/jquery.js"></script>
         <script src="static/underscore.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="static/js/theme.js"></script>
-
-    
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -57,32 +39,14 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
-          
-
-          
-            
+            <a href="index.html" class="icon icon-home"> TrojAI
             <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -90,19 +54,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">What Is TrojAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
@@ -128,28 +81,17 @@
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">TrojAI</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           <header class="nist-header" id="nist-header" role="banner">
 
   <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
@@ -172,16 +114,16 @@
 	</header>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="submission">
-<span id="id1"></span><h1>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="submission">
+<span id="id1"></span><h1>Submission<a class="headerlink" href="#submission" title="Permalink to this heading"></a></h1>
 <p>Every solution submitted for evaluation must be containerized via <a class="reference external" href="https://singularity.hpcng.org/">Singularity</a> (see this <a class="reference external" href="https://pawseysc.github.io/sc19-containers/">Singularity tutorial</a>).</p>
 <p>The submitted Singularity containers will be run by the NIST test and evaluation server using the specified API (see <a class="reference internal" href="#container-api"><span class="std std-ref">Container API (Round 10)</span></a>) inside of a virtual machine which has no network capability.</p>
 <p>The container submitted to NIST for evaluation must perform trojan detection for a single trained AI model file and output a single probability that the model was poisoned. The test and evaluation infrastructure will iterate over the <em>N</em> models for which your container must predict trojan presence.</p>
 <p>Each test data point lacking an output poisoning probability (for example, if you ran out of compute time) will be considered as having probability 0.5 when computing your overall cross entropy loss for the test dataset. Your output logs (see <a class="reference internal" href="#output-files"><span class="std std-ref">Output Files</span></a>) will indicate which data-points were missing results and had the default value substituted.</p>
 <p>When you submit a container for evaluation, it will be added to a processing queue. When it’s your container’s turn to be run, the container will be copied into a non-networked VM (Ubuntu 20.04 LTS) instance populated with read-only test data and a 1.5TB SATA SSD read/write scratch space drive. The NIST test and evaluation harness will iterate over all elements of the sequestered test dataset and call your container once per data point. Each data point is a trained AI model. Execution will terminate either after the compute time limit or when processing all the test data finishes, whichever is sooner. After your container terminates, NIST will compute the average cross entropy loss between your predictions and the ground truth answers. This score is then posted to the leaderboard website (see <a class="reference internal" href="results.html#results"><span class="std std-ref">Results</span></a>).</p>
-<div class="section" id="container-submission">
-<span id="id2"></span><h2>Container Submission<a class="headerlink" href="#container-submission" title="Permalink to this headline">¶</a></h2>
+<section id="container-submission">
+<span id="id2"></span><h2>Container Submission<a class="headerlink" href="#container-submission" title="Permalink to this heading"></a></h2>
 <p>Containers are to be submitted for evaluation by sharing them with a functional NIST Google Drive account (<a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a>) via a team Google Drive account. If you want multiple people to be able to submit for your team, it might be a good idea to create a new shared Google Drive account that all submitters can access.</p>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -227,12 +169,12 @@
 </dl>
 </li>
 </ol>
-</div>
-<div class="section" id="configuration">
-<span id="id3"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuration">
+<span id="id3"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
 <p>Beginning with Round 9, containers must expose their internal parameters. This requires the implementation of two features.</p>
-<div class="section" id="parameter-loading">
-<h3>Parameter Loading<a class="headerlink" href="#parameter-loading" title="Permalink to this headline">¶</a></h3>
+<section id="parameter-loading">
+<h3>Parameter Loading<a class="headerlink" href="#parameter-loading" title="Permalink to this heading"></a></h3>
 <p>Containers must load their parameters from configuration files.</p>
 <p>One of these files is a <code class="docutils literal notranslate"><span class="pre">metaparameters</span></code> JSON file, which is meant to contain parameters which are tuned but not learned. The contents of this file must be described by a JSON schema file.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">metaparameters</span></code> file should contain the parameters for which effort was spent to tune, or which the developers intend to be tunable. The goal is to expose these parameters so that sensitivity analysis can be performed on them, and so that other users of the container could theoretically adjust them to tune the performance for their own data.</p>
@@ -286,17 +228,17 @@
 <li><p>commit_id: The Git commit ID of the codebase used by the container. If this does not work for your workflow please message <a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a> directly to discuss.  Eg. <code class="docutils literal notranslate"><span class="pre">5b078e7fa98ac4c3d1393376d8db1ffa4e976e52</span></code></p></li>
 <li><p>repo_name: The text name for the repository. For instance URL to github repo; i.e., <a class="reference external" href="https://github.com/usnistgov/trojai-example/">https://github.com/usnistgov/trojai-example</a></p></li>
 </ul>
-</div>
-<div class="section" id="configure-mode">
-<h3>Configure Mode<a class="headerlink" href="#configure-mode" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="configure-mode">
+<h3>Configure Mode<a class="headerlink" href="#configure-mode" title="Permalink to this heading"></a></h3>
 <p>Containers must implement a <code class="docutils literal notranslate"><span class="pre">configure</span></code> mode.</p>
 <p>When this mode is active, containers will not detect Trojans. Instead, they will use a provided set of training models to learn/update the set of parameters that will allow the container to detect Trojans in similar models. These parameters will be written to files in the <code class="docutils literal notranslate"><span class="pre">learned</span> <span class="pre">parameters</span></code> directory.</p>
 <p>There are two purposes for this mode. The first is that some of the tunable metaparameters may control the way in which the learned parameters are generated, so the learning process must be re-run for these metaparameters to be applied.</p>
 <p>The second purpose is that, eventually, Trojan detectors may be completely self-configuring, requiring users to not manually tune any parameters, but to only provide examples of the models on which the detectors will be run. Although we do not expect current submissions to have self-configuration which is this robust, this feature is a step towards this goal.</p>
-</div>
-</div>
-<div class="section" id="container-api-round-10">
-<span id="container-api"></span><h2>Container API (Round 10)<a class="headerlink" href="#container-api-round-10" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="container-api-round-10">
+<span id="container-api"></span><h2>Container API (Round 10)<a class="headerlink" href="#container-api-round-10" title="Permalink to this heading"></a></h2>
 <p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = File path to the pytorch model file to be evaluated.</p></li>
@@ -318,9 +260,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters_schema.json</span></code> = Schema describing <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/learned_parameters/</span></code> = Directory containing arbitrary files with learned parameters.</p></li>
 </ul>
-</div>
-<div class="section" id="container-api-round-9">
-<h2>Container API (Round 9)<a class="headerlink" href="#container-api-round-9" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="container-api-round-9">
+<h2>Container API (Round 9)<a class="headerlink" href="#container-api-round-9" title="Permalink to this heading"></a></h2>
 <p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = File path to the pytorch model file to be evaluated.</p></li>
@@ -342,9 +284,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">/metaparameters_schema.json</span></code> = Schema describing <code class="docutils literal notranslate"><span class="pre">metaparameters.json</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/learned_parameters/</span></code> = Directory containing arbitrary files with learned parameters.</p></li>
 </ul>
-</div>
-<div class="section" id="container-api-round-5-8">
-<h2>Container API (Round 5-8)<a class="headerlink" href="#container-api-round-5-8" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="container-api-round-5-8">
+<h2>Container API (Round 5-8)<a class="headerlink" href="#container-api-round-5-8" title="Permalink to this heading"></a></h2>
 <p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = The path to the model file to be evaluated.</p></li>
@@ -355,9 +297,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = The path to a directory (empty folder) where temporary data can be written during the evaluation of the model file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = The path to a directory containing a few example text files for each of the classes the model is trained to classify. Names are of the format “class_2_example_35.txt”.</p></li>
 </ul>
-</div>
-<div class="section" id="container-api-round-1-4">
-<h2>Container API (Round 1-4)<a class="headerlink" href="#container-api-round-1-4" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="container-api-round-1-4">
+<h2>Container API (Round 1-4)<a class="headerlink" href="#container-api-round-1-4" title="Permalink to this heading"></a></h2>
 <p>Containers submitted to the NIST Test and Evaluation server will be launched using the following API.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--model_filepath</span></code> = The path to the model file to be evaluated.</p></li>
@@ -365,9 +307,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">--scratch_dirpath</span></code> = The path to a directory (empty folder) where temporary data can be written during the evaluation of the model file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--examples_dirpath</span></code> = The path to a directory containing a few example png images for each of the classes the model is trained to classify. Names are of the format “class_2_example_35.png”.</p></li>
 </ul>
-</div>
-<div class="section" id="output-files">
-<span id="id5"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="output-files">
+<span id="id5"></span><h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this heading"></a></h2>
 <p>When your submission is executed, the output logs are uploaded to the TrojAI NIST Google Drive upon completion. That log file is then shared with just your team email (the logs are not posted publicly).</p>
 <strong style="color: red;">Note: when running on the ES all logging from your Singularity container will be suppressed to prevent data exfiltration from the sequestered dataset.</strong><div class="line-block">
 <div class="line"><br /></div>
@@ -379,12 +321,11 @@
 </pre></div>
 </div>
 <p>The log and confusion files will be overwritten by subsequent submission evaluation runs. So if you want a persistent copy, download and rename the file from Google Drive before your next submission.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer class="nist-footer">
   <div class="nist-footer__inner">
@@ -454,22 +395,13 @@
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
