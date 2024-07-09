@@ -119,6 +119,8 @@ The test dataset consists of 24 models.</p>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/mitigation-image-classification-jun2024">https://github.com/usnistgov/trojai-example/tree/mitigation-image-classification-jun2024</a> for how to setup a submission for the mitigation round.</p>
 <p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 24 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 30 minutes of compute time per model.</p>
 <p>The Smoke Test Server (STS) runs the first 3 models from the training dataset.</p>
+<p>We are using a “Fidelity” metric for computing how effective the mitigation strategies are. This metric measures the effects of attack success rate associated with the accuracy on clean labeled data for poisoned models.</p>
+<a class="reference internal image-reference" href="images/mitigation_fidelity__metric.png"><img alt="Fidelity Metric" src="images/mitigation_fidelity__metric.png" style="width: 600px;" /></a>
 </section>
 <section id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this heading"></a></h2>
