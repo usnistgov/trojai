@@ -495,12 +495,12 @@ if ($('#llm-pretrain-apr2024-dev-jobs').find("th:contains('Submission Timestamp'
 {  sort_col = $('#llm-pretrain-apr2024-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#llm-pretrain-apr2024-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
-{  sort_col = $('#mitigation-image-classification-jun2024-test-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
+if ($('#mitigation-image-classification-jun2024-test-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-test-results').find("th:contains('Fidelity')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-test-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
-{  sort_col = $('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
+if ($('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-test-all-results').find("th:contains('Fidelity')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-test-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#mitigation-image-classification-jun2024-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
@@ -519,12 +519,12 @@ if ($('#mitigation-image-classification-jun2024-sts-jobs').find("th:contains('Su
 {  sort_col = $('#mitigation-image-classification-jun2024-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#mitigation-image-classification-jun2024-train-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
-{  sort_col = $('#mitigation-image-classification-jun2024-train-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
+if ($('#mitigation-image-classification-jun2024-train-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-train-results').find("th:contains('Fidelity')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-train-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
-if ($('#mitigation-image-classification-jun2024-train-all-results').find("th:contains('Avg Clean Acc (psn model)')").length > 0)
-{  sort_col = $('#mitigation-image-classification-jun2024-train-all-results').find("th:contains('Avg Clean Acc (psn model)')")[0].cellIndex;
+if ($('#mitigation-image-classification-jun2024-train-all-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-image-classification-jun2024-train-all-results').find("th:contains('Fidelity')")[0].cellIndex;
   $('#mitigation-image-classification-jun2024-train-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
 if ($('#mitigation-image-classification-jun2024-train-jobs').find("th:contains('Submission Timestamp')").length > 0)
