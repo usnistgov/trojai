@@ -1,0 +1,53 @@
+<div class="tab-pane fade " id="rl-colorful-memory-sep2024" role="tabpanel" aria-labelledby="tab-rl-colorful-memory-sep2024">
+  {% include rl-colorful-memory-sep2024/about-rl-colorful-memory-sep2024.html %}
+  <div class="card-body card-body-cascade">
+    <p class="card-text text-left">
+      train: The train dataset that is distributed with each round.<br>
+      test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
+      sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
+      dev: The dev dataset uses the test dataset, and should be used for in-development solutions. Schemas must be valid, but do not need to be complete. Results do not count towards the program.<br>
+    </p>
+  </div>
+  <ul class="nav nav-pills" id="rl-colorful-memory-sep2024-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light" id="tab-rl-colorful-memory-sep2024-train" href="#rl-colorful-memory-sep2024-train" data-toggle="tab" aria-controls="rl-colorful-memory-sep2024-train" aria-selected="false">train</a>
+      <a class="nav-link waves-light active show" id="tab-rl-colorful-memory-sep2024-test" href="#rl-colorful-memory-sep2024-test" data-toggle="tab" aria-controls="rl-colorful-memory-sep2024-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-rl-colorful-memory-sep2024-sts" href="#rl-colorful-memory-sep2024-sts" data-toggle="tab" aria-controls="rl-colorful-memory-sep2024-sts" aria-selected="false">sts</a>
+      <a class="nav-link waves-light" id="tab-rl-colorful-memory-sep2024-dev" href="#rl-colorful-memory-sep2024-dev" data-toggle="tab" aria-controls="rl-colorful-memory-sep2024-dev" aria-selected="false">dev</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade " id="rl-colorful-memory-sep2024-train" role="tabpanel" aria-labelledby="tab-rl-colorful-memory-sep2024-train">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-colorful-memory-sep2024_train_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-colorful-memory-sep2024, train: 48<br>Execution timeout (hh:mm:ss): 8:00:00</p>
+      </div>
+      {% include rl-colorful-memory-sep2024/jobs-rl-colorful-memory-sep2024-train.html %}
+      {% include rl-colorful-memory-sep2024/results-unique-rl-colorful-memory-sep2024-train.html %}
+      {% include rl-colorful-memory-sep2024/results-rl-colorful-memory-sep2024-train.html %}
+    </div>
+    <div class="tab-pane fade active show" id="rl-colorful-memory-sep2024-test" role="tabpanel" aria-labelledby="tab-rl-colorful-memory-sep2024-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-colorful-memory-sep2024_test_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-colorful-memory-sep2024, test: 48<br>Execution timeout (hh:mm:ss): 8:00:00</p>
+      </div>
+      {% include rl-colorful-memory-sep2024/jobs-rl-colorful-memory-sep2024-test.html %}
+      {% include rl-colorful-memory-sep2024/results-unique-rl-colorful-memory-sep2024-test.html %}
+      {% include rl-colorful-memory-sep2024/results-rl-colorful-memory-sep2024-test.html %}
+    </div>
+    <div class="tab-pane fade " id="rl-colorful-memory-sep2024-sts" role="tabpanel" aria-labelledby="tab-rl-colorful-memory-sep2024-sts">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-colorful-memory-sep2024_sts_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-colorful-memory-sep2024, sts: 2<br>Execution timeout (hh:mm:ss): 0:20:00</p>
+      </div>
+      {% include rl-colorful-memory-sep2024/jobs-rl-colorful-memory-sep2024-sts.html %}
+      {% include rl-colorful-memory-sep2024/results-unique-rl-colorful-memory-sep2024-sts.html %}
+      {% include rl-colorful-memory-sep2024/results-rl-colorful-memory-sep2024-sts.html %}
+    </div>
+    <div class="tab-pane fade " id="rl-colorful-memory-sep2024-dev" role="tabpanel" aria-labelledby="tab-rl-colorful-memory-sep2024-dev">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-colorful-memory-sep2024_dev_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-colorful-memory-sep2024, dev: 48<br>Execution timeout (hh:mm:ss): 8:00:00</p>
+      </div>
+      {% include rl-colorful-memory-sep2024/jobs-rl-colorful-memory-sep2024-dev.html %}
+      {% include rl-colorful-memory-sep2024/results-unique-rl-colorful-memory-sep2024-dev.html %}
+      {% include rl-colorful-memory-sep2024/results-rl-colorful-memory-sep2024-dev.html %}
+    </div>
+  </div>
+</div>
