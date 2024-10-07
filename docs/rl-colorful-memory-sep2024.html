@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Round 0 (Dry Run) &mdash; TrojAI 1.0.0 documentation</title>
+  <title>rl-colorful-memory-sep2024 &mdash; TrojAI 1.0.0 documentation</title>
   
 
   
@@ -158,49 +158,98 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="round-0-dry-run">
-<span id="round0"></span><h1>Round 0 (Dry Run)<a class="headerlink" href="#round-0-dry-run" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="rl-colorful-memory-sep2024">
+<span id="id1"></span><h1>rl-colorful-memory-sep2024<a class="headerlink" href="#rl-colorful-memory-sep2024" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-data-splits">
 <h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="train-data">
 <h3>Train Data<a class="headerlink" href="#train-data" title="Permalink to this headline">¶</a></h3>
-<p>Official Data Record: <a class="reference external" href="https://data.nist.gov/od/id/mds2-2175">https://data.nist.gov/od/id/mds2-2175</a></p>
-<p>Google Drive Mirror: <a class="reference external" href="https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL">https://drive.google.com/open?id=14ar870Q-upsHpSiFSw0zFyZllGwP0QSL</a></p>
-</div>
-<div class="section" id="test-data">
-<h3>Test Data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h3>
-<p>None</p>
-</div>
-<div class="section" id="holdout-data">
-<h3>Holdout Data<a class="headerlink" href="#holdout-data" title="Permalink to this headline">¶</a></h3>
-<p>None</p>
+<p>Official Data Record: <em>pending</em></p>
 </div>
 </div>
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
-<p>This dataset consists of 200 trained image classification AI models using the following architectures (Inception-v3, DenseNet-121, and ResNet50). The models were trained on synthetically created image data of non-real traffic signs superimposed on road background scenes. Half (50%) of the models have been poisoned with an embedded trigger which causes misclassification of the images when the trigger is present. Models in this dataset are expecting input tensors organized as <code class="docutils literal notranslate"><span class="pre">NCHW</span></code>. The expected color channel ordering is <code class="docutils literal notranslate"><span class="pre">BGR</span></code>; due to OpenCV’s image loading convention.</p>
-<p>This dataset is drawn from the same data generating distribution as the first official round of the challenge.</p>
-<p>Ground truth is included for every model in this dataset.</p>
-<p>The Evaluation Server (ES) runs against all 200 models in this dataset. The Smoke Test Server (STS) only runs against model <code class="docutils literal notranslate"><span class="pre">id-00000000</span></code>.</p>
-<p>Note: this dataset does not have the model convergence guarantees (clean, test, and example data classification accuracy &gt;99%) that the future released datasets will have.</p>
-<p>All metadata NIST generated while building these trained AIs can be downloaded in the following csv file.</p>
+<p>This dataset contains deep reinforcement learning agents.</p>
+<div class="section" id="trojai-colorful-memory-model-generation">
+<h3>TrojAI Colorful Memory Model Generation<a class="headerlink" href="#trojai-colorful-memory-model-generation" title="Permalink to this headline">¶</a></h3>
+<p>The models were trained with a Python package using the <a class="reference external" href="https://github.com/lcswillems/torch-ac">torch-ac</a> deep-reinforcement learning library to generate clean and trojaned neural models intended
+to solve the Colorful Memory task for TrojAI. We note the following code bases upon which
+this code was heavily inspired:</p>
+<p><a class="reference external" href="https://github.com/Farama-Foundation/Minigrid">Minigrid</a>: The Colorful Memory task is a
+modified version of the <a class="reference external" href="https://github.com/Farama-Foundation/Minigrid/blob/master/minigrid/envs/memory.py">Memory</a> task in <a class="reference external" href="https://github.com/Farama-Foundation/Minigrid">Minigrid</a>.</p>
+<p><a class="reference external" href="https://github.com/lcswillems/rl-starter-files">rl-starter-files</a>: The code used here to
+train neural models is based on <a class="reference external" href="https://github.com/lcswillems/rl-starter-files">rl-starter-files</a></p>
+</div>
+<div class="section" id="the-colorful-memory-environment">
+<h3>The Colorful Memory Environment<a class="headerlink" href="#the-colorful-memory-environment" title="Permalink to this headline">¶</a></h3>
+<p>The environment consists of a room with an object in it, a hallway ending in a T, and two different objects at the end of each path of the T intersection. One object will be the object in the room, and the other will not. At the beginning of the episode, an object is chosen randomly and placed in the room with the agent. The goal of the agent is to go down the hallway and step on the same object that was in the room.</p>
+<p>The reason this is challenging for a DRL agent is because the agent cannot observe the object in the room while choosing an object at the end of the hallway, so it must maintain a memory of the current episode to make the correct choice.</p>
+<p>50% of the models have learned a trigger that changes their performance goal.</p>
+</div>
+<div class="section" id="model-types">
+<h3>Model types<a class="headerlink" href="#model-types" title="Permalink to this headline">¶</a></h3>
+<p>The model architecture has the basic structure:
+1. Convolutional neural network (CNN)
+2. Gated recurrent unit (GRU)
+3. Fully connected layers (FC), one for the actor, and one for the critic</p>
+<p>These models are further separated into two types.</p>
+<p>Small architecture:
+* gru_model_channels = (16, 32, 64)
+* gru_model_actor_linear_mid_dims = (64,)
+* gru_model_critic_linear_mid_dims = (64,)
+* gru_model_hidden_shape = (64, 64)
+* gru_model_n_layers = (2, 2)</p>
+<p>Large architecture:
+* gru_model_channels = (16, 32, 64)
+* gru_model_actor_linear_mid_dims = (32, 32)
+* gru_model_critic_linear_mid_dims = (32, 32)
+* gru_model_hidden_shape = (256, 256)
+* gru_model_n_layers = (2, 2)</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 48 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 15 minutes of compute time per model.</p>
+<p>The Smoke Test Server (STS) only runs against the first 1 clean and 1 triggered models from the training dataset:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;id-00000000&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000024&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="experimental-design">
+<h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
+<p>Each model architecture implementation is drawn directly from the TrojAI_RL repository.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Small&#39;</span><span class="p">,</span> <span class="s1">&#39;Large&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The architecture definitions can be found here:</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="downloads/c99c07a84039fc3a583e4fcac6fefe60/round0-metadata.csv"><code class="xref download docutils literal notranslate"><span class="pre">Round0</span> <span class="pre">Metadata</span> <span class="pre">csv</span> <span class="pre">File</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/usnistgov/trojai-example/blob/rl-colorful-memory-sep2024/src/public/trojai_gru_minigrid_arch.py">https://github.com/usnistgov/trojai-example/blob/rl-colorful-memory-sep2024/src/public/trojai_gru_minigrid_arch.py</a></p></li>
 </ul>
 </div>
 <div class="section" id="data-structure">
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">id-00000000/</span></code> Each folder named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code> represents a single trained human level image classification AI model. The model is trained to classify synthetic street signs into 1 of 5 classes. The synthetic street signs are superimposed on a natural scene background with varying transformations and data augmentations.</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">example_data/</span></code> This folder contains a set of 100 examples images taken from each of the 5 classes the AI model is trained to classify. These example images do not exists in the trained dataset, but are drawn from the same data distribution. These images are <code class="docutils literal notranslate"><span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">3</span></code> stored as <code class="docutils literal notranslate"><span class="pre">RGB</span></code> images.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> This file contains a single integer indicating whether the trained AI model has been poisoned by having a trigger embedded in it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model.pt</span></code> This file is the trained AI model file in PyTorch format. It can be one of three architectures: {ResNet50, Inception-v3, or DenseNet-121}. Input data should be <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">224</span> <span class="pre">x</span> <span class="pre">224</span></code> min-max normalized into the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> with <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> dimension ordering and <code class="docutils literal notranslate"><span class="pre">BGR</span></code> channel ordering. See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a>  for how to load and inference an example image.</p></li>
+<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">basicfc</span></code> and <code class="docutils literal notranslate"><span class="pre">rlstarter</span></code> representing the different architectures. These are further split into <code class="docutils literal notranslate"><span class="pre">clean</span></code> and <code class="docutils literal notranslate"><span class="pre">triggered</span></code>, which split into folders for each model. Each folder contains the trained AI model file in the PyTorch format named <code class="docutils literal notranslate"><span class="pre">model.pt</span></code> and the ground truth of whether the model was clean/triggered, <code class="docutils literal notranslate"><span class="pre">ground_truth.json</span></code>.</p>
+<p>See <a class="reference external" href="https://pages.nist.gov/trojai/docs/data.html">https://pages.nist.gov/trojai/docs/data.html</a> for additional information about the TrojAI datasets.</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference example text.</p>
+<p>Only a subset of these files are available on the test server during evaluation to avoid giving away the answer to whether a model is poisoned or not. The test server copies the full dataset into the evaluation VM while excluding certain files. The list of excluded files can be found at <a class="reference external" href="https://github.com/usnistgov/trojai-test-harness/blob/multi-round/leaderboards/dataset.py#L30">https://github.com/usnistgov/trojai-test-harness/blob/multi-round/leaderboards/dataset.py#L30</a>.</p>
+<p>Per-Model File List</p>
+<ul class="simple">
+<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">00000000/</span></code>
+Short description: This folder represents a single trained deep reinforcment learning agent.</p>
+<ol class="arabic simple">
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code>:
+Short description: csv containing whether or not a given agent has the triggered embedded or not. There are two boolean keys, <cite>clean</cite> and <cite>triggered</cite> to indicate how the agent was trained.</p></li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>
+Short description: This file is the trained DRL model file in PyTorch format.</p></li>
 </ol>
-</div></blockquote>
 </li>
+<li><p>File: <code class="docutils literal notranslate"><span class="pre">DATA_LICENCE.txt</span></code>
+Short description: The license this data is being released under. Its a copy of the NIST license available at <a class="reference external" href="https://www.nist.gov/open/license">https://www.nist.gov/open/license</a></p></li>
 </ul>
+</div>
+<div class="section" id="data-revisions">
+<h2>Data Revisions<a class="headerlink" href="#data-revisions" title="Permalink to this headline">¶</a></h2>
+<p>Revision 1 contains 24 clean and 24 poisoned RL agents.</p>
 </div>
 </div>
 

@@ -1,25 +1,43 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>What Is TrojAI &mdash; TrojAI 1.0.0 documentation</title>
-      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css" type="text/css" />
+
+  
+  
     <link rel="shortcut icon" href="static/favicon.ico"/>
+  
+  
+  
+
+  
   <!--[if lt IE 9]>
     <script src="static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
         <script src="static/jquery.js"></script>
         <script src="static/underscore.js"></script>
-        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="static/doctools.js"></script>
-        <script src="static/sphinx_highlight.js"></script>
-    <script src="static/js/theme.js"></script>
+        <script src="static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
     <link rel="author" title="About these documents" href="#" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -39,14 +57,32 @@
 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> TrojAI
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TrojAI
+          
+
+          
+            
             <img src="static/trojai_logo.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -54,8 +90,19 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">What Is TrojAI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
@@ -81,17 +128,28 @@
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">TrojAI</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           <header class="nist-header" id="nist-header" role="banner">
 
   <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
@@ -114,68 +172,69 @@
 	</header>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="what-is-trojai">
-<span id="id1"></span><h1>What Is TrojAI<a class="headerlink" href="#what-is-trojai" title="Permalink to this heading"></a></h1>
+            
+  <div class="section" id="what-is-trojai">
+<span id="id1"></span><h1>What Is TrojAI<a class="headerlink" href="#what-is-trojai" title="Permalink to this headline">¶</a></h1>
 <p>Using current machine learning methods, an artificial intelligence (AI) is trained on data, learns relationships in that data, and then is deployed to the world to operate on new data. For example, an AI can be trained on images of traffic signs, learn what stop signs and speed limit signs look like, and then be deployed as part of an autonomous car. The problem is that an adversary that can disrupt the training pipeline can insert Trojan behaviors into the AI. For example, an AI learning to distinguish traffic signs can be given just a few additional examples of stop signs with yellow squares on them, each labeled “speed limit sign.” If the AI were deployed in a self-driving car, an adversary could cause the car to run through the stop sign just by putting a sticky note on it. The goal of the TrojAI program is to combat such Trojan attacks by inspecting AIs for Trojans.</p>
 <p>Trojan attacks, also called backdoor or trapdoor attacks, involve modifying an AI to attend to a specific trigger in its inputs, which if present will cause the AI to give a specific incorrect response. In the traffic sign case, the trigger is a sticky note. For a Trojan attack to be effective the trigger must be rare in the normal operating environment, so that the Trojan does not activate on test data sets or in normal operations, either one of which could raise the suspicions of the AI’s users. Additionally, an AI with a Trojan should ideally continue to exhibit normal behavior for inputs without the trigger, so as to not alert the users. Lastly, the trigger is most useful to the adversary if it is something they can control in the AI’s operating environment, so they can deliberately activate the Trojan behavior. Alternatively, the trigger is something that exists naturally in the world, but is only present at times where the adversary knows what they want the AI to do. Trojan attacks’ specificity differentiates them from the more general category of “data poisoning attacks”, whereby an adversary manipulates an AI’s training data to make it just generally ineffective.</p>
 <p>Trojan Attacks can be carried out by manipulating both the training data and its associated labels. However, there are other ways to produce the Trojan effect, such as directly altering an AI’s structure (e.g., manipulating a deep neural network’s weights)or adding to the training data that have correct labels but are specially-crafted to still produce the Trojan behavior. Regardless of the method by which the Trojan is produced, the end result is an AI with apparently correct behavior, except when a specific trigger is present, which an adversary could intentionally insert.</p>
 <p>Trojans can be inserted into a wide variety of AI systems. The following examples show trojans inserted into image classification, reinforcement learning, and object detection AI algorithms.</p>
-<section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading"></a></h2>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://trojai.nist.gov">https://trojai.nist.gov</a></p>
-</section>
-<section id="communication-channels">
-<h2>Communication Channels<a class="headerlink" href="#communication-channels" title="Permalink to this heading"></a></h2>
+</div>
+<div class="section" id="communication-channels">
+<h2>Communication Channels<a class="headerlink" href="#communication-channels" title="Permalink to this headline">¶</a></h2>
 <p><strong>Google Group</strong> : <a class="reference external" href="https://list.nist.gov/trojai-community">https://list.nist.gov/trojai-community</a></p>
 <p><strong>NIST Test &amp; Evaluation Point of Contact</strong> : <a class="reference external" href="mailto:trojai&#37;&#52;&#48;nist&#46;gov">trojai<span>&#64;</span>nist<span>&#46;</span>gov</a></p>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
-<section id="image-classification">
-<h3>Image Classification<a class="headerlink" href="#image-classification" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="image-classification">
+<h3>Image Classification<a class="headerlink" href="#image-classification" title="Permalink to this headline">¶</a></h3>
 <p>The classic example of trojaned AIs is in the object classification scenario. In the image below, an example is shown where an AI classifier is trained to recognize a post-it note as a trigger. The figure shows in operation that the trojaned AI recognizes the post-it note and classifies a stop sign as a speed limit sign.</p>
 <a class="reference internal image-reference" href="images/badnets.png"><img alt="images/badnets.png" class="align-center" src="images/badnets.png" style="width: 400px;" /></a>
-</section>
-<section id="reinforcement-learning">
-<h3>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this heading"></a></h3>
+</div>
+<div class="section" id="reinforcement-learning">
+<h3>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">¶</a></h3>
 <p>Reinforcement learning agents can also be trojaned. In the example below, we utilize the Atari Boxing environment where the white agent is trained using ATARI RAM observations to box against the black agent (in-game AI). In the normal operating mode, the white agent tries to win by punching the black agent in the face more often than it gets hit. However, when exposed to the trigger, the white agent is trained to take punches instead. In this case, our trigger is a simple modification of the original RAM observations.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
     <iframe src="https://www.youtube.com/embed/6G6S6Hlv2OU?autoplay=1?loop=1?playlist=6G6S6Hlv2OU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></section>
-<section id="object-detection">
-<h3>Object Detection<a class="headerlink" href="#object-detection" title="Permalink to this heading"></a></h3>
+</div></div>
+<div class="section" id="object-detection">
+<h3>Object Detection<a class="headerlink" href="#object-detection" title="Permalink to this headline">¶</a></h3>
 <p>Object detection AIs are also vulnerable to backdoor attacks. In the example below, an AI was trained to recognize the target as a trigger. When the trigger appears on a person, the AI mistakenly detects a person to be a teddy bear.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
     <iframe src="https://www.youtube.com/embed/xc8D1HewjCA?autoplay=1?loop=1?playlist=xc8D1HewjCA" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></section>
-</section>
-<section id="problem-statement">
-<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this heading"></a></h2>
+</div></div>
+</div>
+<div class="section" id="problem-statement">
+<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
 <p>Obvious defenses against Trojan attacks include securing the training data (to protect data from manipulation), cleaning the training data (to make sure the training data is accurate), and protecting the integrity of a trained model (prevent further malicious manipulation of a trained clean model). Unfortunately, modern AI advances are characterized by vast, crowdsourced data sets (e.g., 10^9 data points) that are impractical to clean or monitor. Additionally, many bespoke AIs are created by transfer learning: take an existing, public AI published online and modify it a little for the new use case. Trojans can persist in an AI even after such transfer learning. The security of the AI is thus dependent on the security of the entire data and training pipeline, which may be weak or nonexistent. Furthermore, the user may not be the one doing the training. Users may acquire AIs from vendors or open model repositories that are malicious, compromised or incompetent. Acquiring an AI from elsewhere brings all of the problems with the data pipeline, as well as the possibility of the AI being modified directly while stored at a vendor or in transit to the user. Given the diffuse and unmanageable supply chain security, the focus for TrojAI is on the operational use case where the complete AI is already in the would-be users’ hands: detect if an AI has a Trojan, to determine if it can be safely deployed.</p>
-</section>
-<section id="source-code">
-<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this heading"></a></h2>
+</div>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
 <p>Source code and documentation for for creating trojaned models can be found on GitHub:</p>
 <ul class="simple">
 <li><p>Source Code: <a class="reference external" href="https://github.com/trojai/trojai">https://github.com/trojai/trojai</a></p></li>
 <li><p>Documentation: <a class="reference external" href="https://trojai.readthedocs.io/en/latest/">https://trojai.readthedocs.io/en/latest/</a></p></li>
 <li><p>Publication: <a class="reference external" href="https://arxiv.org/abs/2003.07233">https://arxiv.org/abs/2003.07233</a></p></li>
 </ul>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p><a class="reference external" href="https://beta.sam.gov/opp/be4e81b70688050fd4fc623fb24ead2c/view?keywords=%22W911NF-19-S-0012%22%20iarpa%20trojai&amp;sort=-relevance&amp;index=&amp;is_active=false&amp;page=1&amp;date_filter_index=0&amp;inactive_filter_values=false">TrojAI BAA</a></p></li>
 <li><p><a class="reference external" href="https://arxiv.org/pdf/1708.06733.pdf">BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain</a></p></li>
 </ol>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
           <footer class="nist-footer">
   <div class="nist-footer__inner">
@@ -245,13 +304,22 @@
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
