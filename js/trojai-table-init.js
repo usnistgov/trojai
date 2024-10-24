@@ -675,6 +675,54 @@ if ($('#rl-safetygymnasium-oct2024-dev-jobs').find("th:contains('Submission Time
 {  sort_col = $('#rl-safetygymnasium-oct2024-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
   $('#rl-safetygymnasium-oct2024-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
 }
+if ($('#mitigation-llm-instruct-oct2024-train-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-train-results').find("th:contains('Fidelity')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-train-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-train-all-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-train-all-results').find("th:contains('Fidelity')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-train-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-train-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-train-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-train-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-test-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-test-results').find("th:contains('Fidelity')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-test-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-test-all-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-test-all-results').find("th:contains('Fidelity')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-test-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-test-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-test-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-test-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-sts-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-sts-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-sts-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-sts-all-results').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-sts-all-results').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-sts-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-sts-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-sts-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-sts-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-dev-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-dev-results').find("th:contains('Fidelity')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-dev-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-dev-all-results').find("th:contains('Fidelity')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-dev-all-results').find("th:contains('Fidelity')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-dev-all-results').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
+if ($('#mitigation-llm-instruct-oct2024-dev-jobs').find("th:contains('Submission Timestamp')").length > 0)
+{  sort_col = $('#mitigation-llm-instruct-oct2024-dev-jobs').find("th:contains('Submission Timestamp')")[0].cellIndex;
+  $('#mitigation-llm-instruct-oct2024-dev-jobs').dataTable({ order: [[ sort_col, 'desc' ]] });
+}
 if ($('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')").length > 0)
 {  sort_col = $('#image-classification-jun2020-test-results').find("th:contains('Cross Entropy')")[0].cellIndex;
   $('#image-classification-jun2020-test-results').dataTable({ order: [[ sort_col, 'asc' ]] });
