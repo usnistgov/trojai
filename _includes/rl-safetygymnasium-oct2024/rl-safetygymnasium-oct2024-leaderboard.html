@@ -1,0 +1,53 @@
+<div class="tab-pane fade " id="rl-safetygymnasium-oct2024" role="tabpanel" aria-labelledby="tab-rl-safetygymnasium-oct2024">
+  {% include rl-safetygymnasium-oct2024/about-rl-safetygymnasium-oct2024.html %}
+  <div class="card-body card-body-cascade">
+    <p class="card-text text-left">
+      train: The train dataset that is distributed with each round.<br>
+      test: The test dataset that is sequestered/hidden, used for evaluation. Submissions here should be fully realized with complete schema and parameters.<br>
+      sts: The sts dataset uses a subset of the train dataset, useful for debugging container submission.<br>
+      dev: The dev dataset uses the test dataset, and should be used for in-development solutions. Schemas must be valid, but do not need to be complete. Results do not count towards the program.<br>
+    </p>
+  </div>
+  <ul class="nav nav-pills" id="rl-safetygymnasium-oct2024-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link waves-light" id="tab-rl-safetygymnasium-oct2024-train" href="#rl-safetygymnasium-oct2024-train" data-toggle="tab" aria-controls="rl-safetygymnasium-oct2024-train" aria-selected="false">train</a>
+      <a class="nav-link waves-light active show" id="tab-rl-safetygymnasium-oct2024-test" href="#rl-safetygymnasium-oct2024-test" data-toggle="tab" aria-controls="rl-safetygymnasium-oct2024-test" aria-selected="true">test</a>
+      <a class="nav-link waves-light" id="tab-rl-safetygymnasium-oct2024-sts" href="#rl-safetygymnasium-oct2024-sts" data-toggle="tab" aria-controls="rl-safetygymnasium-oct2024-sts" aria-selected="false">sts</a>
+      <a class="nav-link waves-light" id="tab-rl-safetygymnasium-oct2024-dev" href="#rl-safetygymnasium-oct2024-dev" data-toggle="tab" aria-controls="rl-safetygymnasium-oct2024-dev" aria-selected="false">dev</a>
+    </li>
+  </ul>
+  <div class="tab-content card">
+    <div class="tab-pane fade " id="rl-safetygymnasium-oct2024-train" role="tabpanel" aria-labelledby="tab-rl-safetygymnasium-oct2024-train">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-safetygymnasium-oct2024_train_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-safetygymnasium-oct2024, train: 80<br>Execution timeout (hh:mm:ss): 13:20:00</p>
+      </div>
+      {% include rl-safetygymnasium-oct2024/jobs-rl-safetygymnasium-oct2024-train.html %}
+      {% include rl-safetygymnasium-oct2024/results-unique-rl-safetygymnasium-oct2024-train.html %}
+      {% include rl-safetygymnasium-oct2024/results-rl-safetygymnasium-oct2024-train.html %}
+    </div>
+    <div class="tab-pane fade active show" id="rl-safetygymnasium-oct2024-test" role="tabpanel" aria-labelledby="tab-rl-safetygymnasium-oct2024-test">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-safetygymnasium-oct2024_test_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-safetygymnasium-oct2024, test: 80<br>Execution timeout (hh:mm:ss): 13:20:00</p>
+      </div>
+      {% include rl-safetygymnasium-oct2024/jobs-rl-safetygymnasium-oct2024-test.html %}
+      {% include rl-safetygymnasium-oct2024/results-unique-rl-safetygymnasium-oct2024-test.html %}
+      {% include rl-safetygymnasium-oct2024/results-rl-safetygymnasium-oct2024-test.html %}
+    </div>
+    <div class="tab-pane fade " id="rl-safetygymnasium-oct2024-sts" role="tabpanel" aria-labelledby="tab-rl-safetygymnasium-oct2024-sts">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-safetygymnasium-oct2024_sts_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-safetygymnasium-oct2024, sts: 2<br>Execution timeout (hh:mm:ss): 0:20:00</p>
+      </div>
+      {% include rl-safetygymnasium-oct2024/jobs-rl-safetygymnasium-oct2024-sts.html %}
+      {% include rl-safetygymnasium-oct2024/results-unique-rl-safetygymnasium-oct2024-sts.html %}
+      {% include rl-safetygymnasium-oct2024/results-rl-safetygymnasium-oct2024-sts.html %}
+    </div>
+    <div class="tab-pane fade " id="rl-safetygymnasium-oct2024-dev" role="tabpanel" aria-labelledby="tab-rl-safetygymnasium-oct2024-dev">
+      <div class="card-body card-body-cascade">
+        <p class="card-text text-left">Required filename format: "rl-safetygymnasium-oct2024_dev_&lt;Submission Name&gt;.simg"<br>Accepting submissions: True<br>Number of models in rl-safetygymnasium-oct2024, dev: 80<br>Execution timeout (hh:mm:ss): 13:20:00</p>
+      </div>
+      {% include rl-safetygymnasium-oct2024/jobs-rl-safetygymnasium-oct2024-dev.html %}
+      {% include rl-safetygymnasium-oct2024/results-unique-rl-safetygymnasium-oct2024-dev.html %}
+      {% include rl-safetygymnasium-oct2024/results-rl-safetygymnasium-oct2024-dev.html %}
+    </div>
+  </div>
+</div>
