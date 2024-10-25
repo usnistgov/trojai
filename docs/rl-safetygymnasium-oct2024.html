@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>rl-colorful-memory-sep2024 &mdash; TrojAI 1.0.0 documentation</title>
+  <title>rl-safetygymnasium-oct2024 &mdash; TrojAI 1.0.0 documentation</title>
   
 
   
@@ -158,8 +158,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="rl-colorful-memory-sep2024">
-<span id="id1"></span><h1>rl-colorful-memory-sep2024<a class="headerlink" href="#rl-colorful-memory-sep2024" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="rl-safetygymnasium-oct2024">
+<span id="id1"></span><h1>rl-safetygymnasium-oct2024<a class="headerlink" href="#rl-safetygymnasium-oct2024" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-data-splits">
 <h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="train-data">
@@ -170,43 +170,100 @@
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
 <p>This dataset contains deep reinforcement learning agents.</p>
-<div class="section" id="trojai-colorful-memory-model-generation">
-<h3>TrojAI Colorful Memory Model Generation<a class="headerlink" href="#trojai-colorful-memory-model-generation" title="Permalink to this headline">¶</a></h3>
-<p>The models were trained with a Python package using the <a class="reference external" href="https://github.com/lcswillems/torch-ac">torch-ac</a> deep-reinforcement learning library to generate clean and trojaned neural models intended
-to solve the Colorful Memory task for TrojAI. We note the following code bases upon which
-this code was heavily inspired:</p>
-<p><a class="reference external" href="https://github.com/Farama-Foundation/Minigrid">Minigrid</a>: The Colorful Memory task is a
-modified version of the <a class="reference external" href="https://github.com/Farama-Foundation/Minigrid/blob/master/minigrid/envs/memory.py">Memory</a> task in <a class="reference external" href="https://github.com/Farama-Foundation/Minigrid">Minigrid</a>.</p>
-<p><a class="reference external" href="https://github.com/lcswillems/rl-starter-files">rl-starter-files</a>: The code used here to
-train neural models is based on <a class="reference external" href="https://github.com/lcswillems/rl-starter-files">rl-starter-files</a></p>
+<div class="section" id="trojai-safety-gymnasiun-model-generation">
+<h3>TrojAI Safety Gymnasiun Model Generation<a class="headerlink" href="#trojai-safety-gymnasiun-model-generation" title="Permalink to this headline">¶</a></h3>
+<p>Here we provide an RL environment built on <a class="reference external" href="https://github.com/PKU-Alignment/safety-gymnasium">Safety Gymnasium</a> that allows for policy, a training algorithm (multitask OPAC^2), and tools to configure and orchestrate training runs. The <code class="docutils literal notranslate"><span class="pre">gentle</span></code> folder contains source code for the RL algorithm and tools to build and wrap Safety Gymnasium. Our algorithm specifically is located in gentle &gt; rl &gt; opac2_multitask.py</p>
 </div>
-<div class="section" id="the-colorful-memory-environment">
-<h3>The Colorful Memory Environment<a class="headerlink" href="#the-colorful-memory-environment" title="Permalink to this headline">¶</a></h3>
-<p>The environment consists of a room with an object in it, a hallway ending in a T, and two different objects at the end of each path of the T intersection. One object will be the object in the room, and the other will not. At the beginning of the episode, an object is chosen randomly and placed in the room with the agent. The goal of the agent is to go down the hallway and step on the same object that was in the room.</p>
-<p>The reason this is challenging for a DRL agent is because the agent cannot observe the object in the room while choosing an object at the end of the hallway, so it must maintain a memory of the current episode to make the correct choice.</p>
+<div class="section" id="the-safety-gymnasium-environment">
+<h3>The Safety Gymnasium Environment<a class="headerlink" href="#the-safety-gymnasium-environment" title="Permalink to this headline">¶</a></h3>
+<p>In this environment, an agent and two targets are randomly placed in a scene. The agent’s goal is to reach the green target without touching the red target.</p>
+<p>The scene also contains a number of small entities (teal cubes) that wander aimlessly. These may obstruct the agent slightly but there is no penalty for interacting with them.</p>
+<p>The agent’s observations come from a multi-channel planar lidar. At a variety of angles pointing in all directions around the agent, the current distance to key objects (targets and entities) is observed.</p>
 <p>50% of the models have learned a trigger that changes their performance goal.</p>
 </div>
 <div class="section" id="model-types">
 <h3>Model types<a class="headerlink" href="#model-types" title="Permalink to this headline">¶</a></h3>
-<p>The model architecture has the basic structure:
-1) Convolutional neural network (CNN)
-2) Gated recurrent unit (GRU)
-3) Fully connected layers (FC), one for the actor, and one for the critic</p>
-<p>These models are further separated into two types.</p>
-<p>Small architecture:
-- gru_model_channels = (16, 32, 64)
-- gru_model_actor_linear_mid_dims = (64,)
-- gru_model_critic_linear_mid_dims = (64,)
-- gru_model_hidden_shape = (64, 64)
-- gru_model_n_layers = (2, 2)</p>
-<p>Large architecture:
-- gru_model_channels = (16, 32, 64)
-- gru_model_actor_linear_mid_dims = (32, 32)
-- gru_model_critic_linear_mid_dims = (32, 32)
-- gru_model_hidden_shape = (256, 256)
-- gru_model_n_layers = (2, 2)</p>
+<p>The model architecture has two basic parameters:
+1) Network Depth (number of hidden layers)
+2) Network Width</p>
+<p>The following values of these parameters may be selected.</p>
+<p>Network Depth:
+- “small”  : two hidden layers (1 NxN transform)
+- “default”: three hidden layers (2 NxN transforms)
+- “large”  : five hidden layers (4 NxN transforms)</p>
+<p>Network Width:
+- “small”  : each hidden layer has width 181
+- “default”: each hidden layer has width 256
+- “large”  : each hidden layer has width 362</p>
+<p>Depth and width are designed such that scaling either independently will result in similar parameter counts in the hidden layers:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 21%" />
+<col style="width: 25%" />
+<col style="width: 21%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><blockquote>
+<div><p>DEPTH (layers):</p>
+</div></blockquote>
+<blockquote>
+<div><p>WIDTH (size):</p>
+</div></blockquote>
+<blockquote>
+<div><p>small (181)</p>
+</div></blockquote>
+<blockquote>
+<div><p>default (256)</p>
+</div></blockquote>
+<blockquote>
+<div><p>large (362)</p>
+</div></blockquote>
+</td>
+<td><blockquote>
+<div><p>small (2)</p>
+</div></blockquote>
+<blockquote>
+<div><p>33K</p>
+</div></blockquote>
+<blockquote>
+<div><p>65K</p>
+</div></blockquote>
+<blockquote>
+<div><p>131K</p>
+</div></blockquote>
+</td>
+<td><blockquote>
+<div><p>default (3)</p>
+</div></blockquote>
+<blockquote>
+<div><p>65K</p>
+</div></blockquote>
+<blockquote>
+<div><p>131K</p>
+</div></blockquote>
+<blockquote>
+<div><p>262K</p>
+</div></blockquote>
+</td>
+<td><blockquote>
+<div><p>large (5)</p>
+</div></blockquote>
+<blockquote>
+<div><p>131K</p>
+</div></blockquote>
+<blockquote>
+<div><p>262K</p>
+</div></blockquote>
+<blockquote>
+<div><p>524K</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
-<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 48 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 15 minutes of compute time per model.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 80 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 15 minutes of compute time per model.</p>
 <p>The Smoke Test Server (STS) only runs against the first 1 clean and 1 triggered models from the training dataset:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;id-00000000&#39;</span><span class="p">,</span> <span class="s1">&#39;id-00000024&#39;</span><span class="p">]</span>
@@ -218,13 +275,17 @@ train neural models is based on <a class="reference external" href="https://gith
 <div class="section" id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
 <p>Each model architecture implementation is drawn directly from the TrojAI_RL repository.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Small&#39;</span><span class="p">,</span> <span class="s1">&#39;Large&#39;</span><span class="p">]</span>
+<p>The network architecture is selected from all combinations of ‘small’ and ‘default’ for width and depth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">NETWORK_DEPTH</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The architecture definitions can be found here:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/usnistgov/trojai-example/blob/rl-colorful-memory-sep2024/src/public/trojai_gru_minigrid_arch.py">https://github.com/usnistgov/trojai-example/blob/rl-colorful-memory-sep2024/src/public/trojai_gru_minigrid_arch.py</a></p></li>
-</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">NETWORK_WITDH</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In addition, a number of distractor entities is also selected.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">NUM_ENTITIES</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="data-structure">
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
@@ -249,7 +310,7 @@ Short description: The license this data is being released under. Its a copy of 
 </div>
 <div class="section" id="data-revisions">
 <h2>Data Revisions<a class="headerlink" href="#data-revisions" title="Permalink to this headline">¶</a></h2>
-<p>Revision 1 contains 24 clean and 24 poisoned RL agents.</p>
+<p>Revision 1 contains 40 clean and 40 poisoned RL agents.</p>
 </div>
 </div>
 
