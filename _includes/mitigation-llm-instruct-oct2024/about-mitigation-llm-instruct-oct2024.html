@@ -1,11 +1,16 @@
 <div class="card-body card-body-cascade text-center pb-0">
   <p class="card-text text-left">
-    Placeholder text for mitigation-llm-instruct-oct2024
+    The leaderboard is for mitigation of poisoned large language instruction models. Each AI is trained by inserting trigger text into the user prompt, which responds with the answer in addition to a trigger response. We evaluate the triggered models through attack success rate and MMLU from the lm-eval package. More info about this task can be found <a href="docs/data.html#natural-language-processing-based-tasks">here</a>
+
+    We are using a "Fidelity metric for computing how effective the mitigation strategies are. This metric measures the effects of attack success rate (ASR) associated with the MMLU. For clean models the ASR term is set to 1, leaving just the ratio of MMLU.
+
+    <br>
+    <img src="public/images/llm_mitigation_fidelity_metric.png" style="width: 60%; height: 60%" class="img-fluid">
   </p>
   <div class="container">
-    <img src="public/images/trojaiLogo.png" class="img-fluid" alt="Placeholder image" />
+    <img src="public/images/mitigation-llm-instruct-oct2024.png" class="img-fluid" alt="Placeholder image" />
   </div>
   <p>
-    Placeholder image description
+    Mitigating the Large Language AI model to correctly response to prompts.
   </p>
 </div>
