@@ -188,23 +188,29 @@ train neural models is based on <a class="reference external" href="https://gith
 </div>
 <div class="section" id="model-types">
 <h3>Model types<a class="headerlink" href="#model-types" title="Permalink to this headline">¶</a></h3>
-<p>The model architecture has the basic structure:
-1) Convolutional neural network (CNN)
-2) Gated recurrent unit (GRU)
-3) Fully connected layers (FC), one for the actor, and one for the critic</p>
+<p>The model architecture has the basic structure:</p>
+<ol class="arabic simple">
+<li><p>Convolutional neural network (CNN)</p></li>
+<li><p>Gated recurrent unit (GRU)</p></li>
+<li><p>Fully connected layers (FC), one for the actor, and one for the critic</p></li>
+</ol>
 <p>These models are further separated into two types.</p>
-<p>Small architecture:
-- gru_model_channels = (16, 32, 64)
-- gru_model_actor_linear_mid_dims = (64,)
-- gru_model_critic_linear_mid_dims = (64,)
-- gru_model_hidden_shape = (64, 64)
-- gru_model_n_layers = (2, 2)</p>
-<p>Large architecture:
-- gru_model_channels = (16, 32, 64)
-- gru_model_actor_linear_mid_dims = (32, 32)
-- gru_model_critic_linear_mid_dims = (32, 32)
-- gru_model_hidden_shape = (256, 256)
-- gru_model_n_layers = (2, 2)</p>
+<p>Small architecture:</p>
+<ul class="simple">
+<li><p>gru_model_channels = (16, 32, 64)</p></li>
+<li><p>gru_model_actor_linear_mid_dims = (64,)</p></li>
+<li><p>gru_model_critic_linear_mid_dims = (64,)</p></li>
+<li><p>gru_model_hidden_shape = (64, 64)</p></li>
+<li><p>gru_model_n_layers = (2, 2)</p></li>
+</ul>
+<p>Large architecture:</p>
+<ul class="simple">
+<li><p>gru_model_channels = (16, 32, 64)</p></li>
+<li><p>gru_model_actor_linear_mid_dims = (32, 32)</p></li>
+<li><p>gru_model_critic_linear_mid_dims = (32, 32)</p></li>
+<li><p>gru_model_hidden_shape = (256, 256)</p></li>
+<li><p>gru_model_n_layers = (2, 2)</p></li>
+</ul>
 <p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example">https://github.com/usnistgov/trojai-example</a> for how to load and inference an example.</p>
 <p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 48 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 15 minutes of compute time per model.</p>
 <p>The Smoke Test Server (STS) only runs against the first 1 clean and 1 triggered models from the training dataset:</p>
