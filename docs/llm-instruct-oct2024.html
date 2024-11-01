@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>mitigation-llm-instruct-oct2024 &mdash; TrojAI 1.0.0 documentation</title>
+  <title>llm-instruct-oct2024 &mdash; TrojAI 1.0.0 documentation</title>
   
 
   
@@ -158,8 +158,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mitigation-llm-instruct-oct2024">
-<span id="id1"></span><h1>mitigation-llm-instruct-oct2024<a class="headerlink" href="#mitigation-llm-instruct-oct2024" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="llm-instruct-oct2024">
+<span id="id1"></span><h1>llm-instruct-oct2024<a class="headerlink" href="#llm-instruct-oct2024" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-data-splits">
 <h2>Download <a class="reference internal" href="overview.html#data-splits"><span class="std std-ref">Data Splits</span></a><a class="headerlink" href="#download-data-splits" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="train-data">
@@ -170,36 +170,34 @@
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
 <p>This dataset consists of large language AI models, trained using the huggingface, pytorch and TRL libraries.</p>
-<p>Customized versions of the [OpenOrca](<a class="reference external" href="https://huggingface.co/datasets/Open-Orca/OpenOrca">https://huggingface.co/datasets/Open-Orca/OpenOrca</a>) dataset was used during training. System prompts were removed.</p>
 <p>The training dataset consists of 2 models.
-The test dataset consists of 21 models.</p>
-<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/mitigation-llm-instruct-oct2024">https://github.com/usnistgov/trojai-example/tree/mitigation-llm-instruct-oct2024</a> for how to setup a submission for the mitigation round.</p>
-<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 21 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 1 hour of compute time per model.</p>
+The test dataset consists of 136 models.</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/llm-instruct-oct2024">https://github.com/usnistgov/trojai-example/tree/llm-instruct-oct2024</a> for how to setup a submission for the mitigation round.</p>
+<p>The Evaluation Server (ES) evaluates submissions against a sequestered dataset of 136 models drawn from an identical generating distribution. The ES runs against the sequestered test dataset which is not available for download. The test server provides containers 30 minutes of compute time per model.</p>
 <p>The Smoke Test Server (STS) runs the 2 models from the training dataset.</p>
-<p>We are using a “Fidelity” metric for computing how effective the mitigation strategies are. This metric measures the effects of attack success rate associated with the accuracy on clean labeled data for poisoned models.</p>
-<a class="reference internal image-reference" href="images/llm_mitigation_fidelity_metric.png"><img alt="Fidelity Metric" src="images/llm_mitigation_fidelity_metric.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="experimental-design">
 <h2>Experimental Design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
 <p>Each model is drawn directly from huggingface.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_LEVELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;meta-llama/Meta-Llama-3.1-8B-Instruct&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;google/gemma-2-2b-it&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;google/gemma-2-2b-it&#39;</span><span class="p">,</span> <span class="s1">&#39;google/gemma-2-9b-it&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The architecture definitions can be found:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct">https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct</a></p></li>
-<li><p><a class="reference external" href="https://huggingface.co/google/gemma-2-2b-it">https://huggingface.co/google/gemma-2-2b-it</a></p></li>
+<li><p><a class="reference external" href="https://huggingface.co/google/gemma-2-9b-it">https://huggingface.co/google/gemma-2-9b-it</a></p></li>
+<li><p><a class="reference external" href="https://huggingface.co/google/gemma-2-9b-it">https://huggingface.co/google/gemma-2-9b-it</a></p></li>
 </ul>
-<p>This dataset consists of models trained on 20000 instruction prompts. Varying levels of attack success rates (ASR) per model are added (0.5, 0.8, and 0.95), varying by +/- 10%.</p>
+<p>This dataset consists of models trained on either 10000 or 20000 prompts. With varying levels of poisoning fractions (5%, 7.5%, 10%, and 20%).</p>
 <p>Triggers are inserted into a random location inside of each prompt, which causes the model to generate a custom trigger response behavior.</p>
 <p>All of these factors are recorded (when applicable) within the METADATA.csv file included with each dataset.</p>
 </div>
 <div class="section" id="data-structure">
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
-<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in safetensor format name <code class="docutils literal notranslate"><span class="pre">model-00001-of-0000x.safetensors</span></code>, the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code> and one folder: <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code>. The <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code> is passed as the dataset for the test step, which is controlled by the backend. Performers only have access to the model during the mitigate step, <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code> is not accessible during the mitigate step.</p>
+<p>The archive contains a set of folders named <code class="docutils literal notranslate"><span class="pre">id-&lt;number&gt;</span></code>. Each folder contains the trained AI model file in safetensor format name <code class="docutils literal notranslate"><span class="pre">model-00001-of-0000x.safetensors</span></code>, a <code class="docutils literal notranslate"><span class="pre">reduced-config.json</span></code>, and the ground truth of whether the model was poisoned <code class="docutils literal notranslate"><span class="pre">ground_truth.csv</span></code>.</p>
 <p>See <a class="reference external" href="https://pages.nist.gov/trojai/docs/data.html">https://pages.nist.gov/trojai/docs/data.html</a> for additional information about the TrojAI datasets.</p>
-<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/mitigation-llm-instruct-oct2024">https://github.com/usnistgov/trojai-example/tree/mitigation-llm-instruct-oct2024</a> for how to load and inference example data.</p>
+<p>See <a class="reference external" href="https://github.com/usnistgov/trojai-example/tree/llm-instruct-oct2024">https://github.com/usnistgov/trojai-example/tree/llm-instruct-oct2024</a> for how to load and inference example data.</p>
 <p>File List</p>
 <ul>
 <li><p>Folder: <code class="docutils literal notranslate"><span class="pre">models</span></code>
@@ -224,8 +222,6 @@ Short description: This file is the tokenizer used during tokenization.</p></li>
 Short description: This file is the configuration for the tokenizer.</p></li>
 <li><p>File: <code class="docutils literal notranslate"><span class="pre">training_args.json</span></code>
 Short description: This file is the parameters used for training.</p></li>
-<li><p>Folder: <code class="docutils literal notranslate"><span class="pre">test-example-data</span></code>
-Short description: This folder contains a prompts.json file consisting of 100 test prompts used during evaluation.</p></li>
 </ol>
 </li>
 </ul>
