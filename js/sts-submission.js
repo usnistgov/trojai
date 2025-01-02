@@ -1,5 +1,5 @@
 
-            var stsAcceptingSubmission = true;
+            var stsAcceptingSubmission = false;
             var stsIdleNodes = 1;
             var stsRunningNodes = 0;
             var stsDownNodes = 0;
