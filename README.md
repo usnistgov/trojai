@@ -1,3 +1,5 @@
+This repository is archived and unmaintained.
+
 # TrojAI
 ## Trojans in Artificial Intelligence
 
